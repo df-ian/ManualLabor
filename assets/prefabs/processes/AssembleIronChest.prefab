@@ -1,0 +1,23 @@
+{
+    "ProcessDefinition": {
+        "processType": "ManualLabor:Assembly"
+    },
+    "RequirementInput": {
+        "requirements": ["Hammer"]
+    },
+    "BlockFamilyInput": {
+        "blockCounts": {
+            "ManualLabor:IronBox": 1
+        }
+    },
+    "ItemPrefabInput": {
+        "itemCounts": {
+            "ManualLabor:Key": 1
+        }
+    },
+    "BlockFamilyOutput": {
+        "blockCounts": {
+            "ManualLabor:IronChest": 1
+        }
+    }
+}

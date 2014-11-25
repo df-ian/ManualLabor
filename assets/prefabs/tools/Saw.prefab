@@ -1,0 +1,29 @@
+{
+  "parent": "engine:iconItem",
+  "DisplayName": {
+    "name": "Saw"
+  },
+  "Item": {
+    "renderWithIcon": true
+  },
+   "ProcessRequirementsProvider": {
+       "requirements": [
+           "Saw"
+       ]
+   },
+   "Durability": {
+       "durability": 132,
+       "maxDurability": 132
+   },
+   "TintOverlayIcon": {
+       "texture": {
+           "ManualLabor.SawHandle": {
+           },
+           "ManualLabor.SawHead": {
+             "hue": 200,
+             "saturationScale": 0.2,
+             "brightnessScale": 1
+           }
+       }
+   }
+}

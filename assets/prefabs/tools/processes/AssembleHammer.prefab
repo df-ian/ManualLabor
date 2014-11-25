@@ -1,0 +1,17 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembly"
+  },
+  "RequirementInput": {
+    "requirements": []
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:HammerHead": 1,
+      "ManualLabor:Rod": 1
+    }
+  },
+  "ToolItemOutput": {
+      "item": "ManualLabor:Hammer"
+  }
+}

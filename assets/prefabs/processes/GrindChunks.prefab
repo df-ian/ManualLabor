@@ -1,0 +1,18 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Grinding"
+  },
+  "RequirementInput": {
+    "requirements": ["FineHammer"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Chunks": 1
+    }
+  },
+  "MaterialItemOutput": {
+    "itemCounts": {
+      "ManualLabor:Dust": 1
+    }
+  }
+}

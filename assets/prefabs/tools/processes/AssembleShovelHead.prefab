@@ -1,0 +1,18 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembly"
+  },
+  "RequirementInput": {
+    "requirements": ["MetalFile"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Plate": 2
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:ShovelHead",
+    "amount": 1
+  }
+
+}

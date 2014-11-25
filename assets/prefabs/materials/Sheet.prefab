@@ -1,0 +1,14 @@
+{
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor.Sheet",
+    "stackId": "ManualLabor:Sheet",
+    "renderWithIcon": true
+  },
+  "DisplayName": {
+    "name": "Sheet"
+  },
+  "MaterialItem": {
+    "icon": "ManualLabor.Sheet"
+  }
+}

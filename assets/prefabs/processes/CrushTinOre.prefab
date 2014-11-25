@@ -1,0 +1,23 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Crusher"
+  },
+  "RequirementInput": {
+    "requirements": ["Hammer"]
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "SubstanceMatters:TinOre": 1
+    }
+  },
+  "InjectSubstance": {
+    "add": {
+        "Tin": 1
+    }
+  },
+  "MaterialItemOutput": {
+    "itemCounts": {
+      "ManualLabor:Chunks": 1
+    }
+  }
+}

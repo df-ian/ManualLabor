@@ -1,0 +1,13 @@
+{
+    "parent": "engine:iconItem",
+    "DisplayName": {
+        "name": "Shovel Head"
+    },
+    "Item": {
+        "icon": "ManualLabor.ShovelHead",
+        "renderWithIcon": true
+    },
+    "MaterialItem": {
+        "icon": "ManualLabor.ShovelHead"
+    }
+}

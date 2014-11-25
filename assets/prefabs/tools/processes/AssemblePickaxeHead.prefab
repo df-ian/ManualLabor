@@ -1,0 +1,19 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembly"
+  },
+  "RequirementInput": {
+    "requirements": ["Hammer", "MetalFile"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Plate": 1,
+      "ManualLabor:Nugget": 8
+    }
+  },
+  "MaterialItemOutput": {
+      "item": "ManualLabor:PickaxeHead",
+      "amount": 1
+  }
+
+}

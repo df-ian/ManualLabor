@@ -1,0 +1,12 @@
+{
+    "basedOn" : "TerraTech:Metal",
+    "rotation" : "horizontal",
+    "tiles" : {
+        "sides" : "IronChest_Sides",
+        "front" : "IronChest_Front",
+        "topBottom" : "IronChest_TopBottom"
+    },
+    "entity" : {
+        "prefab" : "IronChest"
+    }
+}

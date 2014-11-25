@@ -1,0 +1,19 @@
+{
+    "ProcessDefinition": {
+        "processType": "ManualLabor:Assembly"
+    },
+    "RequirementInput": {
+        "requirements": ["Hammer", "Screwdriver"]
+    },
+    "ItemPrefabInput": {
+        "itemCounts": {
+            "ManualLabor:IronPlate": 6,
+            "ManualLabor:IronScrew": 12
+        }
+    },
+    "BlockFamilyOutput": {
+        "blockCounts": {
+            "ManualLabor:IronBox": 1
+        }
+    }
+}

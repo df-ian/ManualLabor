@@ -1,0 +1,13 @@
+{
+    "parent" : "engine:iconItem",
+    "DisplayName" : {
+        "name" : "Axe Head"
+    },
+    "Item" : {
+        "icon" : "ManualLabor.AxeHead",
+        "renderWithIcon" : true
+    },
+    "MaterialItem": {
+        "icon": "ManualLabor.AxeHead"
+    }
+}

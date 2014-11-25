@@ -1,0 +1,17 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembly"
+  },
+  "RequirementInput": {
+    "requirements": ["Saw"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Rod": 1
+    }
+  },
+  "MaterialItemOutput": {
+      "item": "ManualLabor:Bolt",
+      "amount": 4
+  }
+}

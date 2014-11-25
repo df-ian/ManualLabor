@@ -1,0 +1,18 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembly"
+  },
+  "RequirementInput": {
+    "requirements": ["Wrench", "MetalFile"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Rod": 1
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:Key",
+    "amount": 1
+  }
+
+}

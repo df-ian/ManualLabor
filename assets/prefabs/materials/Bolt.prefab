@@ -1,0 +1,14 @@
+{
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor.Bolt",
+    "stackId": "ManualLabor:Bolt",
+    "renderWithIcon": true
+  },
+  "DisplayName": {
+    "name": "Bolt"
+  },
+  "MaterialItem": {
+    "icon": "ManualLabor.Bolt"
+  }
+}

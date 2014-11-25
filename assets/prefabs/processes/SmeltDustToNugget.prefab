@@ -1,0 +1,15 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Smelter"
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Dust": 4
+    }
+  },
+  "MaterialItemOutput": {
+    "itemCounts": {
+      "ManualLabor:Nugget": 1
+    }
+  }
+}

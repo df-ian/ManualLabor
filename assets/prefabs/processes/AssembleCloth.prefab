@@ -1,0 +1,15 @@
+{
+    "ProcessDefinition": {
+        "processType": "ManualLabor:Assembly"
+    },
+    "ItemPrefabInput": {
+        "itemCounts": {
+            "ManualLabor:String": 16
+        }
+    },
+    "ItemPrefabOutput": {
+        "itemCounts": {
+            "ManualLabor:Cloth": 1
+        }
+    }
+}

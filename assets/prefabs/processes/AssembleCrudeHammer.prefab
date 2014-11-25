@@ -1,0 +1,20 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembly"
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:Stick": 1
+    }
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "Core:Stone": 1
+    }
+  },
+  "ItemPrefabOutput": {
+    "itemCounts": {
+      "ManualLabor:CrudeHammer": 1
+    }
+  }
+}

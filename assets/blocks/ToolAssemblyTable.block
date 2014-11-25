@@ -1,0 +1,6 @@
+{
+    "displayName": "Tool Assembly Table",
+    "entity": {
+        "prefab": "ToolAssemblyTable"
+    }
+}

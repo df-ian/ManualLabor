@@ -1,0 +1,27 @@
+{
+    "id" : "ManualLabor",
+    "version" : "0.1.0",
+    "author" : "Josharias",
+    "displayName" : "ManualLabor",
+    "description" : "",
+    "dependencies" : [
+        {
+            "id": "Workstation", "minVersion": "0.1.0"
+        },
+        {
+            "id": "Machines", "minVersion": "0.1.0"
+        },
+        {
+            "id": "Durability", "minVersion": "0.1.0"
+        },
+        {
+            "id": "SubstanceMatters", "minVersion": "0.1.0"
+        },
+        {
+            "id": "Journal", "minVersion": "0.1.0"
+        },
+        {
+            "id": "Core", "minVersion": "0.1.0"
+        }
+    ]
+}

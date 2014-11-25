@@ -1,0 +1,29 @@
+{
+  "parent": "engine:iconItem",
+  "DisplayName": {
+    "name": "Screwdriver"
+  },
+  "Item": {
+    "renderWithIcon": true
+  },
+   "ProcessRequirementsProvider": {
+       "requirements": [
+           "Screwdriver"
+       ]
+   },
+   "Durability": {
+       "durability": 132,
+       "maxDurability": 132
+   },
+   "TintOverlayIcon": {
+       "texture": {
+           "ManualLabor.ScrewdriverHandle": {
+           },
+           "ManualLabor.ScrewdriverHead": {
+             "hue": 200,
+             "saturationScale": 0.2,
+             "brightnessScale": 1
+           }
+       }
+   }
+}

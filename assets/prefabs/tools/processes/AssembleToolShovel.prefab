@@ -1,0 +1,19 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembly"
+  },
+  "RequirementInput": {
+    "requirements": []
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:ShovelHead": 1,
+      "ManualLabor:Rod": 1
+    }
+  },
+  "ToolItemOutput": {
+    "item": "ManualLabor:Shovel",
+    "amount": 1
+  }
+
+}

@@ -1,0 +1,18 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembly"
+  },
+  "RequirementInput": {
+    "requirements": ["MetalFile"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Nugget": 1
+    }
+  },
+  "MaterialItemOutput": {
+      "item": "ManualLabor:Rod",
+      "amount": 1
+  }
+
+}

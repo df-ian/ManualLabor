@@ -1,0 +1,18 @@
+{
+    "ProcessDefinition": {
+        "processType": "ManualLabor:Assembly"
+    },
+    "RequirementInput": {
+        "requirements": ["Axe"]
+    },
+    "ItemPrefabInput": {
+        "itemCounts": {
+            "ManualLabor:Stick": 1
+        }
+    },
+    "ItemPrefabOutput": {
+        "itemCounts": {
+            "ManualLabor:WoodenPeg": 2
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembly"
+  },
+  "RequirementInput": {
+    "requirements": ["MetalFile", "Hammer"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Rod": 2
+    }
+  },
+  "ToolItemOutput": {
+    "item": "ManualLabor:Screwdriver",
+    "amount": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembly"
+  },
+  "RequirementInput": {
+    "requirements": ["MetalFile"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Bolt": 1
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:Screw",
+    "amount": 1
+  }
+
+}

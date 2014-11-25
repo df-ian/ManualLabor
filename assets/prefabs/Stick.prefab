@@ -1,0 +1,11 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "ManualLabor.Stick",
+        "stackId": "ManualLabor:Stick",
+        "renderWithIcon": true
+    },
+    "DisplayName": {
+        "name": "Stick"
+    }
+}

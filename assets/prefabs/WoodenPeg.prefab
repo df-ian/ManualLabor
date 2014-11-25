@@ -1,0 +1,11 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "ManualLabor.WoodenPeg",
+        "stackId": "ManualLabor:WoodenPeg",
+        "renderWithIcon": true
+    },
+    "DisplayName": {
+        "name": "Wooden Peg"
+    }
+}

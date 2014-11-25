@@ -1,0 +1,28 @@
+{
+  "parent": "engine:iconItem",
+  "Item": {
+    "renderWithIcon": true,
+    "damageType" : "wrenchDamage"
+  },
+  "DisplayName": {
+    "name": "Wrench"
+  },
+  "ProcessRequirementsProvider": {
+      "requirements": [
+          "Wrench"
+      ]
+  },
+  "Durability": {
+      "durability": 132,
+      "maxDurability": 132
+  },
+  "TintOverlayIcon": {
+      "texture": {
+          "ManualLabor.Wrench": {
+            "hue": 200,
+            "saturationScale": 0.2,
+            "brightnessScale": 1
+          }
+      }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor.CrudeHammer",
+    "renderWithIcon": true,
+    "damageType" : "hammerDamage"
+  },
+  "DisplayName": {
+    "name": "Crude Hammer"
+  },
+  "ProcessRequirementsProvider": {
+    "requirements": [
+      "Hammer"
+    ]
+  },
+  "Durability": {
+    "durability": 32,
+    "maxDurability": 32
+  }
+}

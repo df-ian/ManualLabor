@@ -1,0 +1,14 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembly"
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:AxeHead": 1,
+      "ManualLabor:Rod": 1
+    }
+  },
+  "ToolItemOutput": {
+    "item": "ManualLabor:Axe"
+  }
+}

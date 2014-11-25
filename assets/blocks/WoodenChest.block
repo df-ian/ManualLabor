@@ -1,0 +1,12 @@
+{
+    "basedOn" : "core:wood",
+    "rotation" : "horizontal",
+    "tiles" : {
+        "sides" : "Chest_Sides",
+        "front" : "Chest_Front",
+        "topBottom" : "Chest_TopBottom"
+    },
+    "entity" : {
+        "prefab" : "WoodenChest"
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "InteractionTarget": {},
+  "InteractionScreen": {
+    "screen": "Machines:DefaultMachine"
+  },
+  "Workstation": {
+    "supportedProcessTypes": {
+      "ManualLabor:ToolAssembly": false
+    }
+  },
+  "MachineDefinition": {
+    "inputSlots": 3,
+    "requirementSlots": 2,
+    "outputSlots": 1,
+    "actionTitle": "Assemble",
+    "requirementSlotsTitle": "Tools"
+  },
+  "RenderInventoryInCategory": {
+    "category": "REQUIREMENTS",
+    "translate": [
+      0,
+      0.5,
+      0
+    ],
+    "itemsAreFlat": true,
+    "verticalAlignmentBottom": true
+  },
+  "Network": {
+  }
+}

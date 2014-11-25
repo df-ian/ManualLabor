@@ -1,0 +1,17 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembly"
+  },
+  "RequirementInput": {
+    "requirements": ["Saw", "Screwdriver"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Screw": 1,
+      "ManualLabor:Rod": 2
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:MetalCutter"
+  }
+}

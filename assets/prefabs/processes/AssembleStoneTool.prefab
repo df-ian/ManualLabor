@@ -1,0 +1,15 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembly"
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "Core:Stone": 1
+    }
+  },
+  "ItemPrefabOutput": {
+    "itemCounts": {
+      "ManualLabor:StoneTool": 1
+    }
+  }
+}

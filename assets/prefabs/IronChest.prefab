@@ -1,0 +1,30 @@
+{
+  "Inventory": {
+    "privateToOwner" : false,
+    "itemSlots": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ]
+  },
+  "DropBlockInventory": {},
+  "InteractionTarget": {},
+  "InteractionScreen": {
+      "screen": "engine:containerScreen"
+  },
+  "Network" : {
+  }
+}

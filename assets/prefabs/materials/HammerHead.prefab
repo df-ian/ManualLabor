@@ -1,0 +1,13 @@
+{
+    "parent" : "engine:iconItem",
+    "DisplayName" : {
+        "name" : "Hammer Head"
+    },
+    "Item" : {
+        "icon": "ManualLabor.HammerHead",
+        "renderWithIcon" : true
+    },
+    "MaterialItem": {
+        "icon": "ManualLabor.HammerHead"
+    }
+}

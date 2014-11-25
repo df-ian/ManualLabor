@@ -1,0 +1,18 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembly"
+  },
+  "RequirementInput": {
+    "requirements": ["Hammer"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Nugget": 4
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:Plate",
+    "amount": 1
+  }
+
+}

@@ -1,0 +1,29 @@
+{
+  "parent": "engine:iconItem",
+  "DisplayName": {
+    "name": "Metal Cutter"
+  },
+  "Item": {
+    "renderWithIcon": true
+  },
+  "ProcessRequirementsProvider": {
+      "requirements": [
+          "MetalCutter"
+      ]
+  },
+  "Durability": {
+      "durability": 132,
+      "maxDurability": 132
+  },
+  "TintOverlayIcon": {
+      "texture": {
+          "ManualLabor.MetalCutterHandle": {
+          },
+          "ManualLabor.MetalCutterHead": {
+              "hue": 200,
+              "saturationScale": 0.2,
+              "brightnessScale": 1
+          }
+      }
+  }
+}

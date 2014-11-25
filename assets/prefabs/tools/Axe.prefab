@@ -1,0 +1,33 @@
+{
+    "parent" : "engine:iconItem",
+    "DisplayName" : {
+        "name" : "Axe"
+    },
+    "Item" : {
+        "renderWithIcon": true,
+        "damageType": "axeDamage"
+    },
+     "ProcessRequirementsProvider": {
+         "requirements": [
+             "Axe"
+         ]
+     },
+    "Durability": {
+        "durability": 132,
+        "maxDurability": 132
+    },
+    "TintOverlayIcon": {
+        "texture": {
+            "ManualLabor.Rod": {
+                "hue": 32
+            },
+            "ManualLabor.AxeHead": {
+                "hue": 200,
+                "saturationScale": 0.2,
+                "brightnessScale": 1,
+                "shiftX": 7,
+                "shiftY": -7
+            }
+        }
+    }
+}

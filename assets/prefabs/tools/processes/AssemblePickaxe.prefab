@@ -1,0 +1,14 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembly"
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:PickaxeHead": 1,
+      "ManualLabor:Rod": 1
+    }
+  },
+  "ToolItemOutput": {
+    "item": "ManualLabor:Pickaxe"
+  }
+}

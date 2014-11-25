@@ -1,0 +1,18 @@
+{
+    "ProcessDefinition": {
+        "processType": "ManualLabor:Sawmill"
+    },
+    "RequirementInput": {
+        "requirements": ["Saw"]
+    },
+    "BlockFamilyInput": {
+        "blockCounts": {
+            "Core:PineTrunk": 1
+        }
+    },
+    "ItemPrefabOutput": {
+        "ItemCounts": {
+            "ManualLabor:Plank": 2
+        }
+    }
+}
