@@ -5,10 +5,10 @@
     "RequirementInput": {
         "requirements": ["Hammer", "Screwdriver"]
     },
-    "ItemPrefabInput": {
+    "MaterialItemInput": {
         "itemCounts": {
-            "ManualLabor:IronPlate": 6,
-            "ManualLabor:IronScrew": 12
+            "ManualLabor:Plate.Iron": 6,
+            "ManualLabor:Screw": 12
         }
     },
     "BlockFamilyOutput": {

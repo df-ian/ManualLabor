@@ -11,8 +11,7 @@
     }
   },
   "MaterialItemOutput": {
-    "itemCounts": {
-      "ManualLabor:Dust": 1
-    }
+    "item": "ManualLabor:Dust",
+    "amount": 1
   }
 }

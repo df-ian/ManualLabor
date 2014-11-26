@@ -1,5 +1,5 @@
 {
-    "basedOn" : "TerraTech:Metal",
+    "basedOn" : "SubstanceMatters:Metal",
     "rotation" : "horizontal",
     "tiles" : {
         "sides" : "IronChest_Sides",

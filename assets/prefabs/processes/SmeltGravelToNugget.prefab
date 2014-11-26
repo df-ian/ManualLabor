@@ -8,8 +8,8 @@
     }
   },
   "MaterialItemOutput": {
-    "itemCounts": {
-      "ManualLabor:Nugget": 1
-    }
+    "item": "ManualLabor:Nugget",
+    "amount": 1
+  }
   }
 }

@@ -16,8 +16,7 @@
     }
   },
   "MaterialItemOutput": {
-    "itemCounts": {
-      "ManualLabor:Chunks": 1
-    }
+    "item": "ManualLabor:Chunks",
+    "amount": 1
   }
 }
