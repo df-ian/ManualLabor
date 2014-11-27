@@ -9,7 +9,8 @@
     },
     "ProcessRequirementsProvider": {
         "requirements": [
-            "Hammer"
+            "Hammer",
+            "FineHammer"
         ]
     },
     "Durability": {

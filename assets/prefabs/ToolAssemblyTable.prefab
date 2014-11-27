@@ -5,7 +5,7 @@
   },
   "Workstation": {
     "supportedProcessTypes": {
-      "ManualLabor:ToolAssembly": false
+      "ManualLabor:ToolAssembling": false
     }
   },
   "MachineDefinition": {

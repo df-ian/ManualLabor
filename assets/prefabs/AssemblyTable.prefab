@@ -5,11 +5,12 @@
   },
   "Workstation": {
     "supportedProcessTypes": {
-      "ManualLabor:Assembly": false,
-      "ManualLabor:Sawmill": false,
-      "ManualLabor:Crusher": false,
-      "ManualLabor:Grinder": false,
-      "ManualLabor:Smelter": false
+      "ManualLabor:Assembling": false,
+      "ManualLabor:Sawing": false,
+      "ManualLabor:Crushing": false,
+      "ManualLabor:Grinding": false,
+      "ManualLabor:Smelting": false,
+      "ManualLabor:Smithing": false
     }
   },
   "MachineDefinition": {

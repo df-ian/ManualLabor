@@ -1,6 +1,6 @@
 {
   "ProcessDefinition": {
-    "processType": "ManualLabor:ToolAssembly"
+    "processType": "ManualLabor:ToolAssembling"
   },
   "MaterialItemInput": {
     "itemCounts": {

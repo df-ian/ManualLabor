@@ -1,6 +1,6 @@
 {
   "ProcessDefinition": {
-    "processType": "ManualLabor:Crusher"
+    "processType": "ManualLabor:Crushing"
   },
   "RequirementInput": {
     "requirements": ["Hammer"]
@@ -12,7 +12,7 @@
   },
   "InjectSubstance": {
     "add": {
-        "Iron": 1
+        "SubstanceMatters:Iron": 1
     }
   },
   "MaterialItemOutput": {

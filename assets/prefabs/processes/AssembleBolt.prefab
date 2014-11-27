@@ -1,6 +1,6 @@
 {
   "ProcessDefinition": {
-    "processType": "ManualLabor:Assembly"
+    "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
     "requirements": ["Saw"]

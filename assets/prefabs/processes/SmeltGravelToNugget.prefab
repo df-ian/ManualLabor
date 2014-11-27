@@ -1,10 +1,10 @@
 {
   "ProcessDefinition": {
-    "processType": "ManualLabor:Smelter"
+    "processType": "ManualLabor:Smelting"
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "ManualLabor:Chunks": 4
+      "ManualLabor:Chunks": 1
     }
   },
   "MaterialItemOutput": {

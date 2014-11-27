@@ -1,6 +1,6 @@
 {
     "ProcessDefinition": {
-        "processType": "ManualLabor:Sawmill"
+        "processType": "ManualLabor:Sawing"
     },
     "RequirementInput": {
         "requirements": ["Saw"]
