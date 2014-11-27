@@ -1,7 +1,6 @@
 {
     "parent": "engine:iconItem",
     "Item": {
-        "icon": "ManualLabor.WoodenBucket",
         "stackId": "ManualLabor.WoodenBucket",
         "renderWithIcon": true
     },
@@ -10,5 +9,17 @@
     },
     "FluidContainerItem": {
         "volume": 10
+    },
+    "MaterialFluidItemContainer": {
+        "fluidIcon": "ManualLabor.WoodenBucketFluid"
+    },
+    "TintOverlayIcon": {
+        "texture": {
+            "ManualLabor.WoodenBucket": {
+            },
+            "ManualLabor.WoodenBucketFluid": {
+                "invisible": true
+            }
+        }
     }
 }

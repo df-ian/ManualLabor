@@ -15,8 +15,7 @@
  */
 package org.terasology.manualLabor.systems;
 
-import org.terasology.asset.AssetType;
-import org.terasology.asset.AssetUri;
+import com.google.common.collect.Lists;
 import org.terasology.asset.Assets;
 import org.terasology.durability.components.DurabilityComponent;
 import org.terasology.entitySystem.entity.EntityRef;
@@ -27,11 +26,12 @@ import org.terasology.entitySystem.systems.RegisterSystem;
 import org.terasology.manualLabor.components.IncreaseToolDurabilityComponent;
 import org.terasology.manualLabor.components.MultiplyToolDurabilityComponent;
 import org.terasology.manualLabor.events.ModifyToolCreationEvent;
+import org.terasology.substanceMatters.SubstanceMattersUtil;
 import org.terasology.substanceMatters.components.MaterialCompositionComponent;
 import org.terasology.substanceMatters.components.MaterialItemComponent;
-import org.terasology.substanceMatters.components.SubstanceComponent;
 import org.terasology.tintOverlay.TintOverlayIconComponent;
 
+import java.util.List;
 import java.util.Map;
 
 @RegisterSystem
@@ -42,42 +42,30 @@ public class ModifyToolCreationSystem extends BaseComponentSystem {
      */
     @ReceiveEvent
     public void onToolHasTintOverlayIcon(ModifyToolCreationEvent event, EntityRef toolEntity, TintOverlayIconComponent tintOverlayIconComponent) {
-        // check all the overlay items for a match to this input item's icon
-        for (Map.Entry<String, TintOverlayIconComponent.TintParameter> overlayItem : tintOverlayIconComponent.texture.entrySet()) {
-            AssetUri toolItemIcon = Assets.resolveAssetUri(AssetType.SUBTEXTURE, overlayItem.getKey());
-            boolean matchedIcon = false;
+        List<TintOverlayIconComponent.TintParameter> remainingTintParameters = Lists.newArrayList(tintOverlayIconComponent.texture.values());
 
-            for (EntityRef inputItem : event.getInputItems()) {
-                MaterialItemComponent inputItemMaterialItemComponent = inputItem.getComponent(MaterialItemComponent.class);
-                MaterialCompositionComponent inputItemMaterialCompositionComponent = inputItem.getComponent(MaterialCompositionComponent.class);
-                AssetUri inputItemIcon = Assets.resolveAssetUri(AssetType.SUBTEXTURE, inputItemMaterialItemComponent.icon);
+        // check all the items for an icon match in the tint overlay
+        for (EntityRef inputItem : event.getInputItems()) {
+            MaterialItemComponent inputItemMaterialItemComponent = inputItem.getComponent(MaterialItemComponent.class);
+            MaterialCompositionComponent inputItemMaterialCompositionComponent = inputItem.getComponent(MaterialCompositionComponent.class);
 
-                if (toolItemIcon.equals(inputItemIcon)) {
-                    // change the appearance of this overlay (dont change the offset)
-                    String substance = inputItemMaterialCompositionComponent.getPrimarySubstance();
-                    TintOverlayIconComponent.TintParameter tintParameter = overlayItem.getValue();
-
-                    setTintParametersFromSubstance(substance, tintParameter);
-
-                    matchedIcon = true;
-                }
+            TintOverlayIconComponent.TintParameter tintParameter = tintOverlayIconComponent.getTintParameterForIcon(inputItemMaterialItemComponent.icon);
+            if (tintParameter != null) {
+                // change the appearance of this overlay (dont change the offset)
+                String substance = inputItemMaterialCompositionComponent.getPrimarySubstance();
+                SubstanceMattersUtil.setTintParametersFromSubstance(substance, tintParameter);
+                remainingTintParameters.remove(tintParameter);
             }
+        }
 
-            // if we did not match up this overlay item to an item, and the hue was previously set, use the overall substance to tint
-            if (!matchedIcon && overlayItem.getValue().hue != null) {
-                setTintParametersFromSubstance(toolEntity.getComponent(MaterialCompositionComponent.class).getPrimarySubstance(), overlayItem.getValue());
+        // if we did not match up this overlay item to an item, and the hue was previously set, use the overall substance to tint
+        for (TintOverlayIconComponent.TintParameter tintParameter : remainingTintParameters) {
+            if (tintParameter.hue != null) {
+                SubstanceMattersUtil.setTintParametersFromSubstance(toolEntity.getComponent(MaterialCompositionComponent.class).getPrimarySubstance(), tintParameter);
             }
         }
 
         toolEntity.saveComponent(tintOverlayIconComponent);
-    }
-
-    private void setTintParametersFromSubstance(String substance, TintOverlayIconComponent.TintParameter tintParameter) {
-        Prefab substancePrefab = Assets.getPrefab(substance);
-        SubstanceComponent substanceComponent = substancePrefab.getComponent(SubstanceComponent.class);
-        tintParameter.hue = substanceComponent.hue;
-        tintParameter.brightnessScale = substanceComponent.brightnessScale;
-        tintParameter.saturationScale = substanceComponent.saturationScale;
     }
 
     /**
