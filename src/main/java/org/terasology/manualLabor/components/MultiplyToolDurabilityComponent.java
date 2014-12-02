@@ -20,6 +20,11 @@ import org.terasology.entitySystem.Component;
 /**
  * Add this to a substance so that when a tool is created, its durability is multiplied based on how much of the substance is present.  It stacks multiplicatively
  */
-public class MultiplyToolDurabilityComponent implements Component {
+public class MultiplyToolDurabilityComponent implements Component, ToolModificationDescription {
     public float multiplyPerSubstanceAmount = 1f;
+
+    @Override
+    public String getDescription() {
+        return String.format("Multiplies tool durability by %f for every unit of material", multiplyPerSubstanceAmount);
+    }
 }

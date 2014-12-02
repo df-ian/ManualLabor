@@ -3,7 +3,7 @@
     "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
-    "requirements": ["Wrench", "MetalFile"]
+    "requirements": ["Pliers", "MetalFile"]
   },
   "MaterialItemInput": {
     "itemCounts": {

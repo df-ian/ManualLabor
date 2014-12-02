@@ -1,14 +1,14 @@
 {
   "parent": "engine:iconItem",
   "DisplayName": {
-    "name": "Metal Cutter"
+    "name": "Pliers"
   },
   "Item": {
     "renderWithIcon": true
   },
   "ProcessRequirementsProvider": {
       "requirements": [
-          "MetalCutter"
+          "Pliers"
       ]
   },
   "Durability": {
@@ -17,9 +17,9 @@
   },
   "TintOverlayIcon": {
       "texture": {
-          "ManualLabor.MetalCutterHandle": {
+          "ManualLabor.PliersHandle": {
           },
-          "ManualLabor.MetalCutterHead": {
+          "ManualLabor.PliersHead": {
               "hue": 200,
               "saturationScale": 0.2,
               "brightnessScale": 1

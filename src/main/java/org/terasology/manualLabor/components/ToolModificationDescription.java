@@ -15,5 +15,6 @@
  */
 package org.terasology.manualLabor.components;
 
-public class ToolSubstanceDescriptionComponent {
+public interface ToolModificationDescription {
+    String getDescription();
 }

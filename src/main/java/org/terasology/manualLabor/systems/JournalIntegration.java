@@ -15,11 +15,14 @@
  */
 package org.terasology.manualLabor.systems;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import org.terasology.asset.Assets;
+import org.terasology.entitySystem.entity.EntityManager;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
+import org.terasology.entitySystem.prefab.Prefab;
+import org.terasology.entitySystem.prefab.PrefabManager;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterSystem;
 import org.terasology.journal.DiscoveredNewJournalEntry;
@@ -27,21 +30,31 @@ import org.terasology.journal.JournalManager;
 import org.terasology.journal.StaticJournalChapterHandler;
 import org.terasology.journal.part.TextJournalPart;
 import org.terasology.journal.part.TitleJournalPart;
-import org.terasology.logic.characters.CharacterComponent;
-import org.terasology.logic.inventory.events.InventorySlotChangedEvent;
 import org.terasology.logic.players.event.OnPlayerSpawnedEvent;
+import org.terasology.manualLabor.components.ToolModificationDescription;
 import org.terasology.registry.In;
+import org.terasology.rendering.nui.HorizontalAlign;
+import org.terasology.substanceMatters.components.SubstanceComponent;
+import org.terasology.world.BlockEntityRegistry;
+import org.terasology.world.block.BlockManager;
+import org.terasology.world.block.family.BlockFamily;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RegisterSystem
 public class JournalIntegration extends BaseComponentSystem {
     @In
     JournalManager journalManager;
+    @In
+    EntityManager entityManager;
+    @In
+    PrefabManager prefabManager;
+    @In
+    BlockManager blockManager;
+    @In
+    BlockEntityRegistry blockEntityRegistry;
 
     private String chapterId = "ManualLabor";
-    private Multimap<String, String> dependencyMap = HashMultimap.create();
 
     @Override
     public void initialise() {
@@ -49,44 +62,58 @@ public class JournalIntegration extends BaseComponentSystem {
 
         StaticJournalChapterHandler chapterHandler = new StaticJournalChapterHandler();
 
-        List<JournalManager.JournalEntryPart> introduction = Arrays.asList(
+        List<JournalManager.JournalEntryPart> introduction = Lists.newArrayList(
                 new TitleJournalPart("Manual Labor"),
-                new TextJournalPart("")
+                new TextJournalPart("To Get started, get a "),
+                new TitleJournalPart("Tools"),
+                new ItemIconJournalPart("ManualLabor:Hammer", HorizontalAlign.LEFT),
+                new TextJournalPart("Hammers are primarily a digging tool to dig through rock."),
+                new TextJournalPart("When used as a crafting tool, they can flatten materials and can smash ores into smaller chunks that can then be smelted into metal."),
+                new ItemIconJournalPart("ManualLabor:Pickaxe", HorizontalAlign.LEFT),
+                new TextJournalPart("Pickaxes are a digging tool specializing in minerals."),
+                new ItemIconJournalPart("ManualLabor:Shovel", HorizontalAlign.LEFT),
+                new TextJournalPart("Shovels are a digging tool specializing in dirt."),
+                new ItemIconJournalPart("ManualLabor:Axe", HorizontalAlign.LEFT),
+                new TextJournalPart("Axes are a digging tool specializing in wood."),
+                new ItemIconJournalPart("ManualLabor:MetalFile", HorizontalAlign.LEFT),
+                new TextJournalPart("Metal files are used to sharpen and shape materials."),
+                new ItemIconJournalPart("ManualLabor:Pliers", HorizontalAlign.LEFT),
+                new TextJournalPart("Pliers are used for bending materials."),
+                new ItemIconJournalPart("ManualLabor:Saw", HorizontalAlign.LEFT),
+                new TextJournalPart("Saws are used for cutting materials."),
+                new ItemIconJournalPart("ManualLabor:Screwdriver", HorizontalAlign.LEFT),
+                new TextJournalPart("Screwdrivers are used for fastening materials together."),
+                new ItemIconJournalPart("ManualLabor:Wrench", HorizontalAlign.LEFT),
+                new TextJournalPart("Wrenches are used for working with machines.")
         );
-        chapterHandler.registerJournalEntry("introduction", introduction);
 
+        // add substances
+        for (Prefab substance : prefabManager.listPrefabs(SubstanceComponent.class)) {
+            SubstanceComponent substanceComponent = substance.getComponent(SubstanceComponent.class);
 
-        List<JournalManager.JournalEntryPart> overview = Arrays.asList(
-                new TitleJournalPart("Smelting"),
-                new TextJournalPart("Using a hearth,  you can heat ore to melting point to get metal nuggets.")
+            // try and get a block of this substance
+            BlockFamily blockFamily = blockManager.getBlockFamily(substanceComponent.name + "Ore");
+            if (blockFamily != null) {
 
-        );
-        chapterHandler.registerJournalEntry("overview", overview);
-        dependencyMap.put("overview", "introduction");
+                introduction.add(new TitleJournalPart(substanceComponent.name));
+                introduction.add(new ItemIconJournalPart("ManualLabor:nugget." + substance.getURI().toSimpleString(), HorizontalAlign.LEFT));
+                introduction.add(new TextJournalPart(substanceComponent.description));
 
-        journalManager.registerJournalChapter(chapterId, Assets.getTexture("ManualLabor", "ManualIcon"), "Manual Labor", chapterHandler);
-    }
-
-
-    private void discoveredEntry(EntityRef character, String entryId) {
-        for (String dependentOn : dependencyMap.get(entryId)) {
-            if (!journalManager.hasEntry(character, chapterId, dependentOn)) {
-                discoveredEntry(character, dependentOn);
+                for (ToolModificationDescription toolModificationDescription : Iterables.filter(substance.iterateComponents(), ToolModificationDescription.class)) {
+                    introduction.add(new TextJournalPart(" - " + toolModificationDescription.getDescription()));
+                }
             }
         }
-        if (!journalManager.hasEntry(character, chapterId, entryId)) {
-            character.send(new DiscoveredNewJournalEntry(chapterId, entryId));
-        }
+
+        chapterHandler.registerJournalEntry("introduction", introduction);
+
+        journalManager.registerJournalChapter(chapterId, Assets.getTexture("ManualLabor", "ManualLaborIcon"), "Manual Labor", chapterHandler);
     }
 
 
     @ReceiveEvent
     public void playerSpawned(OnPlayerSpawnedEvent event, EntityRef player) {
         player.send(new DiscoveredNewJournalEntry(chapterId, "introduction"));
-    }
-
-    @ReceiveEvent(components = {CharacterComponent.class})
-    public void playerPickedUpItem(InventorySlotChangedEvent event, EntityRef character) {
     }
 }
 

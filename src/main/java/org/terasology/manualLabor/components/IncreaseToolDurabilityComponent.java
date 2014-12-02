@@ -20,6 +20,11 @@ import org.terasology.entitySystem.Component;
 /**
  * Add this to a substance so that when a tool is created, its base durability is increased based on how much of the substance is present
  */
-public class IncreaseToolDurabilityComponent implements Component {
+public class IncreaseToolDurabilityComponent implements Component, ToolModificationDescription {
     public float increasePerSubstanceAmount = 0f;
+
+    @Override
+    public String getDescription() {
+        return String.format("Increases tool durability by %f for every unit of material", increasePerSubstanceAmount);
+    }
 }
