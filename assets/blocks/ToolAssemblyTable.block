@@ -1,9 +1,8 @@
 {
     "displayName": "Tool Assembly Table",
-    "shape": "ManualLabor:table",
     "tiles" : {
         "all" : "ToolAssemblyTable",
-        "top" : "ToolAssemblyTable_Top"
+        "topBottom" : "ToolAssemblyTable_Top"
     },
     "entity": {
         "prefab": "ToolAssemblyTable"

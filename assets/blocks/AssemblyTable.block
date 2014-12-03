@@ -1,9 +1,8 @@
 {
     "displayName": "Assembly Table",
-    "shape": "ManualLabor:table",
     "tiles" : {
         "all" : "AssemblyTable",
-        "top" : "AssemblyTable_Top"
+        "topBottom" : "AssemblyTable_Top"
     },
     "entity": {
         "prefab": "AssemblyTable"
