@@ -1,0 +1,15 @@
+{
+    "ProcessDefinition": {
+        "processType": "ManualLabor:Assembling"
+    },
+    "BlockFamilyInput": {
+        "blockCounts": {
+            "Core:OakTrunk": 1
+        }
+    },
+    "BlockFamilyOutput": {
+        "blockCounts": {
+            "ManualLabor:AssemblyTable": 1
+        }
+    }
+}
