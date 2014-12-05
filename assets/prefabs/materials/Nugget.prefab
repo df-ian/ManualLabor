@@ -1,7 +1,7 @@
 {
   "parent": "engine:iconItem",
   "Item": {
-    "icon": "ManualLabor.Nugget",
+    "icon": "ManualLabor:ManualLabor.Nugget",
     "stackId": "ManualLabor:Nugget",
     "renderWithIcon": true
   },
@@ -9,6 +9,6 @@
     "name": "Nugget"
   },
   "MaterialItem": {
-    "icon": "ManualLabor.Nugget"
+    "icon": "ManualLabor:ManualLabor.Nugget"
   }
 }

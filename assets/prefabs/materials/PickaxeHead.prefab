@@ -4,10 +4,10 @@
         "name": "Pickaxe Head"
     },
     "Item": {
-        "icon": "ManualLabor.PickaxeHead",
+        "icon": "ManualLabor:ManualLabor.PickaxeHead",
         "renderWithIcon": true
     },
     "MaterialItem": {
-        "icon": "ManualLabor.PickaxeHead"
+        "icon": "ManualLabor:ManualLabor.PickaxeHead"
     }
 }

@@ -7,7 +7,7 @@
         "tileNames":[
             "ShovelHead", "PickaxeHead", "AxeHead", "HammerHead", "", "", "", "",
             "MetalFileHandle", "ScrewdriverHandle", "Wrench", "SawHandle", "PliersHandle", "", "", "",
-            "MetalFileHead", "ScrewdriverHead", "", "SawHead", "PliersHead", "", "", "",
+            "MetalFileHead", "ScrewdriverHead", "Key", "SawHead", "PliersHead", "", "", "",
             "CrudeHammer", "StoneTool", "Cloth", "String", "", "", "", "",
             "Stick", "Plank", "Pegs", "", "", "", "", "",
             "PlantMatter", "WoodenBucket", "WoodenBucketFluid", "", "", "", "", "",

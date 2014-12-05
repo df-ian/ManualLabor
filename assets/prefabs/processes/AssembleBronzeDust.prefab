@@ -1,0 +1,21 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Dust.SubstanceMatters:Copper": 3,
+      "ManualLabor:Dust.SubstanceMatters:Tin": 1
+    }
+  },
+  "InjectSubstance": {
+    "replace": {
+        "SubstanceMatters:Copper": "ManualLabor:Bronze",
+        "SubstanceMatters:Tin": "ManualLabor:Bronze"
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:Dust.ManualLabor:Bronze",
+    "amount": 4
+  }
+}

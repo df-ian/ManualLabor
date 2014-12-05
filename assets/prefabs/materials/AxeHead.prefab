@@ -4,10 +4,11 @@
         "name" : "Axe Head"
     },
     "Item" : {
-        "icon" : "ManualLabor.AxeHead",
+        "icon" : "ManualLabor:ManualLabor.AxeHead",
         "renderWithIcon" : true
     },
     "MaterialItem": {
-        "icon": "ManualLabor.AxeHead"
+        "icon": "ManualLabor:ManualLabor.AxeHead"
+    }
     }
 }

@@ -1,0 +1,11 @@
+{
+    "substance": {
+        "name": "Bronze",
+        "hue": 30,
+        "saturationScale": 1,
+        "brightnessScale": 1
+    },
+    "IncreaseToolDurability": {
+        "increasePerSubstanceAmount": 15
+    }
+}

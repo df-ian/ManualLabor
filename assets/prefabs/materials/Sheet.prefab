@@ -1,7 +1,7 @@
 {
   "parent": "engine:iconItem",
   "Item": {
-    "icon": "ManualLabor.Sheet",
+    "icon": "ManualLabor:ManualLabor.Sheet",
     "stackId": "ManualLabor:Sheet",
     "renderWithIcon": true
   },
@@ -9,6 +9,6 @@
     "name": "Sheet"
   },
   "MaterialItem": {
-    "icon": "ManualLabor.Sheet"
+    "icon": "ManualLabor:ManualLabor.Sheet"
   }
 }

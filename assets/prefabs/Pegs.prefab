@@ -1,7 +1,7 @@
 {
     "parent": "engine:iconItem",
     "Item": {
-        "icon": "ManualLabor.Pegs",
+        "icon": "ManualLabor:ManualLabor.Pegs",
         "stackId": "ManualLabor:Pegs",
         "renderWithIcon": true
     },

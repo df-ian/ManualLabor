@@ -1,7 +1,7 @@
 {
     "parent": "engine:iconItem",
     "Item": {
-        "stackId": "ManualLabor.WoodenBucket",
+        "stackId": "ManualLabor:ManualLabor.WoodenBucket",
         "renderWithIcon": true
     },
     "DisplayName": {
@@ -11,13 +11,13 @@
         "volume": 10
     },
     "MaterialFluidItemContainer": {
-        "fluidIcon": "ManualLabor.WoodenBucketFluid"
+        "fluidIcon": "ManualLabor:ManualLabor.WoodenBucketFluid"
     },
     "TintOverlayIcon": {
         "texture": {
-            "ManualLabor.WoodenBucket": {
+            "ManualLabor:ManualLabor.WoodenBucket": {
             },
-            "ManualLabor.WoodenBucketFluid": {
+            "ManualLabor:ManualLabor.WoodenBucketFluid": {
                 "invisible": true
             }
         }

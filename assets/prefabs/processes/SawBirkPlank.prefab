@@ -12,7 +12,7 @@
     },
     "BlockFamilyInput": {
         "blockCounts": {
-            "Core:Plank": 2
+            "ManualLabor:Plank": 2
         }
     }
 }

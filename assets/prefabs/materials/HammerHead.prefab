@@ -4,10 +4,10 @@
         "name" : "Hammer Head"
     },
     "Item" : {
-        "icon": "ManualLabor.HammerHead",
+        "icon": "ManualLabor:ManualLabor.HammerHead",
         "renderWithIcon" : true
     },
     "MaterialItem": {
-        "icon": "ManualLabor.HammerHead"
+        "icon": "ManualLabor:ManualLabor.HammerHead"
     }
 }
