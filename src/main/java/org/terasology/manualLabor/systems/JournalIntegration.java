@@ -31,13 +31,13 @@ import org.terasology.journal.StaticJournalChapterHandler;
 import org.terasology.journal.part.TextJournalPart;
 import org.terasology.journal.part.TitleJournalPart;
 import org.terasology.logic.players.event.OnPlayerSpawnedEvent;
+import org.terasology.manualLabor.components.ManualLaborSubstanceDescriptionComponent;
 import org.terasology.manualLabor.components.ToolModificationDescription;
 import org.terasology.registry.In;
 import org.terasology.rendering.nui.HorizontalAlign;
 import org.terasology.substanceMatters.components.SubstanceComponent;
 import org.terasology.world.BlockEntityRegistry;
 import org.terasology.world.block.BlockManager;
-import org.terasology.world.block.family.BlockFamily;
 
 import java.util.List;
 
@@ -90,14 +90,18 @@ public class JournalIntegration extends BaseComponentSystem {
         // add substances
         for (Prefab substance : prefabManager.listPrefabs(SubstanceComponent.class)) {
             SubstanceComponent substanceComponent = substance.getComponent(SubstanceComponent.class);
+            ManualLaborSubstanceDescriptionComponent manualLaborSubstanceDescriptionComponent = substance.getComponent(ManualLaborSubstanceDescriptionComponent.class);
 
-            // try and get a block of this substance
-            BlockFamily blockFamily = blockManager.getBlockFamily(substanceComponent.name + "Ore");
-            if (blockFamily != null) {
-
+            if (manualLaborSubstanceDescriptionComponent != null) {
+                // try and get a block of this substance
                 introduction.add(new TitleJournalPart(substanceComponent.name));
-                introduction.add(new ItemIconJournalPart("ManualLabor:nugget." + substance.getURI().toSimpleString(), HorizontalAlign.LEFT));
-                introduction.add(new TextJournalPart(substanceComponent.description));
+                introduction.add(new ItemIconJournalPart(manualLaborSubstanceDescriptionComponent.defaultItemTexture + "." + substance.getURI().toSimpleString(), HorizontalAlign.LEFT));
+                if (!substanceComponent.description.isEmpty()) {
+                    introduction.add(new TextJournalPart(substanceComponent.description));
+                }
+                if (!manualLaborSubstanceDescriptionComponent.description.isEmpty()) {
+                    introduction.add(new TextJournalPart(manualLaborSubstanceDescriptionComponent.description));
+                }
 
                 for (ToolModificationDescription toolModificationDescription : Iterables.filter(substance.iterateComponents(), ToolModificationDescription.class)) {
                     introduction.add(new TextJournalPart(" - " + toolModificationDescription.getDescription()));

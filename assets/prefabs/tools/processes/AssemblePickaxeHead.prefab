@@ -7,8 +7,7 @@
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "ManualLabor:Plate": 1,
-      "ManualLabor:Nugget": 8
+      "ManualLabor:Plate": 2
     }
   },
   "MaterialItemOutput": {

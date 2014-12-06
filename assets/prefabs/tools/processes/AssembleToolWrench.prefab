@@ -3,11 +3,12 @@
     "processType": "ManualLabor:ToolAssembling"
   },
   "RequirementInput": {
-    "requirements": ["Hammer"]
+    "requirements": ["Hammer", "Pliers"]
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "ManualLabor:Plate": 12
+      "ManualLabor:Rod": 1,
+      "ManualLabor:Nugget": 3
     }
   },
   "ToolItemOutput": {

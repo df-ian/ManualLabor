@@ -5,7 +5,13 @@
         "saturationScale": 1,
         "brightnessScale": 1
     },
+    "ManualLaborSubstanceDescription": {
+        "description" : "A combination of copper and tin"
+    },
     "IncreaseToolDurability": {
-        "increasePerSubstanceAmount": 15
+        "increasePerSubstanceAmount": 9
+    },
+    "MultiplyToolDurability": {
+        "multiplyPerSubstanceAmount": 1.003
     }
 }
