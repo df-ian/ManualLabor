@@ -20,7 +20,7 @@ import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.manualLabor.events.ModifyToolCreationEvent;
 import org.terasology.registry.CoreRegistry;
 import org.terasology.substanceMatters.components.MaterialCompositionComponent;
-import org.terasology.workstation.process.inventory.InventoryInputComponent;
+import org.terasology.workstation.process.inventory.InventoryInputProcessPartItemsComponent;
 import org.terasology.workstation.process.inventory.InventoryOutputComponent;
 
 import java.util.HashSet;
@@ -37,7 +37,7 @@ public class ToolItemOutputComponent extends InventoryOutputComponent {
         EntityRef toolEntity = entityManager.create(item);
 
 
-        InventoryInputComponent.InventoryInputProcessPartItemsComponent inputItemsContainer = processEntity.getComponent(InventoryInputComponent.InventoryInputProcessPartItemsComponent.class);
+        InventoryInputProcessPartItemsComponent inputItemsContainer = processEntity.getComponent(InventoryInputProcessPartItemsComponent.class);
         if (inputItemsContainer != null) {
             // add the composition of this tool
             toolEntity.addComponent(new MaterialCompositionComponent(inputItemsContainer.items));

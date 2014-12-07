@@ -90,17 +90,17 @@ public class JournalIntegration extends BaseComponentSystem {
         // add substances
         for (Prefab substance : prefabManager.listPrefabs(SubstanceComponent.class)) {
             SubstanceComponent substanceComponent = substance.getComponent(SubstanceComponent.class);
-            ManualLaborSubstanceDescriptionComponent manualLaborSubstanceDescriptionComponent = substance.getComponent(ManualLaborSubstanceDescriptionComponent.class);
+            ManualLaborSubstanceDescriptionComponent substanceDescriptionComponent = substance.getComponent(ManualLaborSubstanceDescriptionComponent.class);
 
-            if (manualLaborSubstanceDescriptionComponent != null) {
+            if (substanceDescriptionComponent != null) {
                 // try and get a block of this substance
                 introduction.add(new TitleJournalPart(substanceComponent.name));
-                introduction.add(new ItemIconJournalPart(manualLaborSubstanceDescriptionComponent.defaultItemTexture + "." + substance.getURI().toSimpleString(), HorizontalAlign.LEFT));
+                introduction.add(new ItemIconJournalPart(substanceDescriptionComponent.defaultItemTexture + "." + substance.getURI().toSimpleString(), HorizontalAlign.LEFT));
                 if (!substanceComponent.description.isEmpty()) {
                     introduction.add(new TextJournalPart(substanceComponent.description));
                 }
-                if (!manualLaborSubstanceDescriptionComponent.description.isEmpty()) {
-                    introduction.add(new TextJournalPart(manualLaborSubstanceDescriptionComponent.description));
+                if (!substanceDescriptionComponent.description.isEmpty()) {
+                    introduction.add(new TextJournalPart(substanceDescriptionComponent.description));
                 }
 
                 for (ToolModificationDescription toolModificationDescription : Iterables.filter(substance.iterateComponents(), ToolModificationDescription.class)) {
