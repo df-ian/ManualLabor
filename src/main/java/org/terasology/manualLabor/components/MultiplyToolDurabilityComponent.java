@@ -25,6 +25,6 @@ public class MultiplyToolDurabilityComponent implements Component, ToolModificat
 
     @Override
     public String getDescription() {
-        return String.format("Multiplies tool durability by %f for every unit of material", multiplyPerSubstanceAmount);
+        return String.format("Multiplies tool durability by %.1f%% for every 10 units of material", (multiplyPerSubstanceAmount - 1f) * 1000);
     }
 }
