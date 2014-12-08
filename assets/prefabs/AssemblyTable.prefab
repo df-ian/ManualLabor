@@ -9,7 +9,6 @@
       "ManualLabor:Sawing": false,
       "ManualLabor:Crushing": false,
       "ManualLabor:Grinding": false,
-      "ManualLabor:Smelting": false,
       "ManualLabor:Smithing": false
     }
   },

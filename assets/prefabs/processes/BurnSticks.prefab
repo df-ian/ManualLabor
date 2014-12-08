@@ -1,0 +1,13 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Burning"
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:Stick": 1
+    }
+  },
+  "HeatOutput": {
+    "burnTime": 4000
+  }
+}

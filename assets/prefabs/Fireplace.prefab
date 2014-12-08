@@ -1,0 +1,17 @@
+{
+  "MachineDefinition": {
+    "inputSlots": 1,
+    "inputSlotsTitle": "Fuel"
+  },
+  "InteractionTarget": {},
+  "InteractionScreen": {
+    "screen": "Machines:DefaultMachine"
+  },
+  "Workstation": {
+    "supportedProcessTypes": {
+      "ManualLabor:Burning": true
+    }
+  },
+  "DropBlockInventory": {},
+  "Network": {}
+}

@@ -1,0 +1,13 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Burning"
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Chunks.SubstanceMatters:Coal": 1
+    }
+  },
+  "HeatOutput": {
+    "burnTime": 10000
+  }
+}

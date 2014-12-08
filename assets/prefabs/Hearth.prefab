@@ -1,0 +1,17 @@
+{
+  "MachineDefinition": {
+    "inputSlots": 1,
+    "outputSlots": 1
+  },
+  "InteractionTarget": {},
+  "InteractionScreen": {
+    "screen": "Machines:DefaultMachine"
+  },
+  "Workstation": {
+    "supportedProcessTypes": {
+      "ManualLabor:Smelting": true
+    }
+  },
+  "DropBlockInventory": {},
+  "Network": {}
+}

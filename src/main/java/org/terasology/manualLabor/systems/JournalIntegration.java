@@ -64,7 +64,8 @@ public class JournalIntegration extends BaseComponentSystem {
 
         List<JournalManager.JournalEntryPart> introduction = Lists.newArrayList(
                 new TitleJournalPart("Manual Labor"),
-                new TextJournalPart("To Get started, get a "),
+                new TextJournalPart("To get started, get a stick and a stone.  Sticks are found in branches of trees.  You must dig for stone, they are hiding under the dirt layer of the ground.  After finding these ingredients, craft them into a crude hammer.  This hammer will help you dig down and find more ores to help create better tools with."),
+                new TextJournalPart("Also, you can craft a stone tool with one block of stone. This will help you cut wood and other things."),
                 new TitleJournalPart("Tools"),
                 new ItemIconJournalPart("ManualLabor:Hammer", HorizontalAlign.LEFT),
                 new TextJournalPart("Hammers are primarily a digging tool to dig through rock."),
@@ -84,7 +85,12 @@ public class JournalIntegration extends BaseComponentSystem {
                 new ItemIconJournalPart("ManualLabor:Screwdriver", HorizontalAlign.LEFT),
                 new TextJournalPart("Screwdrivers are used for fastening materials together."),
                 new ItemIconJournalPart("ManualLabor:Wrench", HorizontalAlign.LEFT),
-                new TextJournalPart("Wrenches are used for working with machines.")
+                new TextJournalPart("Wrenches are used for working with machines."),
+                new TitleJournalPart("Blocks"),
+                new TextJournalPart("Assembly tables are crafted with a block of wood, this is the basis for further crafting."),
+                new TextJournalPart("Tool assembly tables help craft tools from components. You can craft one from an existing assembly table."),
+                new TextJournalPart("The hearth is for melting down crushed ores to make metals for crafting. You can craft one from an existing fireplace with some additional stone."),
+                new TextJournalPart("Fireplaces heat up hearths to high temperatures so that metals can be melted. You can craft one from a bunch of stone blocks.")
         );
 
         // add substances
@@ -108,6 +114,8 @@ public class JournalIntegration extends BaseComponentSystem {
                 }
             }
         }
+
+        introduction.add(new TitleJournalPart("(Scroll to the top for more instructions)"));
 
         chapterHandler.registerJournalEntry("introduction", introduction);
 

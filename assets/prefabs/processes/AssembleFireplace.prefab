@@ -1,0 +1,18 @@
+{
+    "ProcessDefinition": {
+        "processType": "ManualLabor:Assembling"
+    },
+    "RequirementInput": {
+        "requirements": ["Hammer"]
+    },
+    "BlockFamilyInput": {
+        "blockCounts": {
+            "Core:Stone": 8
+        }
+    },
+    "BlockFamilyOutput": {
+        "blockCounts": {
+            "ManualLabor:Fireplace": 1
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Crushing"
+  },
+  "RequirementInput": {
+    "requirements": ["Hammer"]
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "Core:CoalOre": 1
+    }
+  },
+  "InjectSubstance": {
+    "add": {
+        "SubstanceMatters:Coal": 10
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:Chunks",
+    "amount": 1
+  }
+}
