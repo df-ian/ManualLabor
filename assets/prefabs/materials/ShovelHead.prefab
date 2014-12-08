@@ -1,13 +1,13 @@
 {
-    "parent": "engine:iconItem",
-    "DisplayName": {
-        "name": "Shovel Head"
-    },
-    "Item": {
-        "icon": "ManualLabor:ManualLabor.ShovelHead",
-        "renderWithIcon": true
-    },
-    "MaterialItem": {
-        "icon": "ManualLabor:ManualLabor.ShovelHead"
-    }
+  "parent": "engine:iconItem",
+  "DisplayName": {
+    "name": "Shovel Head"
+  },
+  "Item": {
+    "icon": "ManualLabor:ManualLabor.ShovelHead",
+    "renderWithIcon": true
+  },
+  "MaterialItem": {
+    "icon": "ManualLabor:ManualLabor.ShovelHead"
+  }
 }

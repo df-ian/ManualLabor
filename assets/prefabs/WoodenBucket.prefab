@@ -1,25 +1,25 @@
 {
-    "parent": "engine:iconItem",
-    "Item": {
-        "stackId": "ManualLabor:ManualLabor.WoodenBucket",
-        "renderWithIcon": true
-    },
-    "DisplayName": {
-        "name": "Wooden Bucket"
-    },
-    "FluidContainerItem": {
-        "volume": 1000
-    },
-    "MaterialFluidItemContainer": {
-        "fluidIcon": "ManualLabor:ManualLabor.WoodenBucketFluid"
-    },
-    "TintOverlayIcon": {
-        "texture": {
-            "ManualLabor:ManualLabor.WoodenBucket": {
-            },
-            "ManualLabor:ManualLabor.WoodenBucketFluid": {
-                "invisible": true
-            }
-        }
+  "parent": "engine:iconItem",
+  "Item": {
+    "stackId": "ManualLabor:ManualLabor.WoodenBucket",
+    "renderWithIcon": true
+  },
+  "DisplayName": {
+    "name": "Wooden Bucket"
+  },
+  "FluidContainerItem": {
+    "volume": 1000
+  },
+  "MaterialFluidItemContainer": {
+    "fluidIcon": "ManualLabor:ManualLabor.WoodenBucketFluid"
+  },
+  "TintOverlayIcon": {
+    "texture": {
+      "ManualLabor:ManualLabor.WoodenBucket": {
+      },
+      "ManualLabor:ManualLabor.WoodenBucketFluid": {
+        "invisible": true
+      }
     }
+  }
 }

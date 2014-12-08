@@ -3,7 +3,10 @@
     "processType": "ManualLabor:ToolAssembling"
   },
   "RequirementInput": {
-    "requirements": ["Hammer", "MetalFile"]
+    "requirements": [
+      "Hammer",
+      "MetalFile"
+    ]
   },
   "MaterialItemInput": {
     "itemCounts": {
@@ -15,5 +18,4 @@
     "item": "ManualLabor:AxeHead",
     "amount": 1
   }
-
 }

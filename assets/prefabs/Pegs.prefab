@@ -1,11 +1,11 @@
 {
-    "parent": "engine:iconItem",
-    "Item": {
-        "icon": "ManualLabor:ManualLabor.Pegs",
-        "stackId": "ManualLabor:Pegs",
-        "renderWithIcon": true
-    },
-    "DisplayName": {
-        "name": "Pegs"
-    }
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor:ManualLabor.Pegs",
+    "stackId": "ManualLabor:Pegs",
+    "renderWithIcon": true
+  },
+  "DisplayName": {
+    "name": "Pegs"
+  }
 }

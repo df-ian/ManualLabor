@@ -1,15 +1,15 @@
 {
-    "ProcessDefinition": {
-        "processType": "ManualLabor:Assembling"
-    },
-    "BlockFamilyInput": {
-        "blockCounts": {
-            "ManualLabor:AssemblyTable": 1
-        }
-    },
-    "BlockFamilyOutput": {
-        "blockCounts": {
-            "ManualLabor:ToolAssemblyTable": 1
-        }
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "ManualLabor:AssemblyTable": 1
     }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "ManualLabor:ToolAssemblyTable": 1
+    }
+  }
 }

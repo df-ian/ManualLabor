@@ -1,19 +1,19 @@
 {
-    "ProcessDefinition": {
-        "processType": "ManualLabor:Assembling"
-    },
-    "RequirementInput": {
-        "requirements": ["Hammer"]
-    },
-    "ItemPrefabInput": {
-        "itemCounts": {
-            "ManualLabor:Pegs": 1,
-            "ManualLabor:Plank": 6
-        }
-    },
-    "BlockFamilyOutput": {
-        "blockCounts": {
-            "ManualLabor:WoodenBox": 1
-        }
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "RequirementInput": {
+    "requirements": ["Hammer"]
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:Pegs": 1,
+      "ManualLabor:Plank": 6
     }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "ManualLabor:WoodenBox": 1
+    }
+  }
 }

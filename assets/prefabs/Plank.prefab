@@ -1,11 +1,11 @@
 {
-    "parent": "engine:iconItem",
-    "Item": {
-        "icon": "ManualLabor:ManualLabor.Plank",
-        "stackId": "ManualLabor:Plank",
-        "renderWithIcon": true
-    },
-    "DisplayName": {
-        "name": "Plank"
-    }
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor:ManualLabor.Plank",
+    "stackId": "ManualLabor:Plank",
+    "renderWithIcon": true
+  },
+  "DisplayName": {
+    "name": "Plank"
+  }
 }

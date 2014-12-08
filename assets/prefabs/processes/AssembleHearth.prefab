@@ -1,19 +1,19 @@
 {
-    "ProcessDefinition": {
-        "processType": "ManualLabor:Assembling"
-    },
-    "RequirementInput": {
-        "requirements": ["Hammer"]
-    },
-    "BlockFamilyInput": {
-        "blockCounts": {
-            "Core:Stone": 1,
-            "ManualLabor:Fireplace": 1
-        }
-    },
-    "BlockFamilyOutput": {
-        "blockCounts": {
-            "ManualLabor:Hearth": 1
-        }
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "RequirementInput": {
+    "requirements": ["Hammer"]
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "Core:Stone": 1,
+      "ManualLabor:Fireplace": 1
     }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "ManualLabor:Hearth": 1
+    }
+  }
 }

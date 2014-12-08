@@ -1,13 +1,13 @@
 {
-    "parent": "engine:iconItem",
-    "DisplayName": {
-        "name": "Pickaxe Head"
-    },
-    "Item": {
-        "icon": "ManualLabor:ManualLabor.PickaxeHead",
-        "renderWithIcon": true
-    },
-    "MaterialItem": {
-        "icon": "ManualLabor:ManualLabor.PickaxeHead"
-    }
+  "parent": "engine:iconItem",
+  "DisplayName": {
+    "name": "Pickaxe Head"
+  },
+  "Item": {
+    "icon": "ManualLabor:ManualLabor.PickaxeHead",
+    "renderWithIcon": true
+  },
+  "MaterialItem": {
+    "icon": "ManualLabor:ManualLabor.PickaxeHead"
+  }
 }

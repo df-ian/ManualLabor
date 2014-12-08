@@ -1,18 +1,18 @@
 {
-    "ProcessDefinition": {
-        "processType": "ManualLabor:Assembling"
-    },
-    "RequirementInput": {
-        "requirements": ["Hammer"]
-    },
-    "ItemPrefabInput": {
-        "itemCounts": {
-            "ManualLabor:PlantMatter": 1
-        }
-    },
-    "ItemPrefabOutput": {
-        "itemCounts": {
-            "ManualLabor:String": 1
-        }
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "RequirementInput": {
+    "requirements": ["Hammer"]
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:PlantMatter": 1
     }
+  },
+  "ItemPrefabOutput": {
+    "itemCounts": {
+      "ManualLabor:String": 1
+    }
+  }
 }

@@ -3,7 +3,7 @@
   "Item": {
     "icon": "ManualLabor:ManualLabor.CrudeHammer",
     "renderWithIcon": true,
-    "damageType" : "hammerDamage"
+    "damageType": "hammerDamage"
   },
   "DisplayName": {
     "name": "Crude Hammer"

@@ -1,34 +1,34 @@
 {
-    "parent" : "engine:iconItem",
-    "DisplayName" : {
-        "name" : "Hammer"
-    },
-    "Item" : {
-        "renderWithIcon" : true,
-        "damageType" : "hammerDamage"
-    },
-    "ProcessRequirementsProvider": {
-        "requirements": [
-            "Hammer",
-            "FineHammer"
-        ]
-    },
-    "Durability": {
-        "durability": 132,
-        "maxDurability": 132
-    },
-    "TintOverlayIcon": {
-        "texture": {
-            "ManualLabor.Rod": {
-                "hue": 32
-            },
-            "ManualLabor.HammerHead": {
-                "hue": 200,
-                "saturationScale": 0.2,
-                "brightnessScale": 1,
-                "shiftX": 7,
-                "shiftY": -7
-            }
-        }
+  "parent": "engine:iconItem",
+  "DisplayName": {
+    "name": "Hammer"
+  },
+  "Item": {
+    "renderWithIcon": true,
+    "damageType": "hammerDamage"
+  },
+  "ProcessRequirementsProvider": {
+    "requirements": [
+      "Hammer",
+      "FineHammer"
+    ]
+  },
+  "Durability": {
+    "durability": 132,
+    "maxDurability": 132
+  },
+  "TintOverlayIcon": {
+    "texture": {
+      "ManualLabor.Rod": {
+        "hue": 32
+      },
+      "ManualLabor.HammerHead": {
+        "hue": 200,
+        "saturationScale": 0.2,
+        "brightnessScale": 1,
+        "shiftX": 7,
+        "shiftY": -7
+      }
     }
+  }
 }

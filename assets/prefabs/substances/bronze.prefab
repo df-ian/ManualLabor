@@ -1,17 +1,17 @@
 {
-    "substance": {
-        "name": "Bronze",
-        "hue": 30,
-        "saturationScale": 1,
-        "brightnessScale": 1
-    },
-    "ManualLaborSubstanceDescription": {
-        "description" : "A combination of copper and tin"
-    },
-    "IncreaseToolDurability": {
-        "increasePerSubstanceAmount": 9
-    },
-    "MultiplyToolDurability": {
-        "multiplyPerSubstanceAmount": 1.003
-    }
+  "substance": {
+    "name": "Bronze",
+    "hue": 30,
+    "saturationScale": 1,
+    "brightnessScale": 1
+  },
+  "ManualLaborSubstanceDescription": {
+    "description": "A combination of copper and tin"
+  },
+  "IncreaseToolDurability": {
+    "increasePerSubstanceAmount": 9
+  },
+  "MultiplyToolDurability": {
+    "multiplyPerSubstanceAmount": 1.003
+  }
 }

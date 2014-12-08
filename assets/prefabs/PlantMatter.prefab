@@ -1,11 +1,11 @@
 {
-    "parent": "engine:iconItem",
-    "Item": {
-        "icon": "ManualLabor:ManualLabor.PlantMatter",
-        "stackId": "ManualLabor:PlantMatter",
-        "renderWithIcon": true
-    },
-    "DisplayName": {
-        "name": "Plant Matter"
-    }
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor:ManualLabor.PlantMatter",
+    "stackId": "ManualLabor:PlantMatter",
+    "renderWithIcon": true
+  },
+  "DisplayName": {
+    "name": "Plant Matter"
+  }
 }

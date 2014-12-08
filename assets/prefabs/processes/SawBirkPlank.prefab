@@ -1,18 +1,18 @@
 {
-    "ProcessDefinition": {
-        "processType": "ManualLabor:Sawing"
-    },
-    "RequirementInput": {
-        "requirements": ["Saw"]
-    },
-    "BlockFamilyInput": {
-        "blockCounts": {
-            "Core:BirkTrunk": 1
-        }
-    },
-    "BlockFamilyInput": {
-        "blockCounts": {
-            "ManualLabor:Plank": 2
-        }
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Sawing"
+  },
+  "RequirementInput": {
+    "requirements": ["Saw"]
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "Core:BirkTrunk": 1
     }
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "ManualLabor:Plank": 2
+    }
+  }
 }

@@ -3,7 +3,10 @@
     "processType": "ManualLabor:ToolAssembling"
   },
   "RequirementInput": {
-    "requirements": ["Hammer", "Pliers"]
+    "requirements": [
+      "Hammer",
+      "Pliers"
+    ]
   },
   "MaterialItemInput": {
     "itemCounts": {
@@ -14,5 +17,4 @@
   "ToolItemOutput": {
     "item": "ManualLabor:Wrench"
   }
-
 }

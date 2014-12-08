@@ -1,19 +1,22 @@
 {
-    "ProcessDefinition": {
-        "processType": "ManualLabor:Assembling"
-    },
-    "RequirementInput": {
-        "requirements": ["Hammer", "Screwdriver"]
-    },
-    "MaterialItemInput": {
-        "itemCounts": {
-            "ManualLabor:Plate.Iron": 6,
-            "ManualLabor:Screw": 12
-        }
-    },
-    "BlockFamilyOutput": {
-        "blockCounts": {
-            "ManualLabor:IronBox": 1
-        }
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "RequirementInput": {
+    "requirements": [
+      "Hammer",
+      "Screwdriver"
+    ]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Plate.Iron": 6,
+      "ManualLabor:Screw": 12
     }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "ManualLabor:IronBox": 1
+    }
+  }
 }

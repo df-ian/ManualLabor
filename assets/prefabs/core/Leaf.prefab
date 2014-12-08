@@ -1,5 +1,5 @@
 {
-    "BlockDropGrammar": {
-        "itemDrops": ["0.5|ManualLabor:Stick"]
-    }
+  "BlockDropGrammar": {
+    "itemDrops": ["0.5|ManualLabor:Stick"]
+  }
 }

@@ -1,18 +1,18 @@
 {
-    "ProcessDefinition": {
-        "processType": "ManualLabor:Assembling"
-    },
-    "RequirementInput": {
-        "requirements": ["Axe"]
-    },
-    "ItemPrefabInput": {
-        "itemCounts": {
-            "ManualLabor:Stick": 1
-        }
-    },
-    "ItemPrefabOutput": {
-        "itemCounts": {
-            "ManualLabor:Pegs": 2
-        }
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "RequirementInput": {
+    "requirements": ["Axe"]
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:Stick": 1
     }
+  },
+  "ItemPrefabOutput": {
+    "itemCounts": {
+      "ManualLabor:Pegs": 2
+    }
+  }
 }

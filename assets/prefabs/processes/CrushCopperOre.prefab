@@ -12,7 +12,7 @@
   },
   "InjectSubstance": {
     "add": {
-        "SubstanceMatters:Copper": 10
+      "SubstanceMatters:Copper": 10
     }
   },
   "MaterialItemOutput": {

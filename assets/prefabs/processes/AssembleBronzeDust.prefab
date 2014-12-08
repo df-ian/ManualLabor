@@ -10,8 +10,8 @@
   },
   "InjectSubstance": {
     "replace": {
-        "SubstanceMatters:Copper": "ManualLabor:Bronze",
-        "SubstanceMatters:Tin": "ManualLabor:Bronze"
+      "SubstanceMatters:Copper": "ManualLabor:Bronze",
+      "SubstanceMatters:Tin": "ManualLabor:Bronze"
     }
   },
   "MaterialItemOutput": {

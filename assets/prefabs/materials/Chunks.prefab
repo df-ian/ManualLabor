@@ -8,7 +8,7 @@
   "DisplayName": {
     "name": "Chunks"
   },
-    "MaterialItem": {
-        "icon": "ManualLabor:ManualLabor.Chunks"
-    }
+  "MaterialItem": {
+    "icon": "ManualLabor:ManualLabor.Chunks"
+  }
 }

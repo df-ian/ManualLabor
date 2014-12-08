@@ -1,10 +1,10 @@
 {
-    "IncreaseToolDurability": {
-        "increasePerSubstanceAmount": 7
-    },
-    "MultiplyToolDurability": {
-        "multiplyPerSubstanceAmount": 1.002
-    },
-    "ManualLaborSubstanceDescription": {
-    }
+  "IncreaseToolDurability": {
+    "increasePerSubstanceAmount": 7
+  },
+  "MultiplyToolDurability": {
+    "multiplyPerSubstanceAmount": 1.002
+  },
+  "ManualLaborSubstanceDescription": {
+  }
 }

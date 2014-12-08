@@ -1,18 +1,18 @@
 {
-    "ProcessDefinition": {
-        "processType": "ManualLabor:Sawing"
-    },
-    "RequirementInput": {
-        "requirements": ["Saw"]
-    },
-    "BlockFamilyInput": {
-        "blockCounts": {
-            "Core:PineTrunk": 1
-        }
-    },
-    "ItemPrefabOutput": {
-        "ItemCounts": {
-            "ManualLabor:Plank": 2
-        }
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Sawing"
+  },
+  "RequirementInput": {
+    "requirements": ["Saw"]
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "Core:PineTrunk": 1
     }
+  },
+  "ItemPrefabOutput": {
+    "ItemCounts": {
+      "ManualLabor:Plank": 2
+    }
+  }
 }

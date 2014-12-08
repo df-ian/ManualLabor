@@ -1,0 +1,14 @@
+{
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor:ManualLabor.Key",
+    "stackId": "ManualLabor:Key",
+    "renderWithIcon": true
+  },
+  "DisplayName": {
+    "name": "Key"
+  },
+  "MaterialItem": {
+    "icon": "ManualLabor:ManualLabor.Key"
+  }
+}

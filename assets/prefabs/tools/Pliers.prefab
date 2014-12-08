@@ -7,23 +7,23 @@
     "renderWithIcon": true
   },
   "ProcessRequirementsProvider": {
-      "requirements": [
-          "Pliers"
-      ]
+    "requirements": [
+      "Pliers"
+    ]
   },
   "Durability": {
-      "durability": 132,
-      "maxDurability": 132
+    "durability": 132,
+    "maxDurability": 132
   },
   "TintOverlayIcon": {
-      "texture": {
-          "ManualLabor.PliersHandle": {
-          },
-          "ManualLabor.PliersHead": {
-              "hue": 200,
-              "saturationScale": 0.2,
-              "brightnessScale": 1
-          }
+    "texture": {
+      "ManualLabor.PliersHandle": {
+      },
+      "ManualLabor.PliersHead": {
+        "hue": 200,
+        "saturationScale": 0.2,
+        "brightnessScale": 1
       }
+    }
   }
 }

@@ -3,7 +3,10 @@
     "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
-    "requirements": ["Pliers", "MetalFile"]
+    "requirements": [
+      "Pliers",
+      "MetalFile"
+    ]
   },
   "MaterialItemInput": {
     "itemCounts": {
@@ -14,5 +17,4 @@
     "item": "ManualLabor:Key",
     "amount": 1
   }
-
 }

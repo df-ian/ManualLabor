@@ -11,7 +11,7 @@
     }
   },
   "MaterialItemOutput": {
-      "item": "ManualLabor:Bolt",
-      "amount": 4
+    "item": "ManualLabor:Bolt",
+    "amount": 4
   }
 }

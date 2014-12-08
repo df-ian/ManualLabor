@@ -11,8 +11,7 @@
     }
   },
   "MaterialItemOutput": {
-      "item": "ManualLabor:Rod",
-      "amount": 1
+    "item": "ManualLabor:Rod",
+    "amount": 1
   }
-
 }

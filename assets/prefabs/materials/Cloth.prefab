@@ -1,14 +1,14 @@
 {
-    "parent": "engine:iconItem",
-    "Item": {
-        "icon": "ManualLabor:ManualLabor.Cloth",
-        "stackId": "ManualLabor:Cloth",
-        "renderWithIcon": true
-    },
-    "DisplayName": {
-        "name": "Cloth"
-    },
-    "MaterialItem": {
-        "icon": "ManualLabor:ManualLabor.Cloth"
-    }
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor:ManualLabor.Cloth",
+    "stackId": "ManualLabor:Cloth",
+    "renderWithIcon": true
+  },
+  "DisplayName": {
+    "name": "Cloth"
+  },
+  "MaterialItem": {
+    "icon": "ManualLabor:ManualLabor.Cloth"
+  }
 }
