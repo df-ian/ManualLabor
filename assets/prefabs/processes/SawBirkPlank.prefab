@@ -10,8 +10,8 @@
       "Core:BirkTrunk": 1
     }
   },
-  "BlockFamilyInput": {
-    "blockCounts": {
+  "ItemPrefabOutput": {
+    "ItemCounts": {
       "ManualLabor:Plank": 2
     }
   }

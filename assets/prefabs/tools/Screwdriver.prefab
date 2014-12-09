@@ -12,8 +12,8 @@
     ]
   },
   "Durability": {
-    "durability": 132,
-    "maxDurability": 132
+    "durability": 32,
+    "maxDurability": 32
   },
   "TintOverlayIcon": {
     "texture": {

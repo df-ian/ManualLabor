@@ -8,6 +8,6 @@
     }
   },
   "HeatOutput": {
-    "burnTime": 10000
+    "burnTime": 120000
   }
 }
