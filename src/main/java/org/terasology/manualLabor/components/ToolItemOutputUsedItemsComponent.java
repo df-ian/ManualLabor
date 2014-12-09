@@ -13,9 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.manualLabor.events;
+package org.terasology.manualLabor.components;
 
-import org.terasology.entitySystem.event.Event;
+import com.google.common.collect.Maps;
+import org.terasology.entitySystem.Component;
 
-public class ModifyToolCreationEvent implements Event {
+import java.util.Map;
+
+public class ToolItemOutputUsedItemsComponent implements Component {
+    public Map<String, String> iconSubstanceMap = Maps.newHashMap();
 }
