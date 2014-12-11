@@ -13,8 +13,8 @@
     }
   },
   "MachineDefinition": {
-    "inputSlots": 3,
-    "requirementSlots": 2,
+    "inputSlots": 2,
+    "requirementSlots": 1,
     "outputSlots": 1,
     "actionTitle": "Assemble",
     "requirementSlotsTitle": "Tools"
@@ -29,6 +29,7 @@
     "itemsAreFlat": true,
     "verticalAlignmentBottom": true
   },
+  "DropBlockInventory": {},
   "Network": {
   }
 }

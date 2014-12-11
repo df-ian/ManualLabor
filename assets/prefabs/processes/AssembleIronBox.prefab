@@ -3,10 +3,7 @@
     "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
-    "requirements": [
-      "Hammer",
-      "Screwdriver"
-    ]
+    "requirements": ["Screwdriver"]
   },
   "MaterialItemInput": {
     "itemCounts": {
