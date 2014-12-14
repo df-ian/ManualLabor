@@ -1,0 +1,21 @@
+{
+  "InteractionTarget": {},
+  "InteractionScreen": {
+    "screen": "Machines:DefaultMachine"
+  },
+  "Workstation": {
+    "supportedProcessTypes": {
+      "ManualLabor:Assembling": false
+    }
+  },
+  "MachineDefinition": {
+    "inputSlots": 1,
+    "requirementSlots": 1,
+    "outputSlots": 1,
+    "actionTitle": "Assemble",
+    "requirementSlotsTitle": "Tool"
+  },
+  "Network": {
+  },
+  "NestedMachine": {}
+}
