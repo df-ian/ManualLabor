@@ -11,6 +11,9 @@
   "IncreaseToolDurability": {
     "increasePerSubstanceAmount": 9
   },
+  "IncreaseToolDamage": {
+    "increasePerSubstanceAmount": 0.01
+  },
   "MultiplyToolDurability": {
     "multiplyPerSubstanceAmount": 1.003
   }

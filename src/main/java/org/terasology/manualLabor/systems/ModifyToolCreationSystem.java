@@ -22,6 +22,8 @@ import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.prefab.Prefab;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterSystem;
+import org.terasology.manualLabor.components.BonusToolDamageComponent;
+import org.terasology.manualLabor.components.IncreaseToolDamageComponent;
 import org.terasology.manualLabor.components.IncreaseToolDurabilityComponent;
 import org.terasology.manualLabor.components.MultiplyToolDurabilityComponent;
 import org.terasology.manualLabor.events.ModifyToolCreationEvent;
@@ -64,6 +66,21 @@ public class ModifyToolCreationSystem extends BaseComponentSystem {
             durabilityComponent.durability = durabilityComponent.maxDurability;
 
             toolEntity.saveComponent(durabilityComponent);
+
+
+            // add the tool's bonus damage
+            BonusToolDamageComponent bonusToolDamageComponent = new BonusToolDamageComponent();
+            for (Map.Entry<String, Float> substance : materialCompositionComponent.contents.entrySet()) {
+                Prefab substancePrefab = Assets.getPrefab(substance.getKey());
+
+                IncreaseToolDamageComponent substanceIncrease = substancePrefab.getComponent(IncreaseToolDamageComponent.class);
+                if (substanceIncrease != null) {
+                    bonusToolDamageComponent.baseDamage = substanceIncrease.increasePerSubstanceAmount * substance.getValue();
+                }
+            }
+            if (bonusToolDamageComponent.hasValue()) {
+                toolEntity.addComponent(bonusToolDamageComponent);
+            }
         }
     }
 }

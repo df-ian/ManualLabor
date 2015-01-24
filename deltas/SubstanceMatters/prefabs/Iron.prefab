@@ -5,6 +5,9 @@
   "MultiplyToolDurability": {
     "multiplyPerSubstanceAmount": 1.002
   },
+  "IncreaseToolDamage": {
+    "increasePerSubstanceAmount": 0.001
+  },
   "ManualLaborSubstanceDescription": {
   }
 }
