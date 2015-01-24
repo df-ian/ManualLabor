@@ -7,7 +7,7 @@
   },
   "BlockFamilyInput": {
     "blockCounts": {
-      "Core:BirkTrunk": 1
+      "Core:BirchTrunk": 1
     }
   },
   "ItemPrefabOutput": {
