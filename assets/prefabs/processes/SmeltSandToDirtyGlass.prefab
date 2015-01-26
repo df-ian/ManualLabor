@@ -1,0 +1,15 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Smelting"
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "Core:Sand": 1
+    }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "ManualLabor:DirtyGlass": 1
+    }
+  }
+}

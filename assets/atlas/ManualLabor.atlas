@@ -6,7 +6,7 @@
         "gridDimensions":[8, 8],
         "tileNames":[
             "ShovelHead", "PickaxeHead", "AxeHead", "HammerHead", "", "", "", "",
-            "MetalFileHandle", "ScrewdriverHandle", "Wrench", "SawHandle", "PliersHandle", "", "", "",
+            "MetalFileHandle", "ScrewdriverHandle", "Wrench", "SawHandle", "PliersHandle", "MagnifyingGlass", "", "",
             "MetalFileHead", "ScrewdriverHead", "Key", "SawHead", "PliersHead", "", "", "",
             "CrudeHammer", "StoneTool", "Cloth", "String", "", "", "", "",
             "Stick", "Plank", "Pegs", "", "", "", "", "",

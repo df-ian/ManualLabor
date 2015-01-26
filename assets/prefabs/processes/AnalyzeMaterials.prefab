@@ -1,0 +1,13 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:MaterialAnalyzing"
+  },
+  "RequirementInput": {
+    "requirements": ["MaterialAnalysis"]
+  },
+  "ProcessingTime": {
+    "duration": 1000
+  },
+  "AnalyzeMaterials": {
+  }
+}

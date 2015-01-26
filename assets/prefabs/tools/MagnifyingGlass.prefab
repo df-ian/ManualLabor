@@ -1,0 +1,42 @@
+{
+  "parent": "engine:iconItem",
+  "DisplayName": {
+    "name": "Magifying Glass"
+  },
+  "Item": {
+    "renderWithIcon": true
+  },
+  "ProcessRequirementsProvider": {
+    "requirements": [
+      "MaterialAnalysis"
+    ]
+  },
+  "Durability": {
+    "durability": 32,
+    "maxDurability": 32
+  },
+  "TintOverlayIcon": {
+    "texture": {
+      "ManualLabor.MagnifyingGlass": {
+        "hue": 200,
+        "saturationScale": 0.2,
+        "brightnessScale": 1
+      }
+    }
+  },
+  "InteractionTarget": {},
+  "InteractionScreen": {
+    "screen": "Machines:DefaultMachine"
+  },
+  "Workstation": {
+    "supportedProcessTypes": {
+      "ManualLabor:MaterialAnalyzing": true
+    }
+  },
+  "MachineDefinition": {
+    "inputSlots": 1,
+    "outputSlots": 1,
+    "actionTitle": "Analyze"
+  },
+  "NestedMachine": {}
+}

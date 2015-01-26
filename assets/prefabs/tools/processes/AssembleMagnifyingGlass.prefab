@@ -1,0 +1,23 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembling"
+  },
+  "RequirementInput": {
+    "requirements": [
+      "MetalFile"
+    ]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Rod": 1
+    }
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "ManualLabor:DirtyGlass": 1
+    }
+  },
+  "ToolItemOutput": {
+    "item": "ManualLabor:MagnifyingGlass"
+  }
+}
