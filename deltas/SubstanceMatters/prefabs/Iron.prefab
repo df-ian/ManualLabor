@@ -9,5 +9,6 @@
     "increasePerSubstanceAmount": 0.001
   },
   "ManualLaborSubstanceDescription": {
-  }
+  },
+  "MetalSubstance": {}
 }

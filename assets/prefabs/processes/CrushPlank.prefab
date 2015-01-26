@@ -1,0 +1,22 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Crushing"
+  },
+  "RequirementInput": {
+    "requirements": ["Hammer"]
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:Plank": 1
+    }
+  },
+  "InjectSubstance": {
+    "add": {
+      "SubstanceMatters:Wood": 10
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:Chunks",
+    "amount": 1
+  }
+}

@@ -4,14 +4,17 @@
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "ManualLabor:Chunks": 1
+      "ManualLabor:Chunks.SubstanceMatters:Wood": 1
     }
   },
-  "MetalSubstanceRequirement": {
+  "InjectSubstance": {
+    "replace": {
+      "SubstanceMatters:Wood": "ManualLabor:Charcoal"
+    }
   },
   "HeatInput": {},
   "MaterialItemOutput": {
-    "item": "ManualLabor:Nugget",
+    "item": "ManualLabor:Chunks",
     "amount": 1
   }
 }

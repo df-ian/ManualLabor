@@ -1,0 +1,20 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:Plank": 2
+    }
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Chunks.ManualLabor:Charcoal": 1
+    }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "ManualLabor:CampFire": 1
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "basedOn": "core:wood",
+  "displayName": "Camp Fire",
+  "rotation": "horizontal",
+  "entity": {
+    "prefab": "CampFire"
+  },
+  "shape": "engine:billboard",
+  "translucent": true,
+  "doubleSided": true
+}

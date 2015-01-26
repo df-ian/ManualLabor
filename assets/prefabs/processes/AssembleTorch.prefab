@@ -1,0 +1,16 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:Stick": 1,
+      "ManualLabor:PlantMatter": 1
+    }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "Core:Torch": 2
+    }
+  }
+}

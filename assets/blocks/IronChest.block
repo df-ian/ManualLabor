@@ -1,5 +1,6 @@
 {
     "basedOn" : "SubstanceMatters:Metal",
+    "displayName": "Iron Chest",
     "rotation" : "horizontal",
     "tiles" : {
         "sides" : "IronChest_Sides",

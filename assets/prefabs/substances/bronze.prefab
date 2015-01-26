@@ -16,5 +16,6 @@
   },
   "MultiplyToolDurability": {
     "multiplyPerSubstanceAmount": 1.003
-  }
+  },
+  "MetalSubstance": {}
 }
