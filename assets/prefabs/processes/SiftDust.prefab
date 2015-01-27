@@ -1,0 +1,20 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Sifting"
+  },
+  "FluidInput": {
+    "fluidVolumes": {
+      "fluid:water": 100
+    }
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Dust": 1
+    }
+  },
+  "SiftedMaterialOutput": {
+    "item": "ManualLabor:Dust",
+    "smallItem": "ManualLabor:SmallDust",
+    "minimumSiftableAmount": 1.0
+  }
+}

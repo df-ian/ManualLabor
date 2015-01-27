@@ -1,0 +1,24 @@
+{
+  "InteractionTarget": {},
+  "InteractionScreen": {
+    "screen": "Machines:DefaultMachine"
+  },
+  "Workstation": {
+    "supportedProcessTypes": {
+      "ManualLabor:Sifting": false
+    }
+  },
+  "MachineDefinition": {
+    "inputSlots": 1,
+    "outputSlots": 2,
+    "actionTitle": "Sift"
+  },
+  "FluidInventory": {
+    "fluidSlots": [0],
+    "maximumVolumes": [4000]
+  },
+  "FluidTransportBlockNetwork": {},
+  "DropBlockInventory": {},
+  "Network": {
+  }
+}

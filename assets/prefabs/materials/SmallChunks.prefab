@@ -1,0 +1,14 @@
+{
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor:ManualLabor.SmallChunks",
+    "stackId": "ManualLabor:Chunks",
+    "renderWithIcon": true
+  },
+  "DisplayName": {
+    "name": "Chunk Pile"
+  },
+  "MaterialItem": {
+    "icon": "ManualLabor:ManualLabor.SmallChunks"
+  }
+}

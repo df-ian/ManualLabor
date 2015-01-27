@@ -12,7 +12,8 @@
   },
   "InjectSubstance": {
     "add": {
-      "SubstanceMatters:Tin": 10
+      "SubstanceMatters:Tin": 10,
+      "SubstanceMatters:Stone": 1
     }
   },
   "MaterialItemOutput": {

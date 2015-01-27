@@ -1,0 +1,13 @@
+{
+  "displayName": "Sifter",
+  "rotation": "horizontal",
+  "tiles": {
+    "sides": "fireplace_side",
+    "front": "hearth_front",
+    "top": "hearth_top",
+    "bottom": "fireplace_bottom"
+  },
+  "entity": {
+    "prefab": "ManualLabor:Sifter"
+  }
+}

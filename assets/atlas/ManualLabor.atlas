@@ -11,7 +11,7 @@
             "CrudeHammer", "StoneTool", "Cloth", "String", "", "", "", "",
             "Stick", "Plank", "Pegs", "", "", "", "", "",
             "PlantMatter", "WoodenBucket", "WoodenBucketFluid", "", "", "", "", "",
-            "", "", "", "", "", "", "", "",
+            "", "SmallChunks", "SmallDust", "", "", "", "", "",
             "Nugget", "Chunks", "Dust", "Sheet", "Plate", "Rod", "Bolt", "Screw"
         ]
     }

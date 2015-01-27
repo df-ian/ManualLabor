@@ -1,0 +1,22 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "RequirementInput": {
+    "requirements": ["MetalFile"]
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:Plank": 1
+    }
+  },
+  "InjectSubstance": {
+    "add": {
+      "SubstanceMatters:Wood": 10
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:Rod",
+    "amount": 1
+  }
+}

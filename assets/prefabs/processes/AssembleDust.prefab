@@ -1,0 +1,14 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:SmallDust": 4
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:Dust",
+    "amount": 1
+  }
+}
