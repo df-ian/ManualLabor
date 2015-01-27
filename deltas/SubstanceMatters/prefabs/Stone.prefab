@@ -1,0 +1,8 @@
+{
+  "MultiplyToolDurability": {
+    "multiplyPerSubstanceAmount": 0.90
+  },
+  "ManualLaborSubstanceDescription": {
+    "defaultItemTexture": "ManualLabor.Chunks"
+  }
+}
