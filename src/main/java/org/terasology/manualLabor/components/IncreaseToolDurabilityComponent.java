@@ -25,6 +25,7 @@ public class IncreaseToolDurabilityComponent implements Component, ToolModificat
 
     @Override
     public String getDescription() {
-        return String.format("Increases tool durability by %.1f for every unit of material", increasePerSubstanceAmount);
+        String upDown = increasePerSubstanceAmount < 0f ? "Decreases" : "Increases";
+        return String.format(upDown + " tool durability by %.1f for every unit of material", Math.abs(increasePerSubstanceAmount));
     }
 }

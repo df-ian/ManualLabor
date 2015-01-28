@@ -25,6 +25,7 @@ public class IncreaseToolDamageComponent implements Component, ToolModificationD
 
     @Override
     public String getDescription() {
-        return String.format("Increases tool damage by %.1f for every 100 units of material", increasePerSubstanceAmount * 100f);
+        String upDown = increasePerSubstanceAmount < 0f ? "Decreases" : "Increases";
+        return String.format(upDown + " tool damage by %.1f for every 100 units of material", Math.abs(increasePerSubstanceAmount * 100f));
     }
 }
