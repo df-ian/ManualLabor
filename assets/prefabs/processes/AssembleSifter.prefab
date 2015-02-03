@@ -1,0 +1,16 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:Plank": 4,
+      "ManualLabor:WoodenBucket": 1
+    }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "ManualLabor:Sifter": 1
+    }
+  }
+}

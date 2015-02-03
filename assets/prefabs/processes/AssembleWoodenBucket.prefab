@@ -1,0 +1,19 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "RequirementInput": {
+    "requirements": ["Saw"]
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:String": 3,
+      "ManualLabor:Plank": 3
+    }
+  },
+  "ItemPrefabOutput": {
+    "itemCounts": {
+      "ManualLabor:WoodenBucket": 1
+    }
+  }
+}
