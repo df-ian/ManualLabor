@@ -1,0 +1,13 @@
+{
+  "parent": "engine:iconItem",
+  "DisplayName": {
+    "name": "Sledge Hammer Head"
+  },
+  "Item": {
+    "icon": "ManualLabor:ManualLabor.SledgeHammerHead",
+    "renderWithIcon": true
+  },
+  "MaterialItem": {
+    "icon": "ManualLabor:ManualLabor.SledgeHammerHead"
+  }
+}

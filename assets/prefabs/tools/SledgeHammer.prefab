@@ -1,0 +1,34 @@
+{
+  "parent": "engine:iconItem",
+  "DisplayName": {
+    "name": "Sledge Hammer"
+  },
+  "Item": {
+    "renderWithIcon": true,
+    "damageType": "hammerDamage"
+  },
+  "ProcessRequirementsProvider": {
+    "requirements": [
+      "SledgeHammer",
+      "SmithingHammer"
+    ]
+  },
+  "Durability": {
+    "durability": 132,
+    "maxDurability": 132
+  },
+  "TintOverlayIcon": {
+    "texture": {
+      "ManualLabor.Rod": {
+        "hue": 32
+      },
+      "ManualLabor.SledgeHammerHead": {
+        "hue": 200,
+        "saturationScale": 0.2,
+        "brightnessScale": 1,
+        "shiftX": 7,
+        "shiftY": -7
+      }
+    }
+  }
+}

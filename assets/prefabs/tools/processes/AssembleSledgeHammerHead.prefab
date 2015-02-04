@@ -1,0 +1,17 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:ToolAssembling"
+  },
+  "RequirementInput": {
+    "requirements": ["Mallet"]
+  },
+  "MaterialItemInput": {
+    "itemCounts": {
+      "ManualLabor:Nugget": 8
+    }
+  },
+  "MaterialItemOutput": {
+    "item": "ManualLabor:SledgeHammerHead",
+    "amount": 1
+  }
+}

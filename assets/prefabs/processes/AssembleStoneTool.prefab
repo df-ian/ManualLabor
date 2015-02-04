@@ -2,6 +2,9 @@
   "ProcessDefinition": {
     "processType": "ManualLabor:Assembling"
   },
+  "RequirementInput": {
+    "requirements": ["CrudeMallet"]
+  },
   "BlockFamilyInput": {
     "blockCounts": {
       "Core:Stone": 1

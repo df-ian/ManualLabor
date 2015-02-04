@@ -11,8 +11,11 @@
   },
   "ProcessRequirementsProvider": {
     "requirements": [
-      "Axe",
       "Saw"
     ]
+  },
+  "Durability": {
+    "durability": 32,
+    "maxDurability": 32
   }
 }

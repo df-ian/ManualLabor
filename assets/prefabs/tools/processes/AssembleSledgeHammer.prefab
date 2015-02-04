@@ -7,11 +7,11 @@
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "ManualLabor:HammerHead": 1,
+      "ManualLabor:SledgeHammerHead": 1,
       "ManualLabor:Rod": 1
     }
   },
   "ToolItemOutput": {
-    "item": "ManualLabor:Hammer"
+    "item": "ManualLabor:SledgeHammer"
   }
 }

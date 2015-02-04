@@ -3,7 +3,7 @@
     "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
-    "requirements": ["MetalFile"]
+    "requirements": ["Saw"]
   },
   "ItemPrefabInput": {
     "itemCounts": {
