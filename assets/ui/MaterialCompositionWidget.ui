@@ -1,0 +1,6 @@
+{
+  "type": "ManualLabor:MaterialCompositionWidget",
+  "content": {
+    "type": "UILabel"
+  }
+}

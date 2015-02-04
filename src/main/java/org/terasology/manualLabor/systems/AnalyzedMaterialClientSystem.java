@@ -17,7 +17,6 @@ package org.terasology.manualLabor.systems;
 
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
-import org.terasology.entitySystem.prefab.Prefab;
 import org.terasology.entitySystem.prefab.PrefabManager;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterMode;
@@ -27,9 +26,6 @@ import org.terasology.registry.In;
 import org.terasology.rendering.nui.layers.ingame.inventory.GetItemTooltip;
 import org.terasology.rendering.nui.widgets.TooltipLine;
 import org.terasology.substanceMatters.components.MaterialCompositionComponent;
-import org.terasology.substanceMatters.components.SubstanceComponent;
-
-import java.util.Map;
 
 @RegisterSystem(RegisterMode.CLIENT)
 public class AnalyzedMaterialClientSystem extends BaseComponentSystem {
@@ -40,20 +36,6 @@ public class AnalyzedMaterialClientSystem extends BaseComponentSystem {
     public void getDurabilityItemTooltip(GetItemTooltip event, EntityRef entity,
                                          AnalyzedMaterialComponent analyzedMaterialComponent,
                                          MaterialCompositionComponent materialCompositionComponent) {
-        String tooltip = "";
-        for (Map.Entry<String, Float> substanceAmount : materialCompositionComponent.getSortedByAmountDesc()) {
-            String substanceName = substanceAmount.getKey();
-            Prefab substancePrefab = prefabManager.getPrefab(substanceAmount.getKey());
-            if (substancePrefab != null) {
-                SubstanceComponent substanceComponent = substancePrefab.getComponent(SubstanceComponent.class);
-                if (substanceComponent != null) {
-                    substanceName = substanceComponent.name;
-                }
-            }
-            tooltip += substanceAmount.getValue() + " " + substanceName + "\n";
-        }
-
-        tooltip = tooltip.trim();
-        event.getTooltipLines().add(new TooltipLine(tooltip));
+        event.getTooltipLines().add(new TooltipLine(materialCompositionComponent.toDisplayString()));
     }
 }

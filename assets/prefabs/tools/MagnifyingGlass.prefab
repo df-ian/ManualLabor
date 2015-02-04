@@ -36,7 +36,8 @@
   "MachineDefinition": {
     "inputSlots": 1,
     "outputSlots": 1,
-    "actionTitle": "Analyze"
+    "actionTitle": "Analyze",
+    "outputWidgets": ["ManualLabor:MaterialCompositionWidget"]
   },
   "NestedMachine": {}
 }
