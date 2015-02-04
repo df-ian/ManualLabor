@@ -2,16 +2,14 @@
   "ProcessDefinition": {
     "processType": "ManualLabor:ToolAssembling"
   },
-  "RequirementInput": {
-    "requirements": ["Hammer"]
-  },
   "MaterialItemInput": {
     "itemCounts": {
-      "ManualLabor:Nugget": 8
+      "ManualLabor:Nugget": 4,
+      "ManualLabor:Rod": 1
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:HammerHead",
+  "ToolItemOutput": {
+    "item": "ManualLabor:Mallet",
     "amount": 1
   }
 }

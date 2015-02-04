@@ -5,10 +5,10 @@
         "tileSize":[32, 32],
         "gridDimensions":[8, 8],
         "tileNames":[
-            "ShovelHead", "PickaxeHead", "AxeHead", "HammerHead", "", "", "", "",
+            "ShovelHead", "PickaxeHead", "AxeHead", "SledgeHammerHead", "", "", "", "",
             "MetalFileHandle", "ScrewdriverHandle", "Wrench", "SawHandle", "PliersHandle", "MagnifyingGlass", "", "",
-            "MetalFileHead", "ScrewdriverHead", "Key", "SawHead", "PliersHead", "", "", "",
-            "CrudeHammer", "StoneTool", "Cloth", "String", "", "", "", "",
+            "MetalFileHead", "ScrewdriverHead", "Key", "SawHead", "PliersHead", "MalletHead", "", "",
+            "CrudeHammer", "StoneTool", "Cloth", "String", "", "MalletHandle", "", "",
             "Stick", "Plank", "Pegs", "", "", "", "", "",
             "PlantMatter", "WoodenBucket", "WoodenBucketFluid", "", "", "", "", "",
             "", "SmallChunks", "SmallDust", "", "", "", "", "",

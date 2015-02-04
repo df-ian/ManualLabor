@@ -10,7 +10,8 @@
   },
   "ProcessRequirementsProvider": {
     "requirements": [
-      "Hammer"
+      "SledgeHammer",
+      "CrudeMallet"
     ]
   },
   "Durability": {

@@ -3,7 +3,7 @@
     "processType": "ManualLabor:Crushing"
   },
   "RequirementInput": {
-    "requirements": ["Hammer"]
+    "requirements": ["SledgeHammer"]
   },
   "BlockFamilyInput": {
     "blockCounts": {

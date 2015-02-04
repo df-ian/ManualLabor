@@ -68,15 +68,17 @@ public class JournalIntegration extends BaseComponentSystem {
                         "After finding these ingredients, craft them into a crude hammer.  This hammer will help you dig down and find more ores to help create better tools with."),
                 new TextJournalPart("Also, you can craft a stone tool with one block of stone. This will help you cut wood and other things."),
                 new TitleJournalPart("Tools"),
-                new ItemIconJournalPart("ManualLabor:Hammer", HorizontalAlign.LEFT),
-                new TextJournalPart("Hammers are primarily a digging tool to dig through rock."),
-                new TextJournalPart("When used as a crafting tool, they can flatten materials and can smash ores into smaller chunks that can then be smelted into metal."),
+                new ItemIconJournalPart("ManualLabor:SledgeHammer", HorizontalAlign.LEFT),
+                new TextJournalPart("Sledge hammers are primarily a digging tool to dig through rock."),
+                new TextJournalPart("When used as a crafting tool, they can smash ores into small chunks that can then be smelted into metal."),
                 new ItemIconJournalPart("ManualLabor:Pickaxe", HorizontalAlign.LEFT),
                 new TextJournalPart("Pickaxes are a digging tool specializing in minerals."),
                 new ItemIconJournalPart("ManualLabor:Shovel", HorizontalAlign.LEFT),
                 new TextJournalPart("Shovels are a digging tool specializing in dirt."),
                 new ItemIconJournalPart("ManualLabor:Axe", HorizontalAlign.LEFT),
                 new TextJournalPart("Axes are a digging tool specializing in wood."),
+                new ItemIconJournalPart("ManualLabor:Mallet", HorizontalAlign.LEFT),
+                new TextJournalPart("Mallets are used for assembling various items and tools.  Also, they can be used to grind chunks of material into dust."),
                 new ItemIconJournalPart("ManualLabor:MetalFile", HorizontalAlign.LEFT),
                 new TextJournalPart("Metal files are used to sharpen and shape materials."),
                 new ItemIconJournalPart("ManualLabor:Pliers", HorizontalAlign.LEFT),
@@ -92,7 +94,8 @@ public class JournalIntegration extends BaseComponentSystem {
                 new TextJournalPart("Tool assembly tables help craft tools from components. You can craft one from an existing assembly table."),
                 new TextJournalPart("The hearth is for melting down crushed ores to make metals for crafting. " +
                         "You can craft one from an existing fireplace with some additional stone."),
-                new TextJournalPart("Fireplaces heat up hearths to high temperatures so that metals can be melted. You can craft one from a bunch of stone blocks.")
+                new TextJournalPart("Fireplaces heat up hearths to high temperatures so that metals can be melted. You can craft one from a bunch of stone blocks."),
+                new TextJournalPart("Sifters can separate out impurities from crushed ores using water.")
         );
 
         // add substances

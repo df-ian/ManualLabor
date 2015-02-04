@@ -1,33 +1,31 @@
 {
   "parent": "engine:iconItem",
   "DisplayName": {
-    "name": "Hammer"
+    "name": "Mallet"
   },
   "Item": {
-    "renderWithIcon": true,
-    "damageType": "hammerDamage"
+    "renderWithIcon": true
   },
   "ProcessRequirementsProvider": {
     "requirements": [
-      "Hammer",
+      "Mallet",
+      "CrudeMallet",
+      "SmithingHammer",
       "FineHammer"
     ]
   },
   "Durability": {
-    "durability": 132,
-    "maxDurability": 132
+    "durability": 32,
+    "maxDurability": 32
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.Rod": {
-        "hue": 32
+      "ManualLabor.MalletHandle": {
       },
-      "ManualLabor.HammerHead": {
+      "ManualLabor.MalletHead": {
         "hue": 200,
         "saturationScale": 0.2,
-        "brightnessScale": 1,
-        "shiftX": 7,
-        "shiftY": -7
+        "brightnessScale": 1
       }
     }
   }
