@@ -47,7 +47,7 @@ public class CampFireAuthoritySystem extends BaseComponentSystem {
             EntityBuilder renderedEntityBuilder = entityManager.newBuilder(lightAreaComponent.lightPrefab);
             renderedEntityBuilder.setOwner(entity);
             LocationComponent locationComponent = new LocationComponent();
-            Vector3f worldPosition = new Vector3f(block.getPosition().toVector3f());
+            Vector3f worldPosition = block.getPosition().toVector3f();
             worldPosition.add(relativePosition);
             locationComponent.setWorldPosition(worldPosition);
             renderedEntityBuilder.addComponent(locationComponent);
