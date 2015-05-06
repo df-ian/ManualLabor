@@ -5,14 +5,14 @@
   "RequirementInput": {
     "requirements": ["CrudeMallet"]
   },
-  "BlockFamilyInput": {
-    "blockCounts": {
-      "Core:Stone": 1
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:CrudeAxe": 1
     }
   },
   "ItemPrefabOutput": {
     "itemCounts": {
-      "ManualLabor:StoneTool": 1
+      "ManualLabor:CrudeShovel": 1
     }
   }
 }

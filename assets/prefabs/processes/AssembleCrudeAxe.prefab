@@ -1,0 +1,18 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "RequirementInput": {
+    "requirements": ["CrudeMallet"]
+  },
+  "ItemPrefabInput": {
+    "itemCounts": {
+      "ManualLabor:CrudeHammer": 1
+    }
+  },
+  "ItemPrefabOutput": {
+    "itemCounts": {
+      "ManualLabor:CrudeAxe": 1
+    }
+  }
+}

@@ -8,7 +8,7 @@
             "ShovelHead", "PickaxeHead", "AxeHead", "SledgeHammerHead", "", "", "", "",
             "MetalFileHandle", "ScrewdriverHandle", "Wrench", "SawHandle", "PliersHandle", "MagnifyingGlass", "", "",
             "MetalFileHead", "ScrewdriverHead", "Key", "SawHead", "PliersHead", "MalletHead", "", "",
-            "CrudeHammer", "StoneTool", "Cloth", "String", "", "MalletHandle", "", "",
+            "CrudeHammer", "CrudeAxe", "Cloth", "String", "CrudeShovel", "MalletHandle", "", "",
             "Stick", "Plank", "Pegs", "", "", "", "", "",
             "PlantMatter", "WoodenBucket", "WoodenBucketFluid", "", "", "", "", "",
             "", "SmallChunks", "SmallDust", "", "", "", "", "",

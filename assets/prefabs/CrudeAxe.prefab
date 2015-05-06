@@ -1,13 +1,12 @@
 {
   "parent": "engine:iconItem",
   "Item": {
-    "icon": "ManualLabor:ManualLabor.StoneTool",
-    "stackId": "ManualLabor:StoneTool",
+    "icon": "ManualLabor:ManualLabor.CrudeAxe",
     "renderWithIcon": true,
     "damageType": "axeDamage"
   },
   "DisplayName": {
-    "name": "Stone Tool"
+    "name": "Crude Axe"
   },
   "ProcessRequirementsProvider": {
     "requirements": [
