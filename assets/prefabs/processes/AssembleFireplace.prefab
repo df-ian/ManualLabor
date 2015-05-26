@@ -3,7 +3,7 @@
     "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
-    "requirements": ["Mallet"]
+    "requirements": ["CrudeMallet"]
   },
   "BlockFamilyInput": {
     "blockCounts": {
