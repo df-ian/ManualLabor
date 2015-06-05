@@ -44,7 +44,7 @@ public class ModifyToolCreationSystem extends BaseComponentSystem {
         if (materialCompositionComponent != null) {
             // increase the tool's base durability
             for (Map.Entry<String, Float> substance : materialCompositionComponent.contents.entrySet()) {
-                Prefab substancePrefab = Assets.getPrefab(substance.getKey());
+                Prefab substancePrefab = Assets.getPrefab(substance.getKey()).get();
 
                 IncreaseToolDurabilityComponent substanceIncrease = substancePrefab.getComponent(IncreaseToolDurabilityComponent.class);
                 if (substanceIncrease != null) {
@@ -54,7 +54,7 @@ public class ModifyToolCreationSystem extends BaseComponentSystem {
 
             // multiply the durability
             for (Map.Entry<String, Float> substance : materialCompositionComponent.contents.entrySet()) {
-                Prefab substancePrefab = Assets.getPrefab(substance.getKey());
+                Prefab substancePrefab = Assets.getPrefab(substance.getKey()).get();
 
                 MultiplyToolDurabilityComponent substanceMultiply = substancePrefab.getComponent(MultiplyToolDurabilityComponent.class);
                 if (substanceMultiply != null) {
@@ -71,7 +71,7 @@ public class ModifyToolCreationSystem extends BaseComponentSystem {
             // add the tool's bonus damage
             BonusToolDamageComponent bonusToolDamageComponent = new BonusToolDamageComponent();
             for (Map.Entry<String, Float> substance : materialCompositionComponent.contents.entrySet()) {
-                Prefab substancePrefab = Assets.getPrefab(substance.getKey());
+                Prefab substancePrefab = Assets.getPrefab(substance.getKey()).get();
 
                 IncreaseToolDamageComponent substanceIncrease = substancePrefab.getComponent(IncreaseToolDamageComponent.class);
                 if (substanceIncrease != null) {

@@ -9,7 +9,7 @@
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "ManualLabor:Chunks.ManualLabor:Charcoal": 1
+      "SubstanceMatters:MaterialItem#ManualLabor:Chunks|ManualLabor:Charcoal": 1
     }
   },
   "BlockFamilyOutput": {

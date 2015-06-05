@@ -4,8 +4,8 @@
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "ManualLabor:Dust.SubstanceMatters:Copper": 3,
-      "ManualLabor:Dust.SubstanceMatters:Tin": 1
+      "SubstanceMatters:MaterialItem#ManualLabor:Dust|SubstanceMatters:Copper": 3,
+      "SubstanceMatters:MaterialItem#ManualLabor:Dust|SubstanceMatters:Tin": 1
     }
   },
   "InjectSubstance": {
@@ -15,7 +15,7 @@
     }
   },
   "MaterialItemOutput": {
-    "item": "ManualLabor:Dust.ManualLabor:Bronze",
+    "item": "SubstanceMatters:MaterialItem#ManualLabor:Dust|ManualLabor:Bronze",
     "amount": 4
   }
 }

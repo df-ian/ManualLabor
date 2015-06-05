@@ -1,7 +1,7 @@
 {
   "parent": "engine:iconItem",
   "Item": {
-    "icon": "ManualLabor:ManualLabor.SmallDust",
+    "icon": "ManualLabor:ManualLabor#SmallDust",
     "stackId": "ManualLabor:Dust",
     "renderWithIcon": true
   },
@@ -9,6 +9,6 @@
     "name": "Dust Pile"
   },
   "MaterialItem": {
-    "icon": "ManualLabor:ManualLabor.SmallDust"
+    "icon": "ManualLabor:ManualLabor#SmallDust"
   }
 }

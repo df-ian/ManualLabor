@@ -7,7 +7,7 @@
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "ManualLabor:Plate.Iron": 6,
+      "SubstanceMatters:MaterialItem#ManualLabor:Plate|Iron": 6,
       "ManualLabor:Screw": 12
     }
   },
