@@ -17,9 +17,9 @@
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.SawHandle": {
+      "ManualLabor#SawHandle": {
       },
-      "ManualLabor.SawHead": {
+      "ManualLabor#SawHead": {
         "hue": 200,
         "saturationScale": 0.2,
         "brightnessScale": 1

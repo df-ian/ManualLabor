@@ -19,10 +19,10 @@
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.Rod": {
+      "ManualLabor#Rod": {
         "hue": 32
       },
-      "ManualLabor.SledgeHammerHead": {
+      "ManualLabor#SledgeHammerHead": {
         "hue": 200,
         "saturationScale": 0.2,
         "brightnessScale": 1,

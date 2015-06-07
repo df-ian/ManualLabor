@@ -17,9 +17,9 @@
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.PliersHandle": {
+      "ManualLabor#PliersHandle": {
       },
-      "ManualLabor.PliersHead": {
+      "ManualLabor#PliersHead": {
         "hue": 200,
         "saturationScale": 0.2,
         "brightnessScale": 1

@@ -20,9 +20,9 @@
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.MalletHandle": {
+      "ManualLabor#MalletHandle": {
       },
-      "ManualLabor.MalletHead": {
+      "ManualLabor#MalletHead": {
         "hue": 200,
         "saturationScale": 0.2,
         "brightnessScale": 1

@@ -18,7 +18,7 @@
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.Wrench": {
+      "ManualLabor#Wrench": {
         "hue": 200,
         "saturationScale": 0.2,
         "brightnessScale": 1

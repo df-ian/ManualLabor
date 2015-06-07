@@ -17,9 +17,9 @@
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.MetalFileHandle": {
+      "ManualLabor#MetalFileHandle": {
       },
-      "ManualLabor.MetalFileHead": {
+      "ManualLabor#MetalFileHead": {
         "hue": 200,
         "saturationScale": 0.2,
         "brightnessScale": 1

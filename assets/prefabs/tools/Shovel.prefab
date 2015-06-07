@@ -13,10 +13,10 @@
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.Rod": {
+      "ManualLabor#Rod": {
         "hue": 32
       },
-      "ManualLabor.ShovelHead": {
+      "ManualLabor#ShovelHead": {
         "hue": 200,
         "saturationScale": 0.2,
         "brightnessScale": 1,

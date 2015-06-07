@@ -150,7 +150,7 @@ public class JournalIntegration extends BaseComponentSystem {
                     description.append("<l>");
                 }
 
-                addItemWithDescription(introduction, substanceDescriptionComponent.defaultItemTexture + "." + substance.getURI().toSimpleString(),
+                addItemWithDescription(introduction, "SubstanceMatters:MaterialItem#" + substanceDescriptionComponent.defaultItemTexture + "|" + substance.getName(),
                         description.toString());
             }
         }
@@ -159,7 +159,7 @@ public class JournalIntegration extends BaseComponentSystem {
 
         chapterHandler.registerJournalEntry("introduction", introduction);
 
-        journalManager.registerJournalChapter(chapterId, Assets.getTexture("ManualLabor", "ManualLaborIcon"), "Manual Labor", chapterHandler);
+        journalManager.registerJournalChapter(chapterId, Assets.getTexture("ManualLabor:ManualLaborIcon").get(), "Manual Labor", chapterHandler);
     }
 
     private void addItemWithDescription(List<ParagraphData> introduction, String itemUri, String itemDescription) {

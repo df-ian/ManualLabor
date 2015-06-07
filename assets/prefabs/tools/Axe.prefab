@@ -18,10 +18,10 @@
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.Rod": {
+      "ManualLabor#Rod": {
         "hue": 32
       },
-      "ManualLabor.AxeHead": {
+      "ManualLabor#AxeHead": {
         "hue": 200,
         "saturationScale": 0.2,
         "brightnessScale": 1,

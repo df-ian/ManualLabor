@@ -17,9 +17,9 @@
   },
   "TintOverlayIcon": {
     "texture": {
-      "ManualLabor.ScrewdriverHandle": {
+      "ManualLabor#ScrewdriverHandle": {
       },
-      "ManualLabor.ScrewdriverHead": {
+      "ManualLabor#ScrewdriverHead": {
         "hue": 200,
         "saturationScale": 0.2,
         "brightnessScale": 1
