@@ -1,0 +1,12 @@
+{
+  "displayName": "Sifting Table",
+  "rotation": "horizontal",
+  "tiles": {
+    "sides": "SiftingTable_side",
+    "top": "SiftingTable_top",
+    "bottom": "SiftingTable_bottom"
+  },
+  "entity": {
+    "prefab": "ManualLabor:SiftingTable"
+  }
+}
