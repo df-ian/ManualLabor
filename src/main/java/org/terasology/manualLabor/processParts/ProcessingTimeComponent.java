@@ -17,6 +17,7 @@ package org.terasology.manualLabor.processParts;
 
 import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
+import org.terasology.manualLabor.events.ModifyProcessingTimeEvent;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
@@ -31,7 +32,11 @@ public class ProcessingTimeComponent implements Component, ProcessPart, Describe
 
     @Override
     public long getDuration(EntityRef instigator, EntityRef workstation, EntityRef processEntity) {
-        return duration;
+        ModifyProcessingTimeEvent processingTimeEvent = new ModifyProcessingTimeEvent(duration, instigator, workstation, processEntity);
+        instigator.send(processingTimeEvent);
+        workstation.send(processingTimeEvent);
+        processEntity.send(processingTimeEvent);
+        return ((Float) processingTimeEvent.getResultValue()).longValue();
     }
 
     @Override
