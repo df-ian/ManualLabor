@@ -23,21 +23,23 @@ import org.terasology.registry.CoreRegistry;
 import org.terasology.substanceMatters.components.MaterialCompositionComponent;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.WorkstationInventoryUtils;
+import org.terasology.workstation.process.inventory.InventoryInputComponent;
+import org.terasology.workstation.process.inventory.InventoryOutputComponent;
 import org.terasology.workstation.process.inventory.ValidateInventoryItem;
 
 public class AnalyzeMaterialsComponent implements Component, ProcessPart, ValidateInventoryItem {
 
     @Override
     public boolean isResponsibleForSlot(EntityRef workstation, int slotNo) {
-        return WorkstationInventoryUtils.getAssignedSlots(workstation, "INPUT").contains(slotNo)
-                || WorkstationInventoryUtils.getAssignedSlots(workstation, "OUTPUT").contains(slotNo);
+        return WorkstationInventoryUtils.getAssignedInputSlots(workstation, InventoryInputComponent.WORKSTATIONINPUTCATEGORY).contains(slotNo)
+                || WorkstationInventoryUtils.getAssignedOutputSlots(workstation, InventoryOutputComponent.WORKSTATIONOUTPUTCATEGORY).contains(slotNo);
     }
 
     @Override
     public boolean isValid(EntityRef workstation, int slotNo, EntityRef instigator, EntityRef item) {
-        if (WorkstationInventoryUtils.getAssignedSlots(workstation, "INPUT").contains(slotNo)) {
+        if (WorkstationInventoryUtils.getAssignedInputSlots(workstation, InventoryInputComponent.WORKSTATIONINPUTCATEGORY).contains(slotNo)) {
             return item.hasComponent(MaterialCompositionComponent.class) && !item.hasComponent(AnalyzedMaterialComponent.class);
-        } else if (WorkstationInventoryUtils.getAssignedSlots(workstation, "OUTPUT").contains(slotNo)) {
+        } else if (WorkstationInventoryUtils.getAssignedOutputSlots(workstation, InventoryOutputComponent.WORKSTATIONOUTPUTCATEGORY).contains(slotNo)) {
             return item.hasComponent(AnalyzedMaterialComponent.class);
         }
 
@@ -47,7 +49,7 @@ public class AnalyzeMaterialsComponent implements Component, ProcessPart, Valida
     @Override
     public boolean validateBeforeStart(EntityRef instigator, EntityRef workstation, EntityRef processEntity) {
         InventoryManager inventoryManager = CoreRegistry.get(InventoryManager.class);
-        for (int inputSlot : WorkstationInventoryUtils.getAssignedSlots(workstation, "INPUT")) {
+        for (int inputSlot : WorkstationInventoryUtils.getAssignedInputSlots(workstation, InventoryInputComponent.WORKSTATIONINPUTCATEGORY)) {
             EntityRef inputItem = inventoryManager.getItemInSlot(workstation, inputSlot);
             if (inputItem.exists()) {
                 return true;
@@ -70,13 +72,13 @@ public class AnalyzeMaterialsComponent implements Component, ProcessPart, Valida
     public void executeEnd(EntityRef instigator, EntityRef workstation, EntityRef processEntity) {
         InventoryManager inventoryManager = CoreRegistry.get(InventoryManager.class);
 
-        for (int inputSlot : WorkstationInventoryUtils.getAssignedSlots(workstation, "INPUT")) {
+        for (int inputSlot : WorkstationInventoryUtils.getAssignedInputSlots(workstation, InventoryInputComponent.WORKSTATIONINPUTCATEGORY)) {
             EntityRef inputItem = inventoryManager.getItemInSlot(workstation, inputSlot);
             if (inputItem.exists()) {
                 if (!inputItem.hasComponent(AnalyzedMaterialComponent.class)) {
                     inputItem.addComponent(new AnalyzedMaterialComponent());
                 }
-                inventoryManager.moveItemToSlots(instigator, workstation, inputSlot, workstation, WorkstationInventoryUtils.getAssignedSlots(workstation, "OUTPUT"));
+                inventoryManager.moveItemToSlots(instigator, workstation, inputSlot, workstation, WorkstationInventoryUtils.getAssignedOutputSlots(workstation, InventoryOutputComponent.WORKSTATIONOUTPUTCATEGORY));
             }
         }
     }
