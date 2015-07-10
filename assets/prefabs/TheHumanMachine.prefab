@@ -5,6 +5,7 @@
   },
   "Workstation": {
     "supportedProcessTypes": {
+      "ManualLabor:CrudeAssembling": false,
       "ManualLabor:Assembling": false
     }
   },
