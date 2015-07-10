@@ -1,5 +1,10 @@
 {
   "lightArea": {
     "lightPrefab": "CampFireLuminance"
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The camp fire lights up a bigger area than just a torch."
+    ]
   }
 }

@@ -25,5 +25,10 @@
         "brightnessScale": 1
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The screwdriver is used as a crafting tool for fastening materials together."
+    ]
   }
 }

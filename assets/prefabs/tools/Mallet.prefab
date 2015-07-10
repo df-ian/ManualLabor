@@ -28,5 +28,10 @@
         "brightnessScale": 1
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The mallet is primarily a tool used for crafting.  It can be used for smithing metals as well as grinding ore chunks into dust."
+    ]
   }
 }

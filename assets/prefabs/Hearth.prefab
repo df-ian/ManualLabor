@@ -13,5 +13,10 @@
     }
   },
   "DropBlockInventory": {},
-  "Network": {}
+  "Network": {},
+  "ItemHelp": {
+    "paragraphText": [
+      "The hearth is used to melt down crushed ores into metal nuggets."
+    ]
+  }
 }

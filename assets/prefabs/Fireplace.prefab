@@ -13,5 +13,10 @@
     }
   },
   "DropBlockInventory": {},
-  "Network": {}
+  "Network": {},
+  "ItemHelp": {
+    "paragraphText": [
+      "The fireplace can be fed burnable materials that will heat up neighboring blocks.  Like the hearth."
+    ]
+  }
 }

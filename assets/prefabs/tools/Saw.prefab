@@ -25,5 +25,10 @@
         "brightnessScale": 1
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The saw is used as a crafting tool for cutting materials."
+    ]
   }
 }

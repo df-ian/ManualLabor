@@ -21,5 +21,10 @@
         "invisible": true
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The wooden bucket can hold 1,000 mL of liquid at one time.  Use this to collect water for various machines that require water."
+    ]
   }
 }

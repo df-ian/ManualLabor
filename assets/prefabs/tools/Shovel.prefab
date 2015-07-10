@@ -24,5 +24,10 @@
         "shiftY": -7
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The shovel specializes in removing dirt and other soft blocks."
+    ]
   }
 }

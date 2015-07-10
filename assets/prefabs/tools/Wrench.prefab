@@ -24,5 +24,10 @@
         "brightnessScale": 1
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The wrench is good at removing machines and machine parts."
+    ]
   }
 }

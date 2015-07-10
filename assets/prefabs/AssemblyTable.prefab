@@ -31,5 +31,10 @@
   },
   "DropBlockInventory": {},
   "Network": {
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The assembly table is your basic work station for crafting."
+    ]
   }
 }

@@ -24,5 +24,10 @@
         "shiftY": -7
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The pickaxe specializes in mining ores and is moderately good at removing stone."
+    ]
   }
 }

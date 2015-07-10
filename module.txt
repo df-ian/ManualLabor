@@ -18,7 +18,7 @@
             "id": "SubstanceMatters", "minVersion": "0.1.0"
         },
         {
-            "id": "Journal", "minVersion": "0.1.0"
+            "id": "InGameHelp", "minVersion": "0.1.0"
         },
         {
             "id": "Core", "minVersion": "0.54.0"

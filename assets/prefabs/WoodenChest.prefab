@@ -18,5 +18,10 @@
     "screen": "engine:containerScreen"
   },
   "Network": {
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The wooden chest is a great place to store items.  It can store 8 items at a time!"
+    ]
   }
 }

@@ -39,5 +39,11 @@
     "actionTitle": "Analyze",
     "outputWidgets": ["ManualLabor:MaterialCompositionWidget"]
   },
-  "NestedMachine": {}
+  "NestedMachine": {},
+  "ItemHelp": {
+    "paragraphText": [
+      "The magnifying glass can identify what substances are in a material.  This is invaluable for determining if crushed ores have any impurities.",
+      "Activate the magnifying glass while it is in your hand to open the interface.  Put the materials to be identified into the input slot.  Already identified items can be dropped back in the output slot to display their contained substances again."
+    ]
+  }
 }

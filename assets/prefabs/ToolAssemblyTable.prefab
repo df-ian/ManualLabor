@@ -27,5 +27,10 @@
   },
   "DropBlockInventory": {},
   "Network": {
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The tool assembly table allows you to craft various tools from materials.  These tools are much better than the crude counterparts."
+    ]
   }
 }

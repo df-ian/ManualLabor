@@ -16,5 +16,10 @@
   "Durability": {
     "durability": 32,
     "maxDurability": 32
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The crude axe can be used for chopping down trees and cutting wood.  However, it is not very durable."
+    ]
   }
 }

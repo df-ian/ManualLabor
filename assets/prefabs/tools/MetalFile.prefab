@@ -25,5 +25,10 @@
         "brightnessScale": 1
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The metal file is used as a crafting tool for sharpening and shaping materials."
+    ]
   }
 }

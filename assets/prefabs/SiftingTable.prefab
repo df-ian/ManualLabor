@@ -21,5 +21,11 @@
   "FluidTransportBlockNetwork": {},
   "DropBlockInventory": {},
   "Network": {
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The sifting table uses water and a little elbow grease to separate out substances from chunks of material.",
+      "Try using it to remove all the stone from your metal chunks and make better tools!"
+    ]
   }
 }

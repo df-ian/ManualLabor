@@ -29,5 +29,10 @@
         "shiftY": -7
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The axe specializes in chopping down trees and cutting wood."
+    ]
   }
 }

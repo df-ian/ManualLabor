@@ -25,5 +25,10 @@
         "brightnessScale": 1
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The pliers are used as a crafting tool for bending materials."
+    ]
   }
 }

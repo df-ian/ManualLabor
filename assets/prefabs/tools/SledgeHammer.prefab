@@ -30,5 +30,10 @@
         "shiftY": -7
       }
     }
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The sledge hammer specializes in removing stone.  It can also be used to as a crafting tool for smithing metals and crushing ores."
+    ]
   }
 }

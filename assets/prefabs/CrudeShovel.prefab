@@ -11,5 +11,10 @@
   "Durability": {
     "durability": 32,
     "maxDurability": 32
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The crude shovel can be used for removing dirt and other soft blocks.  However, it is not very durable."
+    ]
   }
 }
