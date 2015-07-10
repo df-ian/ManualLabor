@@ -26,7 +26,6 @@ import org.terasology.entitySystem.prefab.PrefabManager;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterSystem;
 import org.terasology.journal.BrowserJournalChapterHandler;
-import org.terasology.journal.DefaultDocumentData;
 import org.terasology.journal.DiscoveredNewJournalEntry;
 import org.terasology.journal.JournalManager;
 import org.terasology.logic.inventory.ItemComponent;
@@ -36,11 +35,11 @@ import org.terasology.manualLabor.components.ToolModificationDescription;
 import org.terasology.registry.In;
 import org.terasology.rendering.assets.texture.TextureRegion;
 import org.terasology.rendering.nui.HorizontalAlign;
-import org.terasology.rendering.nui.widgets.browser.data.ImageParagraphData;
 import org.terasology.rendering.nui.widgets.browser.data.ParagraphData;
 import org.terasology.rendering.nui.widgets.browser.data.basic.FlowParagraphData;
 import org.terasology.rendering.nui.widgets.browser.data.basic.HTMLLikeParser;
-import org.terasology.rendering.nui.widgets.browser.ui.style.DocumentRenderStyle;
+import org.terasology.rendering.nui.widgets.browser.ui.style.ContainerInteger;
+import org.terasology.rendering.nui.widgets.browser.ui.style.FixedContainerInteger;
 import org.terasology.rendering.nui.widgets.browser.ui.style.ParagraphRenderStyle;
 import org.terasology.substanceMatters.components.SubstanceComponent;
 import org.terasology.world.BlockEntityRegistry;
@@ -65,25 +64,35 @@ public class JournalIntegration extends BaseComponentSystem {
 
     private String chapterId = "ManualLabor";
 
-    private DocumentRenderStyle imageInsetRenderStyle =new DocumentRenderStyle() {
+    private ParagraphRenderStyle imageInsetRenderStyle = new ParagraphRenderStyle() {
         @Override
-        public Integer getDocumentIndentTop() {
-            return 0;
+        public ContainerInteger getParagraphMarginTop() {
+            return new FixedContainerInteger(0);
         }
 
         @Override
-        public Integer getDocumentIndentBottom() {
-            return 3;
+        public ContainerInteger getParagraphMarginBottom() {
+            return new FixedContainerInteger(3);
         }
 
         @Override
-        public Integer getDocumentIndentLeft() {
-            return 0;
+        public ContainerInteger getParagraphMarginLeft() {
+            return new FixedContainerInteger(0);
         }
 
         @Override
-        public Integer getDocumentIndentRight() {
-            return IMAGE_INDENT_RIGHT;
+        public ContainerInteger getParagraphMarginRight() {
+            return new FixedContainerInteger(IMAGE_INDENT_RIGHT);
+        }
+
+        @Override
+        public FloatStyle getFloatStyle() {
+            return FloatStyle.LEFT;
+        }
+
+        @Override
+        public ClearStyle getClearStyle() {
+            return ClearStyle.BOTH;
         }
     };
 
@@ -163,11 +172,10 @@ public class JournalIntegration extends BaseComponentSystem {
     }
 
     private void addItemWithDescription(List<ParagraphData> introduction, String itemUri, String itemDescription) {
-        DefaultDocumentData imageDocumentData = new DefaultDocumentData(imageInsetRenderStyle);
         TextureRegion textureRegion = getTextureRegion(itemUri);
-        imageDocumentData.addParagraph(new ImageParagraphData(null, textureRegion));
+        introduction.add(new ImageParagraphData(imageInsetRenderStyle, textureRegion));
 
-        FlowParagraphData flowParagraphData = new FlowParagraphData(null, imageDocumentData, textureRegion.getWidth() + IMAGE_INDENT_RIGHT, true);
+        FlowParagraphData flowParagraphData = new FlowParagraphData(null);
         flowParagraphData.append(HTMLLikeParser.parseHTMLLike(itemDescription));
         introduction.add(flowParagraphData);
     }
