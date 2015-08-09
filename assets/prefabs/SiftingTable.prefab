@@ -18,7 +18,9 @@
     "fluidSlots": [0],
     "maximumVolumes": [4000]
   },
-  "FluidTransportBlockNetwork": {},
+  "EntityNetwork": {
+    "connectionsPrefab": "Machines:TankNetworkConnection"
+  },
   "DropBlockInventory": {},
   "Network": {
   },
