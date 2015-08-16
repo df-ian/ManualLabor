@@ -12,6 +12,10 @@
       "ManualLabor:Smelting": true
     }
   },
+  "EntityNetwork": {},
+  "HeatBlockNetwork": {
+    "isLeaf": true
+  },
   "DropBlockInventory": {},
   "Network": {},
   "ItemHelp": {

@@ -7,6 +7,7 @@
       "Core:Sand": 1
     }
   },
+  "HeatInput": {},
   "BlockFamilyOutput": {
     "blockCounts": {
       "ManualLabor:DirtyGlass": 1

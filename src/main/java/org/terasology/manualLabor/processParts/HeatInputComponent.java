@@ -15,33 +15,39 @@
  */
 package org.terasology.manualLabor.processParts;
 
+import org.terasology.entityNetwork.Network;
+import org.terasology.entityNetwork.NetworkNode;
+import org.terasology.entityNetwork.systems.EntityNetworkManager;
 import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
+import org.terasology.manualLabor.components.HeatBlockNetworkComponent;
 import org.terasology.manualLabor.components.HeatedComponent;
-import org.terasology.math.Side;
 import org.terasology.registry.CoreRegistry;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
-import org.terasology.world.BlockEntityRegistry;
-import org.terasology.world.block.BlockComponent;
 
 public class HeatInputComponent implements Component, ProcessPart, DescribeProcess {
 
     @Override
     public boolean validateBeforeStart(EntityRef instigator, EntityRef workstation, EntityRef processEntity) {
-        BlockEntityRegistry blockEntityRegistry = CoreRegistry.get(BlockEntityRegistry.class);
-        BlockComponent blockComponent = workstation.getComponent(BlockComponent.class);
-
-        // find a heated block
-        for (Side side : Side.horizontalSides()) {
-            EntityRef targetEntity = blockEntityRegistry.getEntityAt(side.getAdjacentPos(blockComponent.getPosition()));
-            if (targetEntity.hasComponent(HeatedComponent.class)) {
-                return true;
+        int heatSources = 0;
+        EntityNetworkManager entityNetworkManager = CoreRegistry.get(EntityNetworkManager.class);
+        // loop through all nodes this workstation is part of
+        for (NetworkNode workstationNode : entityNetworkManager.getNodesForEntity(workstation)) {
+            if (workstationNode.getNetworkId().equals(HeatBlockNetworkComponent.NETWORK_ID)) {
+                Network network = entityNetworkManager.getNetwork(workstationNode);
+                // loop through each of the nodes on this network to see how many are heat sources
+                for (NetworkNode siblingNode : entityNetworkManager.getNetworkNodes(network)) {
+                    EntityRef siblingEntity = entityNetworkManager.getEntityForNode(siblingNode);
+                    if (siblingEntity.hasComponent(HeatedComponent.class)) {
+                        heatSources++;
+                    }
+                }
             }
         }
 
-        return false;
+        return heatSources > 0;
     }
 
     @Override
