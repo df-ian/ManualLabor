@@ -17,6 +17,7 @@ package org.terasology.manualLabor.processParts;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import org.terasology.entitySystem.entity.EntityBuilder;
 import org.terasology.entitySystem.entity.EntityManager;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.registry.CoreRegistry;
@@ -61,10 +62,11 @@ public class SiftedMaterialOutputComponent extends InventoryOutputComponent {
 
         if (splittableSubstances.size() != 2) {
             // just output a single item if there is nothing to split.
-            EntityRef newItem = entityManager.create(item);
+            EntityBuilder newItem = entityManager.newBuilder(item);
+            newItem.setPersistent(processEntity.isPersistent());
             newItem.addComponent(materialComposition);
             MaterialItemOutputComponent.setDisplayName(newItem, materialComposition);
-            result.add(newItem);
+            result.add(newItem.build());
         } else {
             // grab the substances not going to be split out so that they can be distributed equally
             MaterialCompositionComponent extraSubstances = new MaterialCompositionComponent();
@@ -76,18 +78,19 @@ public class SiftedMaterialOutputComponent extends InventoryOutputComponent {
 
             // create the new items
             for (Map.Entry<String, Float> splittableSubstance : splittableSubstances.entrySet()) {
-                EntityRef newItem;
+                EntityBuilder newItem;
                 if (splittableSubstance.getValue() <= smallItemAmount) {
-                    newItem = entityManager.create(smallItem);
+                    newItem = entityManager.newBuilder(smallItem);
                 } else {
-                    newItem = entityManager.create(item);
+                    newItem = entityManager.newBuilder(item);
                 }
+                newItem.setPersistent(processEntity.isPersistent());
                 MaterialCompositionComponent newComposition = extraSubstances.copy();
                 newComposition.addSubstance(splittableSubstance.getKey(), splittableSubstance.getValue());
 
                 newItem.addComponent(newComposition);
                 MaterialItemOutputComponent.setDisplayName(newItem, newComposition);
-                result.add(newItem);
+                result.add(newItem.build());
             }
         }
 

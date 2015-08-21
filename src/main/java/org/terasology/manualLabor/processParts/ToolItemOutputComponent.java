@@ -16,6 +16,7 @@
 package org.terasology.manualLabor.processParts;
 
 import com.google.common.collect.Lists;
+import org.terasology.entitySystem.entity.EntityBuilder;
 import org.terasology.entitySystem.entity.EntityManager;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.logic.inventory.InventoryUtils;
@@ -63,13 +64,16 @@ public class ToolItemOutputComponent extends InventoryOutputComponent {
         EntityManager entityManager = CoreRegistry.get(EntityManager.class);
 
         Set<EntityRef> result = new HashSet<>();
-        EntityRef toolEntity = entityManager.create(item);
+        EntityBuilder entityBuilder = entityManager.newBuilder(item);
+        entityBuilder.setPersistent(processEntity.isPersistent());
 
         // add the composition of this tool
         MaterialCompositionComponent materialCompositionComponent = processEntity.getComponent(MaterialCompositionComponent.class);
         if (materialCompositionComponent != null) {
-            toolEntity.addComponent(materialCompositionComponent);
+            entityBuilder.addComponent(materialCompositionComponent);
         }
+
+        EntityRef toolEntity = entityBuilder.build();
 
         // use the items used to tweak the icon
         ToolItemOutputUsedItemsComponent toolItemOutputUsedItemsComponent = processEntity.getComponent(ToolItemOutputUsedItemsComponent.class);
