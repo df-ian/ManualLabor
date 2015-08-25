@@ -10,7 +10,7 @@
   },
   "BlockFamilyOutput": {
     "blockCounts": {
-      "ManualLabor:Sifter": 1
+      "ManualLabor:SiftingTable": 1
     }
   }
 }

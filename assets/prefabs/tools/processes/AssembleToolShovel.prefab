@@ -12,7 +12,6 @@
     }
   },
   "ToolItemOutput": {
-    "item": "ManualLabor:Shovel",
-    "amount": 1
+    "item": "ManualLabor:Shovel"
   }
 }

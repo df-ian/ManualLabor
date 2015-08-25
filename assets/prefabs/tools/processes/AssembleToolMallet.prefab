@@ -9,7 +9,6 @@
     }
   },
   "ToolItemOutput": {
-    "item": "ManualLabor:Mallet",
-    "amount": 1
+    "item": "ManualLabor:Mallet"
   }
 }
