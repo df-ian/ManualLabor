@@ -15,6 +15,7 @@
  */
 package org.terasology.manualLabor.processParts;
 
+import org.terasology.asset.Assets;
 import org.terasology.entityNetwork.Network;
 import org.terasology.entityNetwork.NetworkNode;
 import org.terasology.entityNetwork.systems.EntityNetworkManager;
@@ -22,7 +23,9 @@ import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.manualLabor.components.HeatBlockNetworkComponent;
 import org.terasology.manualLabor.components.HeatedComponent;
+import org.terasology.manualLabor.ui.OverlapLayout;
 import org.terasology.registry.CoreRegistry;
+import org.terasology.rendering.nui.widgets.UIImage;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
@@ -71,7 +74,14 @@ public class HeatInputComponent implements Component, ProcessPart, DescribeProce
 
     @Override
     public ProcessPartDescription getInputDescription() {
-        return new ProcessPartDescription("Heat");
+        String description = "Heat";
+        UIImage image = new UIImage(Assets.getTextureRegion("ManualLabor:Manuallabor#Heat").get());
+        OverlapLayout layout = new OverlapLayout();
+        layout.addWidget(image);
+        layout.setTooltip(description);
+        layout.setTooltipDelay(0);
+
+        return new ProcessPartDescription(description, layout);
     }
 
     @Override

@@ -15,9 +15,12 @@
  */
 package org.terasology.manualLabor.processParts;
 
+import org.terasology.asset.Assets;
 import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.manualLabor.components.HeatedComponent;
+import org.terasology.manualLabor.ui.OverlapLayout;
+import org.terasology.rendering.nui.widgets.UIImage;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
@@ -51,7 +54,14 @@ public class HeatOutputComponent implements Component, ProcessPart, DescribeProc
 
     @Override
     public ProcessPartDescription getOutputDescription() {
-        return new ProcessPartDescription((burnTime / 1000) + " seconds of heat");
+        String description = "Heat";
+        UIImage image = new UIImage(Assets.getTextureRegion("ManualLabor:Manuallabor#Heat").get());
+        OverlapLayout layout = new OverlapLayout();
+        layout.addWidget(image);
+        layout.setTooltip(description);
+        layout.setTooltipDelay(0);
+
+        return new ProcessPartDescription(description, layout);
     }
 
     @Override

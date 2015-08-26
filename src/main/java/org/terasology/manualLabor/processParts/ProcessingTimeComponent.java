@@ -15,9 +15,12 @@
  */
 package org.terasology.manualLabor.processParts;
 
+import org.terasology.asset.Assets;
 import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.manualLabor.events.ModifyProcessingTimeEvent;
+import org.terasology.manualLabor.ui.OverlapLayout;
+import org.terasology.rendering.nui.widgets.UIImage;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
@@ -56,7 +59,14 @@ public class ProcessingTimeComponent implements Component, ProcessPart, Describe
 
     @Override
     public ProcessPartDescription getInputDescription() {
-        return new ProcessPartDescription((duration / 1000) + " sec");
+        String time = String.valueOf(duration / 1000);
+        UIImage image = new UIImage(Assets.getTextureRegion("ManualLabor:Manuallabor#Time").get());
+        OverlapLayout layout = new OverlapLayout();
+        layout.addWidget(image);
+        layout.setTooltip(time + " sec");
+        layout.setTooltipDelay(0);
+
+        return new ProcessPartDescription(time + " sec", layout);
     }
 
     @Override
