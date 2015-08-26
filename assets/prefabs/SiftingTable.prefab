@@ -11,12 +11,9 @@
   "MachineDefinition": {
     "inputSlots": 1,
     "outputSlots": 2,
+    "fluidInputVolumes": [4000],
     "actionTitle": "Sift",
     "inputWidgets": ["Machines:InputFluidsWidget"]
-  },
-  "FluidInventory": {
-    "fluidSlots": [0],
-    "maximumVolumes": [4000]
   },
   "EntityNetwork": {},
   "FluidTransportBlockNetwork": {

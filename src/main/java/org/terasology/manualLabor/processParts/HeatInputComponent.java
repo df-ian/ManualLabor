@@ -36,12 +36,13 @@ public class HeatInputComponent implements Component, ProcessPart, DescribeProce
         // loop through all nodes this workstation is part of
         for (NetworkNode workstationNode : entityNetworkManager.getNodesForEntity(workstation)) {
             if (workstationNode.getNetworkId().equals(HeatBlockNetworkComponent.NETWORK_ID)) {
-                Network network = entityNetworkManager.getNetwork(workstationNode);
-                // loop through each of the nodes on this network to see how many are heat sources
-                for (NetworkNode siblingNode : entityNetworkManager.getNetworkNodes(network)) {
-                    EntityRef siblingEntity = entityNetworkManager.getEntityForNode(siblingNode);
-                    if (siblingEntity.hasComponent(HeatedComponent.class)) {
-                        heatSources++;
+                for (Network network : entityNetworkManager.getNetworks(workstationNode)) {
+                    // loop through each of the nodes on this network to see how many are heat sources
+                    for (NetworkNode siblingNode : entityNetworkManager.getNetworkNodes(network)) {
+                        EntityRef siblingEntity = entityNetworkManager.getEntityForNode(siblingNode);
+                        if (siblingEntity.hasComponent(HeatedComponent.class)) {
+                            heatSources++;
+                        }
                     }
                 }
             }
