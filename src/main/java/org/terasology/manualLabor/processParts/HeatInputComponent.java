@@ -15,6 +15,7 @@
  */
 package org.terasology.manualLabor.processParts;
 
+import com.google.common.collect.Lists;
 import org.terasology.asset.Assets;
 import org.terasology.entityNetwork.Network;
 import org.terasology.entityNetwork.NetworkNode;
@@ -29,6 +30,10 @@ import org.terasology.rendering.nui.widgets.UIImage;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class HeatInputComponent implements Component, ProcessPart, DescribeProcess {
 
@@ -68,24 +73,20 @@ public class HeatInputComponent implements Component, ProcessPart, DescribeProce
     }
 
     @Override
-    public ProcessPartDescription getOutputDescription() {
-        return null;
+    public Collection<ProcessPartDescription> getOutputDescriptions() {
+        return Collections.emptyList();
     }
 
     @Override
-    public ProcessPartDescription getInputDescription() {
+    public Collection<ProcessPartDescription> getInputDescriptions() {
+        List<ProcessPartDescription> descriptions = Lists.newLinkedList();
         String description = "Heat";
         UIImage image = new UIImage(Assets.getTextureRegion("ManualLabor:Manuallabor#Heat").get());
         OverlapLayout layout = new OverlapLayout();
         layout.addWidget(image);
         layout.setTooltip(description);
         layout.setTooltipDelay(0);
-
-        return new ProcessPartDescription(description, layout);
-    }
-
-    @Override
-    public int getComplexity() {
-        return 0;
+        descriptions.add(new ProcessPartDescription(null, description, layout));
+        return descriptions;
     }
 }

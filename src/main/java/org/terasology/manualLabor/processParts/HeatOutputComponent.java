@@ -15,6 +15,7 @@
  */
 package org.terasology.manualLabor.processParts;
 
+import com.google.common.collect.Lists;
 import org.terasology.asset.Assets;
 import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
@@ -24,6 +25,10 @@ import org.terasology.rendering.nui.widgets.UIImage;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class HeatOutputComponent implements Component, ProcessPart, DescribeProcess {
     public long burnTime;
@@ -53,24 +58,20 @@ public class HeatOutputComponent implements Component, ProcessPart, DescribeProc
     }
 
     @Override
-    public ProcessPartDescription getOutputDescription() {
+    public Collection<ProcessPartDescription> getInputDescriptions() {
+        return Collections.emptyList();
+    }
+
+    @Override
+    public Collection<ProcessPartDescription> getOutputDescriptions() {
+        List<ProcessPartDescription> descriptions = Lists.newLinkedList();
         String description = "Heat";
         UIImage image = new UIImage(Assets.getTextureRegion("ManualLabor:Manuallabor#Heat").get());
         OverlapLayout layout = new OverlapLayout();
         layout.addWidget(image);
         layout.setTooltip(description);
         layout.setTooltipDelay(0);
-
-        return new ProcessPartDescription(description, layout);
-    }
-
-    @Override
-    public ProcessPartDescription getInputDescription() {
-        return null;
-    }
-
-    @Override
-    public int getComplexity() {
-        return 0;
+        descriptions.add(new ProcessPartDescription(null, description, layout));
+        return descriptions;
     }
 }

@@ -15,6 +15,7 @@
  */
 package org.terasology.manualLabor.processParts;
 
+import com.google.common.collect.Lists;
 import org.terasology.asset.Assets;
 import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
@@ -24,6 +25,10 @@ import org.terasology.rendering.nui.widgets.UIImage;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class ProcessingTimeComponent implements Component, ProcessPart, DescribeProcess {
     public long duration;
@@ -53,24 +58,20 @@ public class ProcessingTimeComponent implements Component, ProcessPart, Describe
     }
 
     @Override
-    public ProcessPartDescription getOutputDescription() {
-        return null;
+    public Collection<ProcessPartDescription> getOutputDescriptions() {
+        return Collections.emptyList();
     }
 
     @Override
-    public ProcessPartDescription getInputDescription() {
+    public Collection<ProcessPartDescription> getInputDescriptions() {
+        List<ProcessPartDescription> descriptions = Lists.newLinkedList();
         String time = String.valueOf(duration / 1000);
         UIImage image = new UIImage(Assets.getTextureRegion("ManualLabor:Manuallabor#Time").get());
         OverlapLayout layout = new OverlapLayout();
         layout.addWidget(image);
         layout.setTooltip(time + " sec");
         layout.setTooltipDelay(0);
-
-        return new ProcessPartDescription(time + " sec", layout);
-    }
-
-    @Override
-    public int getComplexity() {
-        return 0;
+        descriptions.add(new ProcessPartDescription(null, time + " sec", layout));
+        return descriptions;
     }
 }
