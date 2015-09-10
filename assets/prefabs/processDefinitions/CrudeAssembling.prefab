@@ -1,4 +1,7 @@
 {
+  "ProcessTypeDescription": {
+    "name": "Crude Assembling"
+  },
   "ProcessingTime": {
     "duration": 1000
   }

@@ -1,4 +1,7 @@
 {
+  "ProcessTypeDescription": {
+    "name": "Sawing"
+  },
   "ProcessingTime": {
     "duration": 1000
   }

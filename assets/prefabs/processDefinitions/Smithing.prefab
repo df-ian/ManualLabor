@@ -1,4 +1,7 @@
 {
+  "ProcessTypeDescription": {
+    "name": "Smithing"
+  },
   "ProcessingTime": {
     "duration": 1000
   }

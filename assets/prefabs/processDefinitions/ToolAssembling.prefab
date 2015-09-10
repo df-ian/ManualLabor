@@ -1,4 +1,7 @@
 {
+  "ProcessTypeDescription": {
+    "name": "Tool Assembling"
+  },
   "ProcessingTime": {
     "duration": 1000
   }

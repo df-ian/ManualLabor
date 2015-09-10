@@ -1,4 +1,7 @@
 {
+  "ProcessTypeDescription": {
+    "name": "Sifting"
+  },
   "ProcessingTime": {
     "duration": 1000
   }
