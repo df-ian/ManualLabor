@@ -11,7 +11,7 @@
   "MachineDefinition": {
     "inputSlots": 1,
     "outputSlots": 2,
-    "fluidInputVolumes": [4000],
+    "fluidInputSlotVolumes": [4000],
     "actionTitle": "Sift",
     "inputWidgets": ["Machines:InputFluidsWidget"]
   },
