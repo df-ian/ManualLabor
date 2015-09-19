@@ -1,0 +1,15 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:CrudeAssembling"
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "Core:BirchTrunk": 1
+    }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "ManualLabor:AssemblyTable": 1
+    }
+  }
+}
