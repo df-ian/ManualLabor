@@ -6,7 +6,7 @@
   "Item": {
     "renderWithIcon": true
   },
-  "ProcessRequirementsProvider": {
+  "ProcessRequirementsProviderFromWorkstation": {
     "requirements": [
       "MaterialAnalysis"
     ]
