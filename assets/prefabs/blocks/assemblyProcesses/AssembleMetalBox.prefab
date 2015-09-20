@@ -7,13 +7,15 @@
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "SubstanceMatters:MaterialItem#ManualLabor:Plate|Iron": 6,
+      "ManualLabor:Plate": 6,
       "ManualLabor:Screw": 12
     }
   },
+  "MetalSubstanceRequirement": {
+  },
   "BlockFamilyOutput": {
     "blockCounts": {
-      "ManualLabor:IronBox": 1
+      "ManualLabor:MetalBox": 1
     }
   }
 }

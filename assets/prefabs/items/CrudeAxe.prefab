@@ -10,7 +10,7 @@
   },
   "ProcessRequirementsProvider": {
     "requirements": [
-      "Saw"
+      "CrudeSaw"
     ]
   },
   "Durability": {

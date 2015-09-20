@@ -7,7 +7,7 @@
   },
   "BlockFamilyInput": {
     "blockCounts": {
-      "ManualLabor:IronBox": 1
+      "ManualLabor:MetalBox": 1
     }
   },
   "ItemPrefabInput": {
@@ -17,7 +17,7 @@
   },
   "BlockFamilyOutput": {
     "blockCounts": {
-      "ManualLabor:IronChest": 1
+      "ManualLabor:MetalChest": 1
     }
   }
 }

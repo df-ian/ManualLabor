@@ -1,0 +1,6 @@
+{
+  "displayName": "Metal Box",
+  "entity": {
+    "prefab": "MetalBox"
+  }
+}

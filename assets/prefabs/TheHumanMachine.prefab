@@ -5,12 +5,11 @@
   },
   "Workstation": {
     "supportedProcessTypes": {
-      "ManualLabor:CrudeAssembling": false,
-      "ManualLabor:Assembling": false
+      "ManualLabor:CrudeAssembling": false
     }
   },
   "MachineDefinition": {
-    "inputSlots": 1,
+    "inputSlots": 2,
     "requirementSlots": 1,
     "outputSlots": 1,
     "actionTitle": "Assemble",

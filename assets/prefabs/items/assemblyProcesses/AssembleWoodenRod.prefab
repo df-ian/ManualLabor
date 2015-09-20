@@ -3,7 +3,7 @@
     "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
-    "requirements": ["Saw"]
+    "requirements": ["CrudeSaw"]
   },
   "ItemPrefabInput": {
     "itemCounts": {
