@@ -3,7 +3,7 @@
     "processType": "ManualLabor:Sawing"
   },
   "RequirementInput": {
-    "requirements": ["Saw"]
+    "requirements": ["CrudeSaw"]
   },
   "BlockFamilyInput": {
     "blockCounts": {
