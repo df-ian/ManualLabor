@@ -4,8 +4,7 @@
   },
   "RequirementInput": {
     "requirements": [
-      "Pliers",
-      "MetalFile"
+      "Pliers"
     ]
   },
   "MaterialItemInput": {
