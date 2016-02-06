@@ -4,7 +4,6 @@
     "name": "Sledge Hammer"
   },
   "Item": {
-    "renderWithIcon": true,
     "damageType": "hammerDamage"
   },
   "ProcessRequirementsProvider": {

@@ -2,8 +2,7 @@
   "parent": "engine:iconItem",
   "Item": {
     "icon": "ManualLabor:ManualLabor#Bolt",
-    "stackId": "ManualLabor:Bolt",
-    "renderWithIcon": true
+    "stackId": "ManualLabor:Bolt"
   },
   "DisplayName": {
     "name": "Bolt"

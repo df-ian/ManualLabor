@@ -3,9 +3,7 @@
   "DisplayName": {
     "name": "Magifying Glass"
   },
-  "Item": {
-    "renderWithIcon": true
-  },
+  "Item": {},
   "ProcessRequirementsProviderFromWorkstation": {
     "requirements": [
       "MaterialAnalysis"

@@ -2,8 +2,7 @@
   "parent": "engine:iconItem",
   "Item": {
     "icon": "ManualLabor:ManualLabor#Plate",
-    "stackId": "ManualLabor:Plate",
-    "renderWithIcon": true
+    "stackId": "ManualLabor:Plate"
   },
   "DisplayName": {
     "name": "Plate"

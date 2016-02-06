@@ -2,8 +2,7 @@
   "parent": "engine:iconItem",
   "Item": {
     "icon": "ManualLabor:ManualLabor#PlantMatter",
-    "stackId": "ManualLabor:PlantMatter",
-    "renderWithIcon": true
+    "stackId": "ManualLabor:PlantMatter"
   },
   "DisplayName": {
     "name": "Plant Matter"

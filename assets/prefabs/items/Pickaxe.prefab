@@ -4,7 +4,6 @@
     "name": "Pick Axe"
   },
   "Item": {
-    "renderWithIcon": true,
     "damageType": "pickaxeDamage"
   },
   "Durability": {

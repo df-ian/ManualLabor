@@ -1,7 +1,6 @@
 {
   "parent": "engine:iconItem",
   "Item": {
-    "renderWithIcon": true,
     "damageType": "wrenchDamage"
   },
   "DisplayName": {

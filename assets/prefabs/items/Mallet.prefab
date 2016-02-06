@@ -3,9 +3,7 @@
   "DisplayName": {
     "name": "Mallet"
   },
-  "Item": {
-    "renderWithIcon": true
-  },
+  "Item": {},
   "ProcessRequirementsProvider": {
     "requirements": [
       "Mallet",

@@ -1,8 +1,7 @@
 {
   "parent": "engine:iconItem",
   "Item": {
-    "stackId": "ManualLabor:ManualLabor#WoodenBucket",
-    "renderWithIcon": true
+    "stackId": "ManualLabor:ManualLabor#WoodenBucket"
   },
   "DisplayName": {
     "name": "Wooden Bucket"

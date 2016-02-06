@@ -4,8 +4,7 @@
     "name": "Shovel Head"
   },
   "Item": {
-    "icon": "ManualLabor:ManualLabor#ShovelHead",
-    "renderWithIcon": true
+    "icon": "ManualLabor:ManualLabor#ShovelHead"
   },
   "MaterialItem": {
     "icon": "ManualLabor:ManualLabor#ShovelHead"

@@ -3,9 +3,7 @@
   "DisplayName": {
     "name": "Pliers"
   },
-  "Item": {
-    "renderWithIcon": true
-  },
+  "Item": {},
   "ProcessRequirementsProvider": {
     "requirements": [
       "Pliers"

@@ -2,8 +2,7 @@
   "parent": "engine:iconItem",
   "Item": {
     "icon": "ManualLabor:ManualLabor#Cloth",
-    "stackId": "ManualLabor:Cloth",
-    "renderWithIcon": true
+    "stackId": "ManualLabor:Cloth"
   },
   "DisplayName": {
     "name": "Cloth"

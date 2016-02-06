@@ -4,7 +4,6 @@
     "name": "Axe"
   },
   "Item": {
-    "renderWithIcon": true,
     "damageType": "axeDamage"
   },
   "ProcessRequirementsProvider": {

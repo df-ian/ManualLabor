@@ -3,9 +3,7 @@
   "DisplayName": {
     "name": "Screwdriver"
   },
-  "Item": {
-    "renderWithIcon": true
-  },
+  "Item": {},
   "ProcessRequirementsProvider": {
     "requirements": [
       "Screwdriver"

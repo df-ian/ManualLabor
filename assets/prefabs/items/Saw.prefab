@@ -3,9 +3,7 @@
   "DisplayName": {
     "name": "Saw"
   },
-  "Item": {
-    "renderWithIcon": true
-  },
+  "Item": {},
   "ProcessRequirementsProvider": {
     "requirements": [
       "Saw",

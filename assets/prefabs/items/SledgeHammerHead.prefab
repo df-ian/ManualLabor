@@ -4,8 +4,7 @@
     "name": "Sledge Hammer Head"
   },
   "Item": {
-    "icon": "ManualLabor:ManualLabor#SledgeHammerHead",
-    "renderWithIcon": true
+    "icon": "ManualLabor:ManualLabor#SledgeHammerHead"
   },
   "MaterialItem": {
     "icon": "ManualLabor:ManualLabor#SledgeHammerHead"
