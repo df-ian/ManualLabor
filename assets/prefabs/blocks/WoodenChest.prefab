@@ -15,7 +15,7 @@
   "DropBlockInventory": {},
   "InteractionTarget": {},
   "InteractionScreen": {
-    "screen": "engine:containerScreen"
+    "screen": "core:containerScreen"
   },
   "Network": {
   },
