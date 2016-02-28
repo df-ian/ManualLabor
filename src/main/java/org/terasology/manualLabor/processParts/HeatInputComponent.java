@@ -16,7 +16,7 @@
 package org.terasology.manualLabor.processParts;
 
 import com.google.common.collect.Lists;
-import org.terasology.asset.Assets;
+import org.terasology.utilities.Assets;
 import org.terasology.entityNetwork.Network;
 import org.terasology.entityNetwork.NetworkNode;
 import org.terasology.entityNetwork.systems.EntityNetworkManager;

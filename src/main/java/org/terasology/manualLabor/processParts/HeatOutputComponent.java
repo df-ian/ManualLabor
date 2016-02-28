@@ -16,7 +16,7 @@
 package org.terasology.manualLabor.processParts;
 
 import com.google.common.collect.Lists;
-import org.terasology.asset.Assets;
+import org.terasology.utilities.Assets;
 import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.machines.ui.OverlapLayout;

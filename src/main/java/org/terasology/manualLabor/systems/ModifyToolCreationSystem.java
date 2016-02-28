@@ -15,7 +15,7 @@
  */
 package org.terasology.manualLabor.systems;
 
-import org.terasology.asset.Assets;
+import org.terasology.utilities.Assets;
 import org.terasology.durability.components.DurabilityComponent;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
