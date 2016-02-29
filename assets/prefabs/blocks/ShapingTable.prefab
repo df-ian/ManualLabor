@@ -1,0 +1,36 @@
+{
+  "InteractionTarget": {},
+  "InteractionScreen": {
+    "screen": "Machines:DefaultMachine"
+  },
+  "Workstation": {
+    "supportedProcessTypes": {
+      "IRLCorp:Shaping": false
+    }
+  },
+  "MachineDefinition": {
+    "inputSlots": 1,
+    "requirementSlots": 1,
+    "outputSlots": 1,
+    "actionTitle": "Shape",
+    "requirementSlotsTitle": "Tool"
+  },
+  "RenderInventoryInCategory": {
+    "category": "REQUIREMENTS",
+    "translate": [
+      0,
+      0.5,
+      0
+    ],
+    "itemsAreFlat": true,
+    "verticalAlignmentBottom": true
+  },
+  "DropBlockInventory": {},
+  "Network": {
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The shaping table reforms basic blocks into different shapes."
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 {
     "displayName": "Wooden Box",
+    "rotation": "horizontal",
     "entity": {
         "prefab": "WoodenBox"
     },

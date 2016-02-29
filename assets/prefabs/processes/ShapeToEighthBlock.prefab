@@ -1,0 +1,18 @@
+{
+  "ProcessDefinition": {
+    "processType": "IRLCorp:Shaping"
+  },
+  "RequirementInput": {
+    "requirements": [
+      "CrudeSaw"
+    ]
+  },
+  "ShapedBlockInput": {
+    "Shape": "engine:HalfBlock",
+    "amount": 1
+  },
+  "SymmetricBlockOutput": {
+    "Shape": "engine:EighthBlock",
+    "amount": 4
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "displayName": "Shaping Table",
+    "rotation": "horizontal",
+    "tiles" : {
+        "all" : "ShapingTable",
+        "topBottom" : "ShapingTable_Top"
+    },
+    "entity": {
+        "prefab": "ShapingTable"
+    }
+}

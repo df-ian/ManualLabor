@@ -1,5 +1,6 @@
 {
     "displayName": "Assembly Table",
+    "rotation": "horizontal",
     "tiles" : {
         "all" : "AssemblyTable",
         "topBottom" : "AssemblyTable_Top"

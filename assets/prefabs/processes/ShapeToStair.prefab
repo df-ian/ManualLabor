@@ -1,0 +1,18 @@
+{
+  "ProcessDefinition": {
+    "processType": "IRLCorp:Shaping"
+  },
+  "RequirementInput": {
+    "requirements": [
+      "CrudeMallet"
+    ]
+  },
+  "ShapedBlockInput": {
+    "Shape": "engine:HalfBlock",
+    "amount": 2
+  },
+  "SymmetricBlockOutput": {
+    "Shape": "engine:Stair",
+    "amount": 2
+  }
+}

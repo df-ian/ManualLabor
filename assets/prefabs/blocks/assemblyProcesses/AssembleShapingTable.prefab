@@ -1,0 +1,15 @@
+{
+  "ProcessDefinition": {
+    "processType": "ManualLabor:CrudeAssembling"
+  },
+  "BlockFamilyInput": {
+    "blockCounts": {
+      "ManualLabor:ToolAssemblyTable": 1
+    }
+  },
+  "BlockFamilyOutput": {
+    "blockCounts": {
+      "ManualLabor:ShapingTable": 1
+    }
+  }
+}
