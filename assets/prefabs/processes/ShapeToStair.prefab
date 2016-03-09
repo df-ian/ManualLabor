@@ -1,6 +1,6 @@
 {
   "ProcessDefinition": {
-    "processType": "IRLCorp:Shaping"
+    "processType": "ManualLabor:Shaping"
   },
   "RequirementInput": {
     "requirements": [

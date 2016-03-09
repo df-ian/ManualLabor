@@ -5,7 +5,7 @@
   },
   "Workstation": {
     "supportedProcessTypes": {
-      "IRLCorp:Shaping": false
+      "ManualLabor:Shaping": false
     }
   },
   "MachineDefinition": {
