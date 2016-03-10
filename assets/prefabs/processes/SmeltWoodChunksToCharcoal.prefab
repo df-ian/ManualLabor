@@ -4,7 +4,7 @@
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "SubstanceMatters:MaterialItem#ManualLabor:Chunks|SubstanceMatters:Wood": 1
+      "ManualLabor:Chunks": 1
     }
   },
   "InjectSubstance": {

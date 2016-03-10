@@ -13,14 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.irlCorp.processParts;
+package org.terasology.manualLabor.components;
 
 import org.terasology.entitySystem.Component;
-import org.terasology.world.block.family.BlockFamily;
 
-public class SymmetricBlockTransformationComponent implements Component {
-    public BlockFamily blockFamily;
-
-    public SymmetricBlockTransformationComponent() {
-    }
+public class BurnableSubstanceComponent implements Component {
+    public int burnTimePerSubstanceAmount;
 }

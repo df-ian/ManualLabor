@@ -4,10 +4,12 @@
   },
   "MaterialItemInput": {
     "itemCounts": {
-      "SubstanceMatters:MaterialItem#ManualLabor:Chunks|SubstanceMatters:Coal": 1
+      "ManualLabor:Chunks": 1
     }
   },
+  "BurnableSubstanceRequirement": {
+    // this adds the burn time
+  },
   "HeatOutput": {
-    "burnTime": 120000
   }
 }

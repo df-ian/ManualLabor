@@ -1,11 +1,8 @@
 {
-  "MultiplyToolDurability": {
-    "multiplyPerSubstanceAmount": 0.97
-  },
   "ManualLaborSubstanceDescription": {
     "defaultItemTexture": "ManualLabor:Chunks"
   },
   "BurnableSubstance": {
-    "burnTimePerSubstanceAmount": 3000
+    "burnTimePerSubstanceAmount": 6000
   }
 }

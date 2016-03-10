@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.irlCorp.processParts;
+package org.terasology.manualLabor.processParts;
 
 import com.google.common.collect.Sets;
 import org.terasology.assets.ResourceUrn;

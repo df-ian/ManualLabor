@@ -13,28 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.irlCorp.processParts;
+package org.terasology.manualLabor.processParts;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.terasology.assets.ResourceUrn;
 import org.terasology.entitySystem.entity.EntityManager;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.registry.CoreRegistry;
 import org.terasology.workstation.process.inventory.InventoryInputComponent;
 import org.terasology.world.block.BlockManager;
-import org.terasology.world.block.family.SymmetricFamily;
+import org.terasology.world.block.BlockUri;
 import org.terasology.world.block.items.BlockItemComponent;
 import org.terasology.world.block.items.BlockItemFactory;
 
 import javax.annotation.Nullable;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
-public class SymmetricBlockInputComponent extends InventoryInputComponent {
-    private static final Logger logger = LoggerFactory.getLogger(SymmetricBlockInputComponent.class);
+public class ShapedBlockInputComponent extends InventoryInputComponent {
+    private static final Logger logger = LoggerFactory.getLogger(ShapedBlockInputComponent.class);
+
+    public String shape;
+    public int amount = 1;
 
     @Override
     protected Map<Predicate<EntityRef>, Integer> getInputItems() {
@@ -45,11 +50,14 @@ public class SymmetricBlockInputComponent extends InventoryInputComponent {
                 public boolean apply(@Nullable EntityRef input) {
                     BlockItemComponent blockItemComponent = input.getComponent(BlockItemComponent.class);
                     if (blockItemComponent != null) {
-                        return blockItemComponent.blockFamily instanceof SymmetricFamily && !blockItemComponent.blockFamily.getURI().getShapeUrn().isPresent();
+                        Optional<ResourceUrn> shapeUrn = blockItemComponent.blockFamily.getURI().getShapeUrn();
+                        if (shapeUrn.isPresent() && shapeUrn.get().equals(new ResourceUrn(shape))) {
+                            return true;
+                        }
                     }
                     return false;
                 }
-            }, 1);
+            }, amount);
         }
         return output;
     }
@@ -58,7 +66,7 @@ public class SymmetricBlockInputComponent extends InventoryInputComponent {
     protected Set<EntityRef> createItems() {
         Set<EntityRef> output = Sets.newHashSet();
         BlockItemFactory blockFactory = new BlockItemFactory(CoreRegistry.get(EntityManager.class));
-        output.add(blockFactory.newInstance(CoreRegistry.get(BlockManager.class).getBlockFamily("ManualLabor:TempBlock"), 1));
+        output.add(blockFactory.newInstance(CoreRegistry.get(BlockManager.class).getBlockFamily(new BlockUri(new ResourceUrn("ManualLabor:TempBlock"), new ResourceUrn(shape))), amount));
         return output;
     }
 }
