@@ -1,17 +1,20 @@
 {
+  "Parent": "GrindingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Grinding"
   },
   "RequirementInput": {
     "requirements": ["FineHammer"]
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Chunks": 1
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:Dust",
-    "amount": 1
+  "TransferSubstances": {},
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:Dust": 1
+    }
   }
 }

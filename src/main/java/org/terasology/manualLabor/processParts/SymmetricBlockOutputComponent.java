@@ -15,58 +15,9 @@
  */
 package org.terasology.manualLabor.processParts;
 
-import com.google.common.collect.Sets;
-import org.terasology.assets.ResourceUrn;
-import org.terasology.entitySystem.entity.EntityManager;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.logic.inventory.InventoryUtils;
-import org.terasology.registry.CoreRegistry;
-import org.terasology.workstation.process.inventory.InventoryInputProcessPartSlotAmountsComponent;
-import org.terasology.workstation.process.inventory.InventoryOutputComponent;
-import org.terasology.world.block.BlockManager;
-import org.terasology.world.block.BlockUri;
-import org.terasology.world.block.items.BlockItemComponent;
-import org.terasology.world.block.items.BlockItemFactory;
+import org.terasology.entitySystem.Component;
 
-import java.util.Map;
-import java.util.Set;
-
-public class SymmetricBlockOutputComponent extends InventoryOutputComponent {
+public class SymmetricBlockOutputComponent implements Component {
     public String shape;
     public int amount;
-
-    @Override
-    public boolean validateBeforeStart(EntityRef instigator, EntityRef workstation, EntityRef processEntity) {
-        boolean isValid = false;
-        InventoryInputProcessPartSlotAmountsComponent slotAmountsComponent = processEntity.getComponent(InventoryInputProcessPartSlotAmountsComponent.class);
-        for (Map.Entry<Integer, Integer> slotAmount : slotAmountsComponent.slotAmounts.entrySet()) {
-            EntityRef itemInSlot = InventoryUtils.getItemAt(workstation, slotAmount.getKey());
-            BlockItemComponent blockItemComponent = itemInSlot.getComponent(BlockItemComponent.class);
-            if (blockItemComponent != null) {
-                BlockUri sourceBlockUri = blockItemComponent.blockFamily.getURI();
-                BlockUri newBlockUri = new BlockUri(new ResourceUrn(sourceBlockUri.getShapelessUri().toString()), new ResourceUrn(shape));
-                SymmetricBlockTransformationComponent symmetricBlockTransformationComponent = new SymmetricBlockTransformationComponent();
-                symmetricBlockTransformationComponent.blockFamily = CoreRegistry.get(BlockManager.class).getBlockFamily(newBlockUri);
-                processEntity.addComponent(symmetricBlockTransformationComponent);
-                isValid = true;
-                break;
-            }
-        }
-        return isValid && super.validateBeforeStart(instigator, workstation, processEntity);
-    }
-
-    @Override
-    protected Set<EntityRef> createOutputItems(EntityRef processEntity) {
-        Set<EntityRef> output = Sets.newHashSet();
-        SymmetricBlockTransformationComponent symmetricBlockTransformationComponent = processEntity.getComponent(SymmetricBlockTransformationComponent.class);
-        if (symmetricBlockTransformationComponent != null) {
-            BlockItemFactory blockFactory = new BlockItemFactory(CoreRegistry.get(EntityManager.class));
-            output.add(blockFactory.newInstance(symmetricBlockTransformationComponent.blockFamily, amount));
-        } else {
-            BlockUri newBlockUri = new BlockUri(new ResourceUrn("ManualLabor:TempBlock"), new ResourceUrn(shape));
-            BlockItemFactory blockFactory = new BlockItemFactory(CoreRegistry.get(EntityManager.class));
-            output.add(blockFactory.newInstance(CoreRegistry.get(BlockManager.class).getBlockFamily(newBlockUri), amount));
-        }
-        return output;
-    }
 }

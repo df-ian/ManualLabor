@@ -1,22 +1,24 @@
 {
+  "Parent": "CrushingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Crushing"
   },
   "RequirementInput": {
     "requirements": ["SledgeHammer"]
   },
-  "ItemPrefabInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Plank": 1
     }
   },
-  "InjectSubstance": {
+  "InjectSubstances": {
     "add": {
       "SubstanceMatters:Wood": 10
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:Chunks",
-    "amount": 1
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:Chunks": 1
+    }
   }
 }

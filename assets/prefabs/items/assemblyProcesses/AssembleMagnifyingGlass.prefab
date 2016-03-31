@@ -1,4 +1,5 @@
 {
+  "Parent": "ToolAssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:ToolAssembling"
   },
@@ -7,15 +8,16 @@
       "MetalFile"
     ]
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Rod": 1
-    }
-  },
-  "BlockFamilyInput": {
+    },
     "blockCounts": {
       "ManualLabor:DirtyGlass": 1
     }
+  },
+  "TransferSubstances": {
+    "inject": false
   },
   "ToolItemOutput": {
     "item": "ManualLabor:MagnifyingGlass"

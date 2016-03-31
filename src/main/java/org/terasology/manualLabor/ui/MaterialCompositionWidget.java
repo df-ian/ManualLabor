@@ -25,7 +25,7 @@ import org.terasology.rendering.nui.CoreWidget;
 import org.terasology.rendering.nui.LayoutConfig;
 import org.terasology.rendering.nui.widgets.UILabel;
 import org.terasology.substanceMatters.components.MaterialCompositionComponent;
-import org.terasology.workstation.process.inventory.InventoryOutputComponent;
+import org.terasology.workstation.process.inventory.InventoryOutputProcessPartCommonSystem;
 import org.terasology.workstation.ui.WorkstationUI;
 
 public class MaterialCompositionWidget extends CoreWidget implements WorkstationUI {
@@ -54,7 +54,7 @@ public class MaterialCompositionWidget extends CoreWidget implements Workstation
                     CoreRegistry.get(InventoryManager.class),
                     station,
                     true,
-                    InventoryOutputComponent.WORKSTATIONOUTPUTCATEGORY)) {
+                    InventoryOutputProcessPartCommonSystem.WORKSTATIONOUTPUTCATEGORY)) {
                 MaterialCompositionComponent component = entity.getComponent(MaterialCompositionComponent.class);
                 if (component != null) {
                     result += component.toDisplayString();

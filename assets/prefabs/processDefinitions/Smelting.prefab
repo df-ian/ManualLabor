@@ -1,8 +1,5 @@
 {
   "ProcessTypeDescription": {
     "name": "Smelting"
-  },
-  "ProcessingTime": {
-    "duration": 1000
   }
 }

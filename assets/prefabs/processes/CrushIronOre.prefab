@@ -1,23 +1,25 @@
 {
+  "Parent": "CrushingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Crushing"
   },
   "RequirementInput": {
     "requirements": ["SledgeHammer"]
   },
-  "BlockFamilyInput": {
+  "InventoryInput": {
     "blockCounts": {
       "Core:IronOre": 1
     }
   },
-  "InjectSubstance": {
+  "InjectSubstances": {
     "add": {
       "SubstanceMatters:Iron": 10,
       "SubstanceMatters:Stone": 1
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:Chunks",
-    "amount": 1
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:Chunks": 1
+    }
   }
 }

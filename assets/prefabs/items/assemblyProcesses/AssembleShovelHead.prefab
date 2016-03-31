@@ -1,18 +1,21 @@
 {
+  "Parent": "ToolAssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:ToolAssembling"
   },
   "RequirementInput": {
     "requirements": ["MetalFile"]
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Plate": 1,
       "ManualLabor:Nugget": 4
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:ShovelHead",
-    "amount": 1
+  "TransferSubstances": {},
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:ShovelHead": 1
+    }
   }
 }

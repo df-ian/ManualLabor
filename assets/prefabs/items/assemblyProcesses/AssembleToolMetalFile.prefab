@@ -1,14 +1,18 @@
 {
+  "Parent": "ToolAssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:ToolAssembling"
   },
   "RequirementInput": {
     "requirements": ["Mallet"]
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Plate": 1
     }
+  },
+  "TransferSubstances": {
+    "inject": false
   },
   "ToolItemOutput": {
     "item": "ManualLabor:MetalFile"

@@ -1,22 +1,24 @@
 {
+  "Parent": "AssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
     "requirements": ["CrudeSaw"]
   },
-  "ItemPrefabInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Plank": 1
     }
   },
-  "InjectSubstance": {
+  "InjectSubstances": {
     "add": {
       "SubstanceMatters:Wood": 10
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:Rod",
-    "amount": 1
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:Rod": 1
+    }
   }
 }

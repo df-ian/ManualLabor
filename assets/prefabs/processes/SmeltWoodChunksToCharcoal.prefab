@@ -1,20 +1,24 @@
 {
+  "Parent": "SmeltingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Smelting"
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Chunks": 1
     }
   },
-  "InjectSubstance": {
+  "TransferSubstances": {
+  },
+  "InjectSubstances": {
     "replace": {
       "SubstanceMatters:Wood": "ManualLabor:Charcoal"
     }
   },
   "HeatInput": {},
-  "MaterialItemOutput": {
-    "item": "ManualLabor:Chunks",
-    "amount": 1
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:Chunks": 1
+    }
   }
 }

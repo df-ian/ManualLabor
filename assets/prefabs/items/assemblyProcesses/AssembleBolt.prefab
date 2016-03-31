@@ -1,17 +1,20 @@
 {
+  "Parent": "AssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
     "requirements": ["Saw"]
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Rod": 1
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:Bolt",
-    "amount": 4
+  "TransferSubstances": {},
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:Bolt": 4
+    }
   }
 }

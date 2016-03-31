@@ -1,14 +1,15 @@
 {
+  "Parent": "SmeltingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Smelting"
   },
-  "BlockFamilyInput": {
+  "InventoryInput": {
     "blockCounts": {
       "Core:Sand": 1
     }
   },
   "HeatInput": {},
-  "BlockFamilyOutput": {
+  "InventoryOutput": {
     "blockCounts": {
       "ManualLabor:DirtyGlass": 1
     }

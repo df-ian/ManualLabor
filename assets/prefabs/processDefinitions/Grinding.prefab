@@ -1,8 +1,5 @@
 {
   "ProcessTypeDescription": {
     "name": "Grinding"
-  },
-  "ProcessingTime": {
-    "duration": 1000
   }
 }

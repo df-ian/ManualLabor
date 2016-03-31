@@ -1,21 +1,23 @@
 {
+  "Parent": "AssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Assembling"
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "SubstanceMatters:MaterialItem#ManualLabor:Dust|SubstanceMatters:Copper": 3,
       "SubstanceMatters:MaterialItem#ManualLabor:Dust|SubstanceMatters:Tin": 1
     }
   },
-  "InjectSubstance": {
+  "InjectSubstances": {
     "replace": {
       "SubstanceMatters:Copper": "ManualLabor:Bronze",
       "SubstanceMatters:Tin": "ManualLabor:Bronze"
     }
   },
-  "MaterialItemOutput": {
-    "item": "SubstanceMatters:MaterialItem#ManualLabor:Dust|ManualLabor:Bronze",
-    "amount": 4
+  "InventoryOutput": {
+    "itemCounts": {
+      "SubstanceMatters:MaterialItem#ManualLabor:Dust|ManualLabor:Bronze": 4
+    }
   }
 }

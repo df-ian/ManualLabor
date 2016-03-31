@@ -1,8 +1,9 @@
 {
+  "Parent": "SmeltingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Smelting"
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Chunks": 1
     }
@@ -10,8 +11,10 @@
   "MetalSubstanceRequirement": {
   },
   "HeatInput": {},
-  "MaterialItemOutput": {
-    "item": "ManualLabor:Nugget",
-    "amount": 1
+  "TransferSubstances": {},
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:Nugget": 1
+    }
   }
 }

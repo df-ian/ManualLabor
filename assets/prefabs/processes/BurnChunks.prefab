@@ -2,7 +2,7 @@
   "ProcessDefinition": {
     "processType": "ManualLabor:Burning"
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Chunks": 1
     }

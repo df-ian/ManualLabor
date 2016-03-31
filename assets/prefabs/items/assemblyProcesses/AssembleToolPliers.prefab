@@ -1,4 +1,5 @@
 {
+  "Parent": "ToolAssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:ToolAssembling"
   },
@@ -8,13 +9,16 @@
       "Screwdriver"
     ]
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Screw": 1,
       "ManualLabor:Rod": 2
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:Pliers"
+  "TransferSubstances": {},
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:Pliers": 1
+    }
   }
 }

@@ -1,17 +1,18 @@
 {
+  "Parent": "AssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Assembling"
   },
   "RequirementInput": {
     "requirements": ["CrudeMallet"]
   },
-  "BlockFamilyInput": {
+  "InventoryInput": {
     "blockCounts": {
       "Core:Stone": 1,
       "ManualLabor:Fireplace": 1
     }
   },
-  "BlockFamilyOutput": {
+  "InventoryOutput": {
     "blockCounts": {
       "ManualLabor:Hearth": 1
     }

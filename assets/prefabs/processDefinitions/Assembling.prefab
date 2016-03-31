@@ -1,8 +1,5 @@
 {
   "ProcessTypeDescription": {
     "name": "Assembling"
-  },
-  "ProcessingTime": {
-    "duration": 1000
   }
 }

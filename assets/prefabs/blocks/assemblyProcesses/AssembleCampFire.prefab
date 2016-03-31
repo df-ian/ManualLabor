@@ -1,18 +1,19 @@
 {
+  "Parent": "AssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Assembling"
   },
-  "ItemPrefabInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Plank": 2
     }
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "SubstanceMatters:MaterialItem#ManualLabor:Chunks|ManualLabor:Charcoal": 1
     }
   },
-  "BlockFamilyOutput": {
+  "InventoryOutput": {
     "blockCounts": {
       "ManualLabor:CampFire": 1
     }

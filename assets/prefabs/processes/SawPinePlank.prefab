@@ -1,16 +1,17 @@
 {
+  "Parent": "SawingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Sawing"
   },
   "RequirementInput": {
     "requirements": ["CrudeSaw"]
   },
-  "BlockFamilyInput": {
+  "InventoryInput": {
     "blockCounts": {
       "Core:PineTrunk": 1
     }
   },
-  "ItemPrefabOutput": {
+  "InventoryOutput": {
     "ItemCounts": {
       "ManualLabor:Plank": 2
     }

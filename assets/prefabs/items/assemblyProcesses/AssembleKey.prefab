@@ -1,4 +1,5 @@
 {
+  "Parent": "AssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Assembling"
   },
@@ -7,13 +8,15 @@
       "Pliers"
     ]
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Rod": 1
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:Key",
-    "amount": 1
+  "TransferSubstances": {},
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:Key": 1
+    }
   }
 }

@@ -1,15 +1,19 @@
 {
+  "Parent": "ToolAssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:ToolAssembling"
   },
   "RequirementInput": {
     "requirements": []
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:SledgeHammerHead": 1,
       "ManualLabor:Rod": 1
     }
+  },
+  "TransferSubstances": {
+    "inject": false
   },
   "ToolItemOutput": {
     "item": "ManualLabor:SledgeHammer"

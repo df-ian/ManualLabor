@@ -1,21 +1,21 @@
 {
     "id" : "ManualLabor",
-    "version" : "0.1.1-SNAPSHOT",
+    "version" : "1.0.0-SNAPSHOT",
     "author" : "Josharias",
     "displayName" : "ManualLabor",
     "description" : "",
     "dependencies" : [
         {
-            "id": "Workstation", "minVersion": "0.1.0"
+            "id": "Workstation", "minVersion": "1.0.0"
         },
         {
-            "id": "Machines", "minVersion": "0.1.0"
+            "id": "Machines", "minVersion": "1.0.0"
         },
         {
             "id": "Durability", "minVersion": "0.1.0"
         },
         {
-            "id": "SubstanceMatters", "minVersion": "0.1.0"
+            "id": "SubstanceMatters", "minVersion": "1.0.0"
         },
         {
             "id": "InGameHelp", "minVersion": "0.1.0"

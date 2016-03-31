@@ -1,13 +1,14 @@
 {
+  "Parent": "AssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Assembling"
   },
-  "ItemPrefabInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:String": 16
     }
   },
-  "ItemPrefabOutput": {
+  "InventoryOutput": {
     "itemCounts": {
       "ManualLabor:Cloth": 1
     }

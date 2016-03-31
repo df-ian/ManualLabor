@@ -1,12 +1,16 @@
 {
+  "Parent": "ToolAssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:ToolAssembling"
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:AxeHead": 1,
       "ManualLabor:Rod": 1
     }
+  },
+  "TransferSubstances": {
+    "inject": false
   },
   "ToolItemOutput": {
     "item": "ManualLabor:Axe"

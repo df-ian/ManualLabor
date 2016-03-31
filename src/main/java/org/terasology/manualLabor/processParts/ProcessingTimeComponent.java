@@ -15,63 +15,8 @@
  */
 package org.terasology.manualLabor.processParts;
 
-import com.google.common.collect.Lists;
-import org.terasology.utilities.Assets;
 import org.terasology.entitySystem.Component;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.machines.ui.OverlapLayout;
-import org.terasology.manualLabor.events.ModifyProcessingTimeEvent;
-import org.terasology.rendering.nui.widgets.UIImage;
-import org.terasology.workstation.process.DescribeProcess;
-import org.terasology.workstation.process.ProcessPart;
-import org.terasology.workstation.process.ProcessPartDescription;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-public class ProcessingTimeComponent implements Component, ProcessPart, DescribeProcess {
+public class ProcessingTimeComponent implements Component {
     public long duration;
-
-    @Override
-    public boolean validateBeforeStart(EntityRef instigator, EntityRef workstation, EntityRef processEntity) {
-        return true;
-    }
-
-    @Override
-    public long getDuration(EntityRef instigator, EntityRef workstation, EntityRef processEntity) {
-        ModifyProcessingTimeEvent processingTimeEvent = new ModifyProcessingTimeEvent(duration, instigator, workstation, processEntity);
-        instigator.send(processingTimeEvent);
-        workstation.send(processingTimeEvent);
-        processEntity.send(processingTimeEvent);
-        return ((Float) processingTimeEvent.getResultValue()).longValue();
-    }
-
-    @Override
-    public void executeStart(EntityRef instigator, EntityRef workstation, EntityRef processEntity) {
-
-    }
-
-    @Override
-    public void executeEnd(EntityRef instigator, EntityRef workstation, EntityRef processEntity) {
-
-    }
-
-    @Override
-    public Collection<ProcessPartDescription> getOutputDescriptions() {
-        return Collections.emptyList();
-    }
-
-    @Override
-    public Collection<ProcessPartDescription> getInputDescriptions() {
-        List<ProcessPartDescription> descriptions = Lists.newLinkedList();
-        String time = String.valueOf(duration / 1000);
-        UIImage image = new UIImage(Assets.getTextureRegion("ManualLabor:Manuallabor#Time").get());
-        OverlapLayout layout = new OverlapLayout();
-        layout.addWidget(image);
-        layout.setTooltip(time + " sec");
-        layout.setTooltipDelay(0);
-        descriptions.add(new ProcessPartDescription(null, time + " sec", layout));
-        return descriptions;
-    }
 }

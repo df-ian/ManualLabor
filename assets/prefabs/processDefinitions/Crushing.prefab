@@ -1,8 +1,5 @@
 {
   "ProcessTypeDescription": {
     "name": "Crushing"
-  },
-  "ProcessingTime": {
-    "duration": 1000
   }
 }

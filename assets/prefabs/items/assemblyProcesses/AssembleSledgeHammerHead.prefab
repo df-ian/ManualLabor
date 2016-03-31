@@ -1,17 +1,20 @@
 {
+  "Parent": "ToolAssemblingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:ToolAssembling"
   },
   "RequirementInput": {
     "requirements": ["Mallet"]
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Nugget": 8
     }
   },
-  "MaterialItemOutput": {
-    "item": "ManualLabor:SledgeHammerHead",
-    "amount": 1
+  "TransferSubstances": {},
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:SledgeHammerHead": 1
+    }
   }
 }

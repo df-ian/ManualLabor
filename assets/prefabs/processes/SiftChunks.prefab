@@ -1,4 +1,5 @@
 {
+  "Parent": "SiftingBaseProcessPart",
   "ProcessDefinition": {
     "processType": "ManualLabor:Sifting"
   },
@@ -7,10 +8,13 @@
       "fluid:water": 100
     }
   },
-  "MaterialItemInput": {
+  "InventoryInput": {
     "itemCounts": {
       "ManualLabor:Chunks": 1
     }
+  },
+  "TransferSubstances": {
+    "inject": false
   },
   "SiftedMaterialOutput": {
     "item": "ManualLabor:Chunks",
