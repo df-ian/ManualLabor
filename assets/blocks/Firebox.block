@@ -1,13 +1,13 @@
 {
-  "displayName": "Hearth",
+  "displayName": "Firebox",
   "rotation": "horizontal",
   "tiles": {
     "sides": "firebox_side",
-    "front": "hearth_front",
-    "top": "hearth_top",
+    "front": "firebox_front",
+    "top": "firebox_top",
     "bottom": "firebox_bottom"
   },
   "entity": {
-    "prefab": "ManualLabor:Hearth"
+    "prefab": "ManualLabor:Firebox"
   }
 }
