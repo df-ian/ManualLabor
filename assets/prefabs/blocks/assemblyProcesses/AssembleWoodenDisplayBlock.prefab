@@ -1,0 +1,21 @@
+{
+  "Parent": "AssemblingBaseProcessPart",
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "RequirementInput": {
+    "requirements": [
+      "CrudeMallet"
+    ]
+  },
+  "InventoryInput": {
+    "itemCounts": {
+      "ManualLabor:Plank": 2
+    }
+  },
+  "InventoryOutput": {
+    "blockCounts": {
+      "ManualLabor:WoodenDisplayBlock": 1
+    }
+  }
+}

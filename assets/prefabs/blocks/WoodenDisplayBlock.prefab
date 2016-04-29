@@ -1,0 +1,33 @@
+{
+  "Inventory": {
+    "privateToOwner": false,
+    "itemSlots": [
+      0
+    ]
+  },
+  "InteractionTarget": {},
+  "InteractionScreen": {
+    "screen": "core:containerScreen"
+  },
+  "RenderInventorySlots": {
+    "slots": [
+      0,
+      1
+    ],
+    "translate": [
+      0,
+      0,
+      0
+    ],
+    "blockSize": 1,
+    "rotateWithBlock": false,
+    "verticalAlignmentBottom": true
+  },
+  "DropBlockInventory": {},
+  "Network": {},
+  "ItemHelp": {
+    "paragraphText": [
+      "The wooden display block shows off the item in its inventory to the world."
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "displayName": "Wooden Display Block",
+    "entity": {
+        "prefab": "WoodenDisplayBlock"
+    },
+    "tile": "Core:Plank",
+    "shape": "engine:halfBlock"
+}
