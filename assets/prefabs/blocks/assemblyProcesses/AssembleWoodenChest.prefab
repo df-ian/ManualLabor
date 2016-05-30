@@ -9,9 +9,7 @@
   "InventoryInput": {
     "blockCounts": {
       "ManualLabor:WoodenBox": 1
-    }
-  },
-  "InventoryInput": {
+    },
     "itemCounts": {
       "ManualLabor:Key": 1
     }

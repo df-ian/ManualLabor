@@ -9,9 +9,7 @@
   "InventoryInput": {
     "blockCounts": {
       "ManualLabor:MetalBox": 1
-    }
-  },
-  "InventoryInput": {
+    },
     "itemCounts": {
       "ManualLabor:Key": 1
     }

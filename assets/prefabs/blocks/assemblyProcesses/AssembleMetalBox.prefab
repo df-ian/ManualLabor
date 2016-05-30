@@ -8,8 +8,8 @@
   },
   "InventoryInput": {
     "itemCounts": {
-      "ManualLabor:Plate": 6,
-      "ManualLabor:Screw": 12
+      "ManualLabor:Plate": 4,
+      "ManualLabor:Screw": 8
     }
   },
   "MetalSubstanceRequirement": {
