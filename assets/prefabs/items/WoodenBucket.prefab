@@ -7,7 +7,7 @@
     "name": "Wooden Bucket"
   },
   "FluidContainerItem": {
-    "volume": 1000
+    "maxVolume": 1000
   },
   "MaterialFluidItemContainer": {
     "fluidIcon": "ManualLabor:ManualLabor#WoodenBucketFluid"
