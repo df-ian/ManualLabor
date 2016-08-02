@@ -24,7 +24,7 @@
     "colorSource" : "foliage_lut",
     "debrisOnDestroy" : false,
     "waving" : true,
-    "categories" : ["plant"],
+    "categories" : ["wood", "leaf", "plant"],
     "entity": {
         "prefab": "ManualLabor:Leaf"
     }
