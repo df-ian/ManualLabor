@@ -4,10 +4,11 @@
     "stackId": "ManualLabor:ManualLabor#WoodenBucket"
   },
   "DisplayName": {
-    "name": "Wooden Bucket"
+    "name": "Wooden Bucket",
+    "cooldownTime": 500
   },
   "FluidContainerItem": {
-    "volume": 1000
+    "maxVolume": 1000
   },
   "MaterialFluidItemContainer": {
     "fluidIcon": "ManualLabor:ManualLabor#WoodenBucketFluid"

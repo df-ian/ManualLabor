@@ -1,0 +1,31 @@
+{
+  "parent": "engine:iconItem",
+  "Item": {
+    "stackId": "ManualLabor:ManualLabor#WoodenCup",
+    "cooldownTime": 500
+  },
+  "DisplayName": {
+    "name": "Wooden Cup"
+  },
+  "FluidContainerItem": {
+    "maxVolume": 300
+  },
+  "MaterialFluidItemContainer": {
+    "fluidIcon": "ManualLabor:ManualLabor#WoodenCupFluid"
+  },
+  "TintOverlayIcon": {
+    "texture": {
+      "ManualLabor:ManualLabor#WoodenCup": {
+      },
+      "ManualLabor:ManualLabor#WoodenCupFluid": {
+        "invisible": true
+      }
+    }
+  },
+  "ConsumableFluidContainerItem": {},
+  "ItemHelp": {
+    "paragraphText": [
+      "The wooden cup can hold 300 mL of liquid to quench anyone's thirst."
+    ]
+  }
+}

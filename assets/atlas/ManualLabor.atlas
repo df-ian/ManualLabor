@@ -10,7 +10,7 @@
             "MetalFileHead", "ScrewdriverHead", "Key", "SawHead", "PliersHead", "MalletHead", "", "",
             "CrudeHammer", "CrudeAxe", "Cloth", "String", "CrudeShovel", "MalletHandle", "", "",
             "Stick", "Plank", "Pegs", "", "", "", "", "",
-            "PlantMatter", "WoodenBucket", "WoodenBucketFluid", "", "", "", "", "",
+            "PlantMatter", "WoodenBucket", "WoodenBucketFluid", "WoodenCup", "WoodenCupFluid", "", "", "",
             "", "SmallChunks", "SmallDust", "", "", "", "", "",
             "Nugget", "Chunks", "Dust", "Sheet", "Plate", "Rod", "Bolt", "Screw"
         ]

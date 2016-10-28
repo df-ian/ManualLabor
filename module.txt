@@ -22,6 +22,9 @@
         },
         {
             "id": "Core", "minVersion": "1.0.0"
+        },
+        {
+            "id": "Hunger", "minVersion": "0.1.1"
         }
     ]
 }

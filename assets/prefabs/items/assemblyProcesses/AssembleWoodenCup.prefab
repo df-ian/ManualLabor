@@ -1,0 +1,20 @@
+{
+  "Parent": "AssemblingBaseProcessPart",
+  "ProcessDefinition": {
+    "processType": "ManualLabor:CrudeAssembling"
+  },
+  "RequirementInput": {
+    "requirements": ["CrudeSaw"]
+  },
+  "InventoryInput": {
+    "itemCounts": {
+      "ManualLabor:String": 3,
+      "ManualLabor:Stick": 3
+    }
+  },
+  "InventoryOutput": {
+    "itemCounts": {
+      "ManualLabor:WoodenCup": 1
+    }
+  }
+}
