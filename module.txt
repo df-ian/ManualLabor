@@ -1,6 +1,6 @@
 {
     "id" : "ManualLabor",
-    "version" : "1.0.1-SNAPSHOT",
+    "version" : "1.1.0-SNAPSHOT",
     "author" : "Josharias",
     "displayName" : "ManualLabor",
     "description" : "",
@@ -9,7 +9,7 @@
             "id": "Workstation", "minVersion": "1.0.0"
         },
         {
-            "id": "Machines", "minVersion": "1.0.0"
+            "id": "Machines", "minVersion": "1.1.1"
         },
         {
             "id": "Durability", "minVersion": "0.1.0"
@@ -24,7 +24,7 @@
             "id": "Core", "minVersion": "1.0.0"
         },
         {
-            "id": "Hunger", "minVersion": "0.1.1"
+            "id": "Hunger", "minVersion": "0.2.0"
         }
     ]
 }
