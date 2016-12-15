@@ -2,8 +2,8 @@
     "id" : "ManualLabor",
     "version" : "1.1.1-SNAPSHOT",
     "author" : "Josharias",
-    "displayName" : "ManualLabor",
-    "description" : "",
+    "displayName" : "Manual Labor",
+    "description" : "Adds tools to make manual tasks like digging and chopping easier.",
     "dependencies" : [
         {
             "id": "Workstation", "minVersion": "1.0.0"
