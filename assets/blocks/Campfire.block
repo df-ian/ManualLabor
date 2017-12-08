@@ -1,7 +1,7 @@
 {
   "basedOn": "core:wood",
   "displayName": "Campfire",
-  "rotation": "horizontal",
+  "family": "horizontal",
   "entity": {
     "prefab": "CampFire"
   },

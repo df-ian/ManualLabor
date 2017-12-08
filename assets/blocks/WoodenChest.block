@@ -1,7 +1,7 @@
 {
     "basedOn" : "core:wood",
     "displayName": "Wooden Chest",
-    "rotation" : "horizontal",
+    "family" : "horizontal",
     "tiles" : {
         "sides" : "Chest_Sides",
         "front" : "Chest_Front",

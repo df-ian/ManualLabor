@@ -1,6 +1,6 @@
 {
   "displayName": "Firebox",
-  "rotation": "horizontal",
+  "family": "horizontal",
   "tiles": {
     "sides": "firebox_side",
     "front": "firebox_front",

@@ -1,6 +1,6 @@
 {
     "displayName": "Tool Assembly Table",
-    "rotation": "horizontal",
+    "family": "horizontal",
     "tiles" : {
         "all" : "ToolAssemblyTable",
         "topBottom" : "ToolAssemblyTable_Top"

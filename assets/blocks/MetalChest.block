@@ -1,7 +1,7 @@
 {
   "basedOn": "SubstanceMatters:Metal",
   "displayName": "Metal Chest",
-  "rotation": "horizontal",
+  "family": "horizontal",
   "tiles": {
     "sides": "MetalChest_Sides",
     "front": "MetalChest_Front",
