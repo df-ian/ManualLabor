@@ -1,6 +1,6 @@
 {
   "displayName": "Sifting Table",
-  "rotation": "horizontal",
+  "family": "horizontal",
   "tiles": {
     "sides": "SiftingTable_side",
     "top": "SiftingTable_top",

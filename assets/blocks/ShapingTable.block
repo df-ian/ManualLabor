@@ -1,6 +1,6 @@
 {
     "displayName": "Shaping Table",
-    "rotation": "horizontal",
+    "family": "horizontal",
     "tiles" : {
         "all" : "ShapingTable",
         "topBottom" : "ShapingTable_Top"
