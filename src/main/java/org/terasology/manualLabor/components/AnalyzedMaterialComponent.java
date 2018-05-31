@@ -16,6 +16,9 @@
 package org.terasology.manualLabor.components;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 
 public class AnalyzedMaterialComponent implements Component {
+    @Replicate
+    public boolean IsAnalyzed = true;
 }
