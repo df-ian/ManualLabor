@@ -26,6 +26,7 @@ import org.terasology.machines.ui.OverlapLayout;
 import org.terasology.manualLabor.components.HeatBlockNetworkComponent;
 import org.terasology.manualLabor.components.HeatSourceComponent;
 import org.terasology.manualLabor.components.HeatedComponent;
+import org.terasology.manualLabor.systems.HeatAuthoritySystem;
 import org.terasology.registry.In;
 import org.terasology.rendering.nui.widgets.UIImage;
 import org.terasology.utilities.Assets;
@@ -46,28 +47,11 @@ public class HeatInputProcessPartCommonSystem extends BaseComponentSystem {
     @ReceiveEvent
     public void validateToStartExecution(ProcessEntityIsInvalidToStartEvent event, EntityRef processEntity,
                                          HeatInputComponent heatInputComponent) {
-        int heatSources = 0;
-        int heatSinks = 0;
-        // loop through all nodes this workstation is part of
-        for (NetworkNode workstationNode : entityNetworkManager.getNodesForEntity(event.getWorkstation())) {
-            if (workstationNode.getNetworkId().equals(HeatBlockNetworkComponent.NETWORK_ID)) {
-                for (Network network : entityNetworkManager.getNetworks(workstationNode)) {
-                    // loop through each of the nodes on this network to see how many are heat sources
-                    for (NetworkNode siblingNode : entityNetworkManager.getNetworkNodes(network)) {
-                        EntityRef siblingEntity = entityNetworkManager.getEntityForNode(siblingNode);
-                        if (siblingEntity.hasComponent(HeatSourceComponent.class)) {
-                            heatSources++;
-                        }
-                        if (siblingEntity.hasComponent(HeatedComponent.class)) {
-                            heatSinks++;
-                        }
-                    }
-                }
-            }
-        }
+
+        float averageHeat = HeatAuthoritySystem.getAverageHeat(event.getWorkstation(), entityNetworkManager);
 
         // compare to the average heat sources in the network
-        if ((heatSources / (heatSinks + 1)) == 0) {
+        if (averageHeat == 0) {
             event.consume();
         }
     }

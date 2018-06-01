@@ -26,6 +26,8 @@ import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterMode;
 import org.terasology.entitySystem.systems.RegisterSystem;
+import org.terasology.manualLabor.components.HeatBlockNetworkComponent;
+import org.terasology.manualLabor.components.HeatSourceComponent;
 import org.terasology.manualLabor.components.HeatedComponent;
 import org.terasology.registry.In;
 import org.terasology.workstation.event.WorkstationStateChanged;
@@ -60,5 +62,47 @@ public class HeatAuthoritySystem extends BaseComponentSystem {
                 }
             }
         }
+    }
+
+    public static float getAverageHeat(EntityRef entityRef, EntityNetworkManager entityNetworkManager) {
+        int heatSources = 0;
+        int heatSinks = 0;
+        for (NetworkNode workstationNode : entityNetworkManager.getNodesForEntity(entityRef)) {
+            if (workstationNode.getNetworkId().equals(HeatBlockNetworkComponent.NETWORK_ID)) {
+                for (Network network : entityNetworkManager.getNetworks(workstationNode)) {
+                    // loop through each of the nodes on this network to see how many are heat sources
+                    for (NetworkNode siblingNode : entityNetworkManager.getNetworkNodes(network)) {
+                        EntityRef siblingEntity = entityNetworkManager.getEntityForNode(siblingNode);
+                        if (siblingEntity.hasComponent(HeatSourceComponent.class)) {
+                            heatSources++;
+                        }
+                        if (siblingEntity.hasComponent(HeatedComponent.class)) {
+                            heatSinks++;
+                        }
+                    }
+                }
+            }
+        }
+
+        return (float) (heatSources / (heatSinks + 1));
+    }
+
+    public static float getTotalHeat(EntityRef entityRef, EntityNetworkManager entityNetworkManager) {
+        int heatSources = 0;
+        for (NetworkNode workstationNode : entityNetworkManager.getNodesForEntity(entityRef)) {
+            if (workstationNode.getNetworkId().equals(HeatBlockNetworkComponent.NETWORK_ID)) {
+                for (Network network : entityNetworkManager.getNetworks(workstationNode)) {
+                    // loop through each of the nodes on this network to see how many are heat sources
+                    for (NetworkNode siblingNode : entityNetworkManager.getNetworkNodes(network)) {
+                        EntityRef siblingEntity = entityNetworkManager.getEntityForNode(siblingNode);
+                        if (siblingEntity.hasComponent(HeatSourceComponent.class)) {
+                            heatSources++;
+                        }
+                    }
+                }
+            }
+        }
+
+        return (float)heatSources;
     }
 }
