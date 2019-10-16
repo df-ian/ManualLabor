@@ -4,5 +4,5 @@
     "entity": {
         "prefab": "WoodenBox"
     },
-    "tile": "Core:Plank"
+    "tile": "CoreAssets:Plank"
 }

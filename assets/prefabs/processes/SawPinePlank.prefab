@@ -8,7 +8,7 @@
   },
   "InventoryInput": {
     "blockCounts": {
-      "Core:PineTrunk": 1
+      "CoreBlocks:PineTrunk": 1
     }
   },
   "InventoryOutput": {

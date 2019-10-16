@@ -3,6 +3,6 @@
     "entity": {
         "prefab": "WoodenDisplayBlock"
     },
-    "tile": "Core:Plank",
+    "tile": "CoreAssets:Plank",
     "shape": "engine:halfBlock"
 }

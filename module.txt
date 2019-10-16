@@ -1,6 +1,6 @@
 {
     "id" : "ManualLabor",
-    "version" : "1.2.0-SNAPSHOT",
+    "version" : "1.2.1-SNAPSHOT",
     "author" : "Josharias",
     "displayName" : "Manual Labor",
     "description" : "Adds tools to make manual tasks like digging and chopping easier.",
@@ -10,7 +10,8 @@
         {"id": "Durability", "minVersion": "1.0.0"},
         {"id": "SubstanceMatters", "minVersion": "1.0.0"},
         {"id": "InGameHelp", "minVersion": "1.0.0"},
-        {"id": "Core", "minVersion": "2.0.0"}
+        {"id": "Core", "minVersion": "2.0.0"},
+        {"id": "CoreBlocks", "minVersion": "1.0.0"}
     ],
     "isAugmentation": true
 }

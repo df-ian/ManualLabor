@@ -8,7 +8,7 @@
   },
   "InventoryInput": {
     "blockCounts": {
-      "Core:OakTrunk": 1
+      "CoreBlocks:OakTrunk": 1
     }
   },
   "InventoryOutput": {

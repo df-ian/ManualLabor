@@ -8,7 +8,7 @@
   },
   "InventoryInput": {
     "blockCounts": {
-      "Core:Stone": 1,
+      "CoreBlocks:Stone": 1,
       "ManualLabor:Firebox": 1
     }
   },

@@ -8,7 +8,7 @@
   },
   "InventoryInput": {
     "blockCounts": {
-      "Core:Stone": 8
+      "CoreBlocks:Stone": 8
     }
   },
   "InventoryOutput": {
