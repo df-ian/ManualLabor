@@ -8,7 +8,11 @@
     "cooldownTime": 500
   },
   "FluidContainerItem": {
-    "maxVolume": 1000
+    "maxVolume": 1000,
+    "emptyTexture": "ManualLabor:ManualLabor#WoodenBucket",
+    "textureWithHole": "ManualLabor:ManualLabor#WoodenBucketFluid",
+    "fluidMinPerc": [10,0],
+    "fluidSizePerc": [20,0]
   },
   "MaterialFluidItemContainer": {
     "fluidIcon": "ManualLabor:ManualLabor#WoodenBucketFluid"

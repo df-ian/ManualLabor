@@ -8,7 +8,11 @@
     "name": "Wooden Cup"
   },
   "FluidContainerItem": {
-    "maxVolume": 300
+    "maxVolume": 300,
+    "emptyTexture": "ManualLabor:ManualLabor#WoodenCup",
+    "textureWithHole": "ManualLabor:ManualLabor#WoodenCupFluid",
+    "fluidMinPerc": [10,0],
+    "fluidSizePerc": [20,0]
   },
   "MaterialFluidItemContainer": {
     "fluidIcon": "ManualLabor:ManualLabor#WoodenCupFluid"
