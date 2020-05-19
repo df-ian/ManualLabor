@@ -8,7 +8,7 @@
       "ManualLabor:Stick": 1
     },
     "blockCounts": {
-      "CoreBlocks:Stone": 1
+      "CoreAssets:Stone": 1
     }
   },
   "InventoryOutput": {

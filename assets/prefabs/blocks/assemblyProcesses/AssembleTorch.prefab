@@ -11,7 +11,7 @@
   },
   "InventoryOutput": {
     "blockCounts": {
-      "CoreBlocks:Torch": 2
+      "CoreAssets:Torch": 2
     }
   }
 }

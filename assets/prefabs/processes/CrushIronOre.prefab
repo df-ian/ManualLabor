@@ -8,7 +8,7 @@
   },
   "InventoryInput": {
     "blockCounts": {
-      "CoreBlocks:IronOre": 1
+      "CoreAssets:IronOre": 1
     }
   },
   "InjectSubstances": {

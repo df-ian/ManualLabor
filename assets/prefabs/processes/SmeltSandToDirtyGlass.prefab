@@ -5,7 +5,7 @@
   },
   "InventoryInput": {
     "blockCounts": {
-      "CoreBlocks:Sand": 1
+      "CoreAssets:Sand": 1
     }
   },
   "HeatInput": {},
