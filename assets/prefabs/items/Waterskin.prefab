@@ -1,0 +1,22 @@
+{
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor:ManualLabor#Waterskin",
+    "stackId": "ManualLabor:ManualLabor#Waterskin"
+  },
+  "DisplayName": {
+    "name": "Waterskin"
+  },
+  "FluidContainerItem": {
+      "maxVolume": 500
+  },
+  "MaterialFluidItemContainer": {
+      "fluidIcon": "ManualLabor:ManualLabor#WoodenCupFluid"
+  },
+  "ConsumableFluidContainerItem": {},
+  "ItemHelp": {
+      "paragraphText": [
+        "Waterskins are portable water containers which can hold 500 mL of water."
+      ]
+  }
+}
