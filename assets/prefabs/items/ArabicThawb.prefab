@@ -1,0 +1,10 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "ManualLabor:ArabicThawb"
+    },
+    "DisplayName": {
+        "name": "Arabic Thawb",
+        "description": " Ankle-length garment, usually with long sleeves, similar to a robe or tunic."
+    }
+}

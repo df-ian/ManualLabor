@@ -1,0 +1,10 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "ManualLabor:ManualLabor#WoolVest"
+    },
+    "DisplayName": {
+        "name": "Wool Vest",
+        "description": "A piece of clothing, made of knitted or crocheted wool that covers the upper part of the body."
+    }
+}
