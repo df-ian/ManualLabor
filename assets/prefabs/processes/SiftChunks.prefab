@@ -5,7 +5,7 @@
   },
   "FluidInput": {
     "fluidVolumes": {
-      "fluid:water": 100
+      "CoreAssets:Water": 100
     }
   },
   "InventoryInput": {

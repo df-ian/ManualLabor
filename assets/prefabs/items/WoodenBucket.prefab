@@ -11,20 +11,8 @@
     "maxVolume": 1000,
     "emptyTexture": "ManualLabor:ManualLabor#WoodenBucket",
     "textureWithHole": "ManualLabor:ManualLabor#WoodenBucketFluid",
-    "fluidMinPerc": [10,0],
-    "fluidSizePerc": [20,0]
-  },
-  "MaterialFluidItemContainer": {
-    "fluidIcon": "ManualLabor:ManualLabor#WoodenBucketFluid"
-  },
-  "TintOverlayIcon": {
-    "texture": {
-      "ManualLabor:ManualLabor#WoodenBucket": {
-      },
-      "ManualLabor:ManualLabor#WoodenBucketFluid": {
-        "invisible": true
-      }
-    }
+    "fluidMinPerc": [0.25,0.1875],
+    "fluidSizePerc": [0.59375,0.34375]
   },
   "ItemHelp": {
     "paragraphText": [
