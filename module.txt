@@ -13,7 +13,7 @@
         { "id": "Inventory", "minVersion": "1.1.0" },
         { "id": "ItemRendering", "minVersion": "1.1.0" },
         { "id": "Machines", "minVersion": "1.2.0" },
-        { "id": "SubstanceMatters", "minVersion": "1.0.1" },
+        { "id": "SubstanceMatters", "minVersion": "2.0.0" },
         { "id": "WildAnimals", "minVersion": "1.0.0" },
         { "id": "Workstation", "minVersion": "1.1.0" }
     ],
