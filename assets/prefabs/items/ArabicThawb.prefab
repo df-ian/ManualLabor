@@ -1,7 +1,7 @@
 {
     "parent": "engine:iconItem",
     "Item": {
-        "icon": "ManualLabor:ArabicThawb"
+        "icon": "ManualLabor:ManualLabor#ArabicThawb"
     },
     "DisplayName": {
         "name": "Arabic Thawb",
