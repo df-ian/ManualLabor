@@ -9,7 +9,7 @@
   },
   "FluidContainerItem": {
     "maxVolume": 500,
-    "emptyTexture": "emptyWaterskin",
+    "emptyTexture": "ManualLabor:ManualLabor#WaterskinEmpty",
     "textureWithHole": "ManualLabor:ManualLabor#Waterskin",
     "fluidMinPerc": [0,0],
     "fluidSizePerc": [0,0]
