@@ -1,7 +1,7 @@
 {
   "parent": "engine:iconItem",
   "DisplayName": {
-    "name": "Magifying Glass"
+    "name": "Magnifying Glass"
   },
   "Item": {},
   "ProcessRequirementsProviderFromWorkstation": {

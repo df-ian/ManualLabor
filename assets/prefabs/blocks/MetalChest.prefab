@@ -27,9 +27,12 @@
   },
   "Network": {
   },
+  "DisplayName": {
+    "name": "Chest (Metal)"
+  },
   "ItemHelp": {
     "paragraphText": [
-      "The iron chest is a great place to store items.  It can store 16 items at a time!"
+      "The metal chest is a great place to store items. It can store 16 items at a time!"
     ]
   }
 }

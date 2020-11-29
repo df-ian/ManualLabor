@@ -33,6 +33,9 @@
   "DropBlockInventory": {},
   "Network": {
   },
+  "DisplayName": {
+    "name": "Assembly Table"
+  },
   "ItemHelp": {
     "paragraphText": [
       "The assembly table is your basic work station for crafting."

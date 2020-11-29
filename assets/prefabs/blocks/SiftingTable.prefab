@@ -22,6 +22,9 @@
   "DropBlockInventory": {},
   "Network": {
   },
+  "DisplayName": {
+    "name": "Sifting Table"
+  },
   "ItemHelp": {
     "paragraphText": [
       "The sifting table uses water and a little elbow grease to separate out substances from chunks of material.",

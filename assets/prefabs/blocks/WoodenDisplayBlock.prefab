@@ -25,6 +25,9 @@
   },
   "DropBlockInventory": {},
   "Network": {},
+  "DisplayName": {
+    "name": "Display Block (Wooden)"
+  },
   "ItemHelp": {
     "paragraphText": [
       "The wooden display block shows off the item in its inventory to the world."

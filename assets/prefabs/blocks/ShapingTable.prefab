@@ -28,6 +28,9 @@
   "DropBlockInventory": {},
   "Network": {
   },
+  "DisplayName": {
+    "name": "Shaping Table"
+  },
   "ItemHelp": {
     "paragraphText": [
       "The shaping table reforms basic blocks into different shapes."

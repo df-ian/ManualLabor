@@ -18,6 +18,9 @@
   },
   "DropBlockInventory": {},
   "Network": {},
+  "DisplayName": {
+    "name": "Firebox"
+  },
   "ItemHelp": {
     "paragraphText": [
       "The firebox can be fed burnable materials that will heat up neighboring blocks.  Like the hearth."
