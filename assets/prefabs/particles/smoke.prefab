@@ -1,0 +1,27 @@
+{
+  "location": {},
+  "particleDataSprite": {
+    "texture": "ManualLabor:fx_smoke"
+  },
+  "energyRangeGenerator": {
+    "minEnergy": 0.5,
+    "maxEnergy": 4
+  },
+  "scaleRangeGenerator": {
+    "minScale": [0.01, 0.01, 0.01],
+    "maxScale": [0.5, 0.5, 0.5]
+  },
+  "velocityRangeGenerator": {
+    "minVelocity": [0, 0.3, 0],
+    "maxVelocity": [0.4, 1, 0.4]
+  },
+  "velocityAffector": {},
+  "particleEmitter": {
+    "spawnRateMax": 20,
+    "spawnRateMin": 10,
+    "maxParticles": 100,
+    "particleCollision": false,
+    "destroyEntityWhenDead": true
+  },
+  "network": {}
+}
