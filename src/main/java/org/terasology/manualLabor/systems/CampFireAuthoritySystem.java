@@ -16,6 +16,8 @@
 package org.terasology.manualLabor.systems;
 
 import com.google.common.collect.Sets;
+import org.joml.Vector3f;
+import org.joml.Vector3i;
 import org.terasology.entitySystem.entity.EntityBuilder;
 import org.terasology.entitySystem.entity.EntityManager;
 import org.terasology.entitySystem.entity.EntityRef;
@@ -27,7 +29,6 @@ import org.terasology.entitySystem.systems.RegisterSystem;
 import org.terasology.logic.health.BeforeDestroyEvent;
 import org.terasology.logic.location.LocationComponent;
 import org.terasology.manualLabor.components.LightAreaComponent;
-import org.terasology.math.geom.Vector3f;
 import org.terasology.registry.In;
 import org.terasology.world.block.BlockComponent;
 
@@ -47,7 +48,7 @@ public class CampFireAuthoritySystem extends BaseComponentSystem {
             EntityBuilder renderedEntityBuilder = entityManager.newBuilder(lightAreaComponent.lightPrefab);
             renderedEntityBuilder.setOwner(entity);
             LocationComponent locationComponent = new LocationComponent();
-            Vector3f worldPosition = block.getPosition().toVector3f();
+            Vector3f worldPosition = new Vector3f(block.getPosition(new Vector3i()));
             worldPosition.add(relativePosition);
             locationComponent.setWorldPosition(worldPosition);
             renderedEntityBuilder.addComponent(locationComponent);
