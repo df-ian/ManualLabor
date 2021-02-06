@@ -1,4 +1,4 @@
-// Copyright 2020 The Terasology Foundation
+// Copyright 2021 The Terasology Foundation
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.manualLabor.systems;
 
@@ -23,7 +23,7 @@ public class BonusToolDamageSystem extends BaseComponentSystem {
             BlockDamageModifierComponent blockDamage = event.getDamageType().getComponent(BlockDamageModifierComponent.class);
             BonusToolDamageComponent bonusToolDamageComponent = event.getDirectCause().getComponent(BonusToolDamageComponent.class);
             if (blockDamage != null && bonusToolDamageComponent != null) {
-                BlockFamily blockFamily = blockComponent.getBlock().getBlockFamily();
+                BlockFamily blockFamily = blockComponent.block.getBlockFamily();
                 for (String category : blockFamily.getCategories()) {
                     if (blockDamage.materialDamageMultiplier.containsKey(category)) {
                         event.add(bonusToolDamageComponent.baseDamage);
