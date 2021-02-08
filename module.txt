@@ -18,6 +18,10 @@
       "minVersion": "1.1.0"
     },
     {
+      "id": "EdibleSubstance",
+      "minVersion": "1.0.0"
+    },
+    {
       "id": "Health",
       "minVersion": "1.0.0"
     },
