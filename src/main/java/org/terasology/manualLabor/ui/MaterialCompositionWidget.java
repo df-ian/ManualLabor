@@ -3,14 +3,14 @@
 package org.terasology.manualLabor.ui;
 
 import org.joml.Vector2i;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.logic.inventory.InventoryManager;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.logic.inventory.InventoryManager;
+import org.terasology.engine.registry.CoreRegistry;
 import org.terasology.machines.ExtendedInventoryManager;
 import org.terasology.nui.Canvas;
 import org.terasology.nui.CoreWidget;
 import org.terasology.nui.LayoutConfig;
 import org.terasology.nui.widgets.UILabel;
-import org.terasology.registry.CoreRegistry;
 import org.terasology.substanceMatters.components.MaterialCompositionComponent;
 import org.terasology.workstation.process.inventory.InventoryOutputProcessPartCommonSystem;
 import org.terasology.workstation.ui.WorkstationUI;

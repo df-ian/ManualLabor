@@ -15,8 +15,8 @@
  */
 package org.terasology.manualLabor.processParts;
 
-import org.terasology.entitySystem.Component;
-import org.terasology.world.block.family.BlockFamily;
+import org.terasology.engine.entitySystem.Component;
+import org.terasology.engine.world.block.family.BlockFamily;
 
 public class SymmetricBlockOutputProcessPartComponent implements Component {
     public BlockFamily blockFamily;

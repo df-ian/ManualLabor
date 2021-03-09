@@ -16,10 +16,10 @@
 package org.terasology.manualLabor.components;
 
 import com.google.common.collect.Sets;
-import org.terasology.entitySystem.Component;
-import org.terasology.entitySystem.Owns;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.world.block.ForceBlockActive;
+import org.terasology.engine.entitySystem.Component;
+import org.terasology.engine.entitySystem.Owns;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.world.block.ForceBlockActive;
 
 import java.util.Set;
 

@@ -15,7 +15,7 @@
  */
 package org.terasology.manualLabor.processParts;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.engine.entitySystem.Component;
 
 /**
  * Creates an material item containing the materials that it is composed of based on the original input items.  The item will appear like the largest amount of substance.

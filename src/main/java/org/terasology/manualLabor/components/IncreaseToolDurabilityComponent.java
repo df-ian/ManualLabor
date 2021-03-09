@@ -15,7 +15,7 @@
  */
 package org.terasology.manualLabor.components;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.engine.entitySystem.Component;
 
 /**
  * Add this to a substance so that when a tool is created, its base durability is increased based on how much of the substance is present

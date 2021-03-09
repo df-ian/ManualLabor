@@ -15,21 +15,21 @@
  */
 package org.terasology.manualLabor.systems;
 
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.entitySystem.entity.lifecycleEvents.OnActivatedComponent;
+import org.terasology.engine.entitySystem.entity.lifecycleEvents.OnChangedComponent;
+import org.terasology.engine.entitySystem.event.ReceiveEvent;
+import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
+import org.terasology.engine.entitySystem.systems.RegisterMode;
+import org.terasology.engine.entitySystem.systems.RegisterSystem;
+import org.terasology.engine.registry.In;
 import org.terasology.entityNetwork.Network;
 import org.terasology.entityNetwork.NetworkNode;
 import org.terasology.entityNetwork.components.EntityNetworkComponent;
 import org.terasology.entityNetwork.systems.EntityNetworkManager;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.entitySystem.entity.lifecycleEvents.OnActivatedComponent;
-import org.terasology.entitySystem.entity.lifecycleEvents.OnChangedComponent;
-import org.terasology.entitySystem.event.ReceiveEvent;
-import org.terasology.entitySystem.systems.BaseComponentSystem;
-import org.terasology.entitySystem.systems.RegisterMode;
-import org.terasology.entitySystem.systems.RegisterSystem;
 import org.terasology.manualLabor.components.HeatBlockNetworkComponent;
 import org.terasology.manualLabor.components.HeatSourceComponent;
 import org.terasology.manualLabor.components.HeatedComponent;
-import org.terasology.registry.In;
 import org.terasology.workstation.event.WorkstationStateChanged;
 
 @RegisterSystem(RegisterMode.AUTHORITY)

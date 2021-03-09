@@ -15,7 +15,7 @@
  */
 package org.terasology.manualLabor.processParts;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.engine.entitySystem.Component;
 
 public class ProcessingTimeComponent implements Component {
     public long duration;

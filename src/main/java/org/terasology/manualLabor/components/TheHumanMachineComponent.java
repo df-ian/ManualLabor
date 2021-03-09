@@ -15,10 +15,10 @@
  */
 package org.terasology.manualLabor.components;
 
-import org.terasology.entitySystem.Component;
-import org.terasology.entitySystem.Owns;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.network.Replicate;
+import org.terasology.engine.entitySystem.Component;
+import org.terasology.engine.entitySystem.Owns;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.network.Replicate;
 
 public class TheHumanMachineComponent implements Component {
     @Owns

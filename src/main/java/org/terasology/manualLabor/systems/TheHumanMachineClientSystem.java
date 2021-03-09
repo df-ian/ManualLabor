@@ -15,19 +15,19 @@
  */
 package org.terasology.manualLabor.systems;
 
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.entitySystem.event.EventPriority;
-import org.terasology.entitySystem.event.ReceiveEvent;
-import org.terasology.entitySystem.systems.BaseComponentSystem;
-import org.terasology.entitySystem.systems.RegisterMode;
-import org.terasology.entitySystem.systems.RegisterSystem;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.entitySystem.event.EventPriority;
+import org.terasology.engine.entitySystem.event.ReceiveEvent;
+import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
+import org.terasology.engine.entitySystem.systems.RegisterMode;
+import org.terasology.engine.entitySystem.systems.RegisterSystem;
+import org.terasology.engine.input.binds.inventory.InventoryButton;
+import org.terasology.engine.logic.players.LocalPlayer;
+import org.terasology.engine.network.ClientComponent;
+import org.terasology.engine.registry.In;
+import org.terasology.engine.rendering.nui.NUIManager;
 import org.terasology.input.ButtonState;
-import org.terasology.input.binds.inventory.InventoryButton;
-import org.terasology.logic.players.LocalPlayer;
 import org.terasology.manualLabor.components.TheHumanMachineComponent;
-import org.terasology.network.ClientComponent;
-import org.terasology.registry.In;
-import org.terasology.rendering.nui.NUIManager;
 
 @RegisterSystem(RegisterMode.CLIENT)
 public class TheHumanMachineClientSystem extends BaseComponentSystem {

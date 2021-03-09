@@ -15,7 +15,7 @@
  */
 package org.terasology.manualLabor.components;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.engine.entitySystem.Component;
 
 public class ManualLaborSubstanceDescriptionComponent implements Component {
     public String description = "";

@@ -15,9 +15,9 @@
  */
 package org.terasology.manualLabor.components;
 
+import org.terasology.engine.entitySystem.Component;
+import org.terasology.engine.world.block.ForceBlockActive;
 import org.terasology.entityNetwork.components.BlockLocationNetworkNodeComponent;
-import org.terasology.entitySystem.Component;
-import org.terasology.world.block.ForceBlockActive;
 
 @ForceBlockActive
 public class HeatBlockNetworkComponent extends BlockLocationNetworkNodeComponent implements Component {
