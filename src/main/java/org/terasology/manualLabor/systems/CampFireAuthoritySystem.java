@@ -26,7 +26,7 @@ import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterMode;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
-import org.terasology.engine.logic.health.BeforeDestroyEvent;
+import org.terasology.logic.health.BeforeDestroyEvent;
 import org.terasology.engine.logic.location.LocationComponent;
 import org.terasology.engine.registry.In;
 import org.terasology.engine.world.block.BlockComponent;
