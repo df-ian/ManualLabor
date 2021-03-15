@@ -4,7 +4,7 @@ package org.terasology.manualLabor.ui;
 
 import org.joml.Vector2i;
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.logic.inventory.InventoryManager;
+import org.terasology.module.inventory.systems.InventoryManager;
 import org.terasology.engine.registry.CoreRegistry;
 import org.terasology.machines.ExtendedInventoryManager;
 import org.terasology.nui.Canvas;
