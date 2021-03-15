@@ -9,7 +9,7 @@ import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterMode;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.engine.registry.In;
-import org.terasology.engine.rendering.nui.layers.ingame.inventory.GetItemTooltip;
+import org.terasology.rendering.nui.layers.ingame.inventory.GetItemTooltip;
 import org.terasology.manualLabor.components.AnalyzedMaterialComponent;
 import org.terasology.nui.widgets.TooltipLine;
 import org.terasology.substanceMatters.components.MaterialCompositionComponent;
