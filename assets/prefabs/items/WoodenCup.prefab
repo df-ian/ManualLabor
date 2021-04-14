@@ -8,7 +8,7 @@
     "name": "Wooden Cup"
   },
   "FluidContainerItem": {
-    "maxVolume": 300,
+    "maxVolume": 50,
     "emptyTexture": "ManualLabor:ManualLabor#WoodenCup",
     "textureWithHole": "ManualLabor:ManualLabor#WoodenCupFluid",
     "fluidMinPerc": [0.3125,0.375],
@@ -17,7 +17,7 @@
   "ConsumableFluidContainerItem": {},
   "ItemHelp": {
     "paragraphText": [
-      "The wooden cup can hold 300 mL of liquid to quench anyone's thirst."
+      "The wooden cup can hold 50 mL of liquid to quench anyone's thirst."
     ]
   }
 }
