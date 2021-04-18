@@ -1,59 +1,59 @@
 {
-  "id": "ManualLabor",
-  "version": "1.4.0-SNAPSHOT",
-  "author": "Josharias",
-  "displayName": "Manual Labor",
-  "description": "Adds tools to make manual tasks like digging and chopping easier.",
-  "dependencies": [
-    {
-      "id": "CoreAssets",
-      "minVersion": "2.0.1"
-    },
-    {
-      "id": "Drops",
-      "minVersion": "1.0.1"
-    },
-    {
-      "id": "Durability",
-      "minVersion": "1.1.0"
-    },
-    {
-      "id": "EdibleSubstance",
-      "minVersion": "1.0.0"
-    },
-    {
-      "id": "Health",
-      "minVersion": "1.0.0"
-    },
-    {
-      "id": "InGameHelp",
-      "minVersion": "1.1.0"
-    },
-    {
-      "id": "Inventory",
-      "minVersion": "1.1.0"
-    },
-    {
-      "id": "ItemRendering",
-      "minVersion": "1.1.0"
-    },
-    {
-      "id": "Machines",
-      "minVersion": "1.2.0"
-    },
-    {
-      "id": "SubstanceMatters",
-      "minVersion": "2.0.0"
-    },
-    {
-      "id": "WildAnimals",
-      "minVersion": "1.0.0"
-    },
-    {
-      "id": "Workstation",
-      "minVersion": "1.1.0"
-    }
-  ],
-  "isAsset": true,
-  "isLibrary": true
+    "id": "ManualLabor",
+    "version": "1.4.0-SNAPSHOT",
+    "author": "Josharias",
+    "displayName": "Manual Labor",
+    "description": "Adds tools to make manual tasks like digging and chopping easier.",
+    "dependencies": [
+        {
+            "id": "CoreAssets",
+            "minVersion": "2.0.1"
+        },
+        {
+            "id": "Drops",
+            "minVersion": "1.0.1"
+        },
+        {
+            "id": "Durability",
+            "minVersion": "1.1.0"
+        },
+        {
+            "id": "EdibleSubstance",
+            "minVersion": "1.0.0"
+        },
+        {
+            "id": "Health",
+            "minVersion": "2.0.0-SNAPSHOT"
+        },
+        {
+            "id": "InGameHelp",
+            "minVersion": "1.1.0"
+        },
+        {
+            "id": "Inventory",
+            "minVersion": "1.1.0"
+        },
+        {
+            "id": "ItemRendering",
+            "minVersion": "1.1.0"
+        },
+        {
+            "id": "Machines",
+            "minVersion": "1.2.0"
+        },
+        {
+            "id": "SubstanceMatters",
+            "minVersion": "2.0.0"
+        },
+        {
+            "id": "WildAnimals",
+            "minVersion": "1.0.0"
+        },
+        {
+            "id": "Workstation",
+            "minVersion": "1.1.0"
+        }
+    ],
+    "isAsset": true,
+    "isLibrary": true
 }
