@@ -6,7 +6,6 @@ package org.terasology.manualLabor.systems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.terasology.engine.core.Time;
-import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
@@ -16,17 +15,22 @@ import org.terasology.engine.logic.delay.DelayManager;
 import org.terasology.engine.logic.delay.PeriodicActionTriggeredEvent;
 import org.terasology.engine.logic.inventory.ItemComponent;
 import org.terasology.engine.registry.In;
+import org.terasology.engine.rendering.assets.material.Material;
+import org.terasology.engine.rendering.assets.skeletalmesh.SkeletalMesh;
+import org.terasology.engine.rendering.logic.SkeletalMeshComponent;
 import org.terasology.gestalt.assets.ResourceUrn;
+import org.terasology.gestalt.assets.management.AssetManager;
 import org.terasology.manualLabor.components.ShearableComponent;
 import org.terasology.wildAnimals.event.AnimalSpawnEvent;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @RegisterSystem
 public class ShearingSystem extends BaseComponentSystem {
     public static final int HITS_TO_SHEAR = 5;
     public static final ArrayList<ItemComponent> SHEARING_ITEMS = null; //TODO yet to decide
-    public static final int HAIR_REGROWTH_TIME = 3*60*1000; // In ms
+    public static final int HAIR_REGROWTH_TIME = 3 * 60 * 1000; // 3 minutes in ms
     public static final String HAIR_REGROWTH_ACTION_ID = "ManualLabor:HairRegrowthAction";
     private static final Logger logger = LoggerFactory.getLogger(ShearingSystem.class);
 
@@ -34,10 +38,10 @@ public class ShearingSystem extends BaseComponentSystem {
     protected Time time;
 
     @In
-    private DelayManager delayManager;
+    private AssetManager assetManager;
 
     @In
-    private EntityManager entityManager;
+    private DelayManager delayManager;
 
     @ReceiveEvent
     public void onAnimalSpawn(AnimalSpawnEvent event, EntityRef entityRef) {
@@ -57,8 +61,13 @@ public class ShearingSystem extends BaseComponentSystem {
                 component.hits = 0;
                 component.sheared = true;
                 component.lastShearingTimestamp = time.getGameTimeInMs();
-                delayManager.addPeriodicAction(entityRef, HAIR_REGROWTH_ACTION_ID, 0, HAIR_REGROWTH_TIME/20);
-                //TODO switch model
+                delayManager.addPeriodicAction(entityRef, HAIR_REGROWTH_ACTION_ID, 0, HAIR_REGROWTH_TIME / 20);
+                SkeletalMeshComponent skeletalMeshComponent = entityRef.getComponent(SkeletalMeshComponent.class);
+                Optional<SkeletalMesh> skeletalMesh = assetManager.getAsset("WildAnimals:shearedSheep", SkeletalMesh.class);
+                skeletalMesh.ifPresent(mesh -> skeletalMeshComponent.mesh = mesh);
+                Optional<Material> shearedMaterial = assetManager.getAsset("WildAnimals:shearedSheepSkin", Material.class);
+                shearedMaterial.ifPresent(texture -> skeletalMeshComponent.material = shearedMaterial.get());
+                entityRef.saveComponent(skeletalMeshComponent);
             }
         }
     }
@@ -71,7 +80,12 @@ public class ShearingSystem extends BaseComponentSystem {
                 if ((time.getGameTimeInMs() - shearableComponent.lastShearingTimestamp) > HAIR_REGROWTH_TIME) {
                     shearableComponent.sheared = false;
                     delayManager.cancelPeriodicAction(entity, HAIR_REGROWTH_ACTION_ID);
-                    //TODO switch model
+                    SkeletalMeshComponent skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
+                    Optional<SkeletalMesh> skeletalMesh = assetManager.getAsset("WildAnimals:sheep", SkeletalMesh.class);
+                    skeletalMesh.ifPresent(mesh -> skeletalMeshComponent.mesh = mesh);
+                    Optional<Material> sheepMaterial = assetManager.getAsset("WildAnimals:sheepSkin", Material.class);
+                    sheepMaterial.ifPresent(texture -> skeletalMeshComponent.material = sheepMaterial.get());
+                    entity.saveComponent(skeletalMeshComponent);
                 }
             }
         }
