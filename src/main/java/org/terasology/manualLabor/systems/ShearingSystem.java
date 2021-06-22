@@ -13,7 +13,6 @@ import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.engine.logic.characters.CharacterHeldItemComponent;
 import org.terasology.engine.logic.characters.events.AttackEvent;
-import org.terasology.engine.logic.console.AnimalSpawnEvent;
 import org.terasology.engine.logic.delay.DelayManager;
 import org.terasology.engine.logic.delay.PeriodicActionTriggeredEvent;
 import org.terasology.engine.registry.In;
@@ -24,7 +23,6 @@ import org.terasology.gestalt.assets.ResourceUrn;
 import org.terasology.gestalt.assets.management.AssetManager;
 import org.terasology.manualLabor.components.ShearableComponent;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 @RegisterSystem
@@ -42,13 +40,6 @@ public class ShearingSystem extends BaseComponentSystem {
 
     @In
     private DelayManager delayManager;
-
-    @ReceiveEvent
-    public void onAnimalSpawn(AnimalSpawnEvent event, EntityRef entityRef) {
-        if (entityRef.getParentPrefab().getUrn().equals(new ResourceUrn("WildAnimals:sheep"))) {
-            entityRef.addComponent(new ShearableComponent());
-        }
-    }
 
     @ReceiveEvent(components = {ShearableComponent.class})
     public void onAttack(AttackEvent event, EntityRef entityRef) {
