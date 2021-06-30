@@ -49,13 +49,11 @@ public class ShearingSystem extends BaseComponentSystem {
         ShearableComponent component = entityRef.getComponent(ShearableComponent.class);
         EntityRef heldItem = event.getDirectCause();
         Prefab parentPrefab = heldItem.getParentPrefab();
-        if (parentPrefab != null) {
-            if (!component.sheared && parentPrefab.getUrn().equals(new ResourceUrn(SHEARING_ITEM))) {
-                component.sheared = true;
-                component.lastShearingTimestamp = time.getGameTimeInMs();
-                delayManager.addPeriodicAction(entityRef, HAIR_REGROWTH_ACTION_ID, 0, HAIR_REGROWTH_TIME / 20);
-                switchPrfab(entityRef, SHEARED_SHEEP_MESH, SHEARED_SHEEP_MATERIAL);
-            }
+        if (parentPrefab != null && !component.sheared && parentPrefab.getUrn().equals(new ResourceUrn(SHEARING_ITEM))) {
+            component.sheared = true;
+            component.lastShearingTimestamp = time.getGameTimeInMs();
+            delayManager.addPeriodicAction(entityRef, HAIR_REGROWTH_ACTION_ID, 0, HAIR_REGROWTH_TIME / 20);
+            switchPrefab(entityRef, SHEARED_SHEEP_MESH, SHEARED_SHEEP_MATERIAL);
         }
     }
 
@@ -63,17 +61,15 @@ public class ShearingSystem extends BaseComponentSystem {
     public void onPeriodicActionTriggered(PeriodicActionTriggeredEvent event, EntityRef entity) {
         if (event.getActionId().equals(HAIR_REGROWTH_ACTION_ID)) {
             ShearableComponent shearableComponent = entity.getComponent(ShearableComponent.class);
-            if (shearableComponent.sheared) {
-                if ((time.getGameTimeInMs() - shearableComponent.lastShearingTimestamp) > HAIR_REGROWTH_TIME) {
-                    shearableComponent.sheared = false;
-                    delayManager.cancelPeriodicAction(entity, HAIR_REGROWTH_ACTION_ID);
-                    switchPrfab(entity, SHEEP_MESH, SHEEP_MATERIAL);
-                }
+            if (shearableComponent.sheared && (time.getGameTimeInMs() - shearableComponent.lastShearingTimestamp) > HAIR_REGROWTH_TIME) {
+                shearableComponent.sheared = false;
+                delayManager.cancelPeriodicAction(entity, HAIR_REGROWTH_ACTION_ID);
+                switchPrefab(entity, SHEEP_MESH, SHEEP_MATERIAL);
             }
         }
     }
 
-    private void switchPrfab(EntityRef entity, String meshURI, String materialURI) {
+    private void switchPrefab(EntityRef entity, String meshURI, String materialURI) {
         SkeletalMeshComponent skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
         if (skeletalMeshComponent != null) {
             Optional<SkeletalMesh> skeletalMesh = assetManager.getAsset(meshURI,
@@ -87,6 +83,4 @@ public class ShearingSystem extends BaseComponentSystem {
             entity.saveComponent(skeletalMeshComponent);
         }
     }
-
 }
-
