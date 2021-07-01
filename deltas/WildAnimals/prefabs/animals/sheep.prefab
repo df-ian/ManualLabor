@@ -1,6 +1,7 @@
 {
     "Shearable": {
       "lastShearingTimestamp": -1,
-      "sheared": false
+      "sheared": false,
+      "dropItem":"WildAnimals:wool"
     }
 }

@@ -5,7 +5,23 @@ package org.terasology.manualLabor.components;
 
 import org.terasology.engine.entitySystem.Component;
 
+/**
+ * Attached to components that can be sheared.
+ */
 public class ShearableComponent implements Component {
+
+    /**
+     * Stores the last time the shearing took place. Default -1 for no previous shearing event.
+     */
     public long lastShearingTimestamp = -1;
+
+    /**
+     * Stores the current state of shearing i.e. whether sheared or not.
+     */
     public boolean sheared;
+
+    /**
+     * URI of item to be dropped in event of shearing
+     */
+    public String dropItemURI;
 }

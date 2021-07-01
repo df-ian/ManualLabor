@@ -3,9 +3,12 @@
 
 package org.terasology.manualLabor.systems;
 
+import org.joml.Vector3f;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.terasology.engine.core.Time;
+import org.terasology.engine.entitySystem.entity.EntityBuilder;
+import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.prefab.Prefab;
@@ -14,6 +17,8 @@ import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.engine.logic.characters.events.AttackEvent;
 import org.terasology.engine.logic.delay.DelayManager;
 import org.terasology.engine.logic.delay.PeriodicActionTriggeredEvent;
+import org.terasology.engine.logic.inventory.events.DropItemEvent;
+import org.terasology.engine.logic.location.LocationComponent;
 import org.terasology.engine.registry.In;
 import org.terasology.engine.rendering.assets.material.Material;
 import org.terasology.engine.rendering.assets.skeletalmesh.SkeletalMesh;
@@ -24,6 +29,10 @@ import org.terasology.manualLabor.components.ShearableComponent;
 
 import java.util.Optional;
 
+/**
+ * This system is responsible for handling the logic for shearing. A sheep shearing cycle consists of a shearing switching to the model for
+ * sheared state, dropping an item in event of shearing and switching back to the non sheared state after a certain amount of time.
+ */
 @RegisterSystem
 public class ShearingSystem extends BaseComponentSystem {
     public static final String SHEARING_ITEM = "ManualLabor:CrudeShears";
@@ -39,11 +48,19 @@ public class ShearingSystem extends BaseComponentSystem {
     protected Time time;
 
     @In
+    private EntityManager entityManager;
+
+    @In
     private AssetManager assetManager;
 
     @In
     private DelayManager delayManager;
 
+    /**
+     * Executes changes occurring in event of shearing.
+     *
+     * @param entityRef Entity being sheared
+     */
     @ReceiveEvent(components = {ShearableComponent.class})
     public void onAttack(AttackEvent event, EntityRef entityRef) {
         ShearableComponent component = entityRef.getComponent(ShearableComponent.class);
@@ -54,9 +71,17 @@ public class ShearingSystem extends BaseComponentSystem {
             component.lastShearingTimestamp = time.getGameTimeInMs();
             delayManager.addPeriodicAction(entityRef, HAIR_REGROWTH_ACTION_ID, 0, HAIR_REGROWTH_TIME / 20);
             switchPrefab(entityRef, SHEARED_SHEEP_MESH, SHEARED_SHEEP_MATERIAL);
+            EntityBuilder dropEntity = entityManager.newBuilder(component.dropItemURI);
+            Vector3f worldPosition = entityRef.getComponent(LocationComponent.class).getWorldPosition(new Vector3f());
+            dropEntity.build().send(new DropItemEvent(worldPosition));
         }
     }
 
+    /**
+     * Periodically checks if enough time has elapsed for hair regrowth and executes events to regrow.
+     *
+     * @param entity Entity to regrow hair
+     */
     @ReceiveEvent
     public void onPeriodicActionTriggered(PeriodicActionTriggeredEvent event, EntityRef entity) {
         if (event.getActionId().equals(HAIR_REGROWTH_ACTION_ID)) {
@@ -69,6 +94,13 @@ public class ShearingSystem extends BaseComponentSystem {
         }
     }
 
+    /**
+     * Switches the model for the provided entity
+     *
+     * @param entity entity whose model is to be switched
+     * @param meshURI mesh URI for the new model
+     * @param materialURI material URI for the new model
+     */
     private void switchPrefab(EntityRef entity, String meshURI, String materialURI) {
         SkeletalMeshComponent skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
         if (skeletalMeshComponent != null) {
