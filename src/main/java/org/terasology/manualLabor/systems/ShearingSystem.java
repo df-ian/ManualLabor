@@ -74,6 +74,10 @@ public class ShearingSystem extends BaseComponentSystem {
             EntityBuilder dropEntity = entityManager.newBuilder(component.dropItemURI);
             Vector3f worldPosition = entityRef.getComponent(LocationComponent.class).getWorldPosition(new Vector3f());
             dropEntity.build().send(new DropItemEvent(worldPosition));
+            EntityBuilder entityBuilder = entityManager.newBuilder("ManualLabor:sheepShearingParticleEffect");
+            LocationComponent locationComponent = entityBuilder.getComponent(LocationComponent.class);
+            locationComponent.setWorldPosition(worldPosition);
+            entityBuilder.build();
         }
     }
 
