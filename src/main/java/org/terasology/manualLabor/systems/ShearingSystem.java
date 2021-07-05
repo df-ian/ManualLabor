@@ -6,6 +6,8 @@ package org.terasology.manualLabor.systems;
 import org.joml.Vector3f;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.terasology.engine.audio.StaticSound;
+import org.terasology.engine.audio.events.PlaySoundEvent;
 import org.terasology.engine.core.Time;
 import org.terasology.engine.entitySystem.entity.EntityBuilder;
 import org.terasology.engine.entitySystem.entity.EntityManager;
@@ -66,8 +68,8 @@ public class ShearingSystem extends BaseComponentSystem {
         ShearableComponent component = entityRef.getComponent(ShearableComponent.class);
         EntityRef heldItem = event.getDirectCause();
         Prefab parentPrefab = heldItem.getParentPrefab();
-        if (parentPrefab != null && !component.sheared && parentPrefab.getUrn().equals(new ResourceUrn(SHEARING_ITEM))) {
-            component.sheared = true;
+        if (parentPrefab != null && !component.isSheared && parentPrefab.getUrn().equals(new ResourceUrn(SHEARING_ITEM))) {
+            component.isSheared = true;
             component.lastShearingTimestamp = time.getGameTimeInMs();
             delayManager.addPeriodicAction(entityRef, HAIR_REGROWTH_ACTION_ID, 0, HAIR_REGROWTH_TIME / 20);
             switchPrefab(entityRef, SHEARED_SHEEP_MESH, SHEARED_SHEEP_MATERIAL);
@@ -78,6 +80,8 @@ public class ShearingSystem extends BaseComponentSystem {
             LocationComponent locationComponent = entityBuilder.getComponent(LocationComponent.class);
             locationComponent.setWorldPosition(worldPosition);
             entityBuilder.build();
+            Optional<StaticSound> asset = assetManager.getAsset("ManualLabor:shearingSound", StaticSound.class);
+            asset.ifPresent(staticSound -> entityRef.send(new PlaySoundEvent(staticSound, 1)));
         }
     }
 
@@ -90,8 +94,8 @@ public class ShearingSystem extends BaseComponentSystem {
     public void onPeriodicActionTriggered(PeriodicActionTriggeredEvent event, EntityRef entity) {
         if (event.getActionId().equals(HAIR_REGROWTH_ACTION_ID)) {
             ShearableComponent shearableComponent = entity.getComponent(ShearableComponent.class);
-            if (shearableComponent.sheared && (time.getGameTimeInMs() - shearableComponent.lastShearingTimestamp) > HAIR_REGROWTH_TIME) {
-                shearableComponent.sheared = false;
+            if (shearableComponent.isSheared && (time.getGameTimeInMs() - shearableComponent.lastShearingTimestamp) > HAIR_REGROWTH_TIME) {
+                shearableComponent.isSheared = false;
                 delayManager.cancelPeriodicAction(entity, HAIR_REGROWTH_ACTION_ID);
                 switchPrefab(entity, SHEEP_MESH, SHEEP_MATERIAL);
             }
