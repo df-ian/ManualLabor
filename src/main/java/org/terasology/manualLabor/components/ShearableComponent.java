@@ -6,7 +6,7 @@ package org.terasology.manualLabor.components;
 import org.terasology.engine.entitySystem.Component;
 
 /**
- * Attached to components that can be sheared.
+ * This component can be attached to entities to allow them to be sheared.
  */
 public class ShearableComponent implements Component {
 

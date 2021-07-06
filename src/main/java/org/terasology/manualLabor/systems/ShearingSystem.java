@@ -3,6 +3,7 @@
 
 package org.terasology.manualLabor.systems;
 
+
 import org.joml.Vector3f;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,8 +31,9 @@ import org.terasology.manualLabor.components.ShearableComponent;
 import java.util.Optional;
 
 /**
- * This system is responsible for handling the logic for shearing. A sheep shearing cycle consists of a shearing switching to the model for
- * sheared state, dropping an item in event of shearing and switching back to the non sheared state after a certain amount of time.
+ * This system is handling the logic for shearing. It currently is implemented mainly for sheep.
+ * The event of shearing starts a sheep shearing cycle that first switches the model to a
+ * sheared state and switches it back after 3 minutes to the non-sheared state.
  */
 @RegisterSystem
 public class ShearingSystem extends BaseComponentSystem {
@@ -57,12 +59,12 @@ public class ShearingSystem extends BaseComponentSystem {
     private DelayManager delayManager;
 
     /**
-     * Executes changes occurring in event of shearing.
+     * Checks pre-conditions for shearing (e.g. the right tool) and initiates the shearing cycle.
      *
      * @param entityRef Entity being sheared
      */
     @ReceiveEvent(components = {ShearableComponent.class})
-    public void onAttack(AttackEvent event, EntityRef entityRef) {
+    public void onShearing(AttackEvent event, EntityRef entityRef) {
         ShearableComponent component = entityRef.getComponent(ShearableComponent.class);
         EntityRef heldItem = event.getDirectCause();
         Prefab parentPrefab = heldItem.getParentPrefab();

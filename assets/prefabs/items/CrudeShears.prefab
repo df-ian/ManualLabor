@@ -1,0 +1,14 @@
+{
+  "parent": "engine:iconItem",
+  "Item": {
+    "icon": "ManualLabor:ManualLabor#CrudeShears"
+  },
+  "DisplayName": {
+    "name": "Crude Shears"
+  },
+  "ItemHelp": {
+    "paragraphText": [
+      "The crude shears can be used to shear animals. However, they are not very durable."
+    ]
+  }
+}
