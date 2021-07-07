@@ -3,7 +3,6 @@
 
 package org.terasology.manualLabor.systems;
 
-
 import org.joml.Vector3f;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
