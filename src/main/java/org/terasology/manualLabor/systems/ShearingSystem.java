@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.terasology.engine.core.Time;
 import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.entitySystem.event.EventPriority;
 import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.prefab.Prefab;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
@@ -58,7 +59,7 @@ public class ShearingSystem extends BaseComponentSystem {
      *
      * @param entityRef Entity being sheared
      */
-    @ReceiveEvent(components = {ShearableComponent.class})
+    @ReceiveEvent(components = {ShearableComponent.class}, priority = EventPriority.PRIORITY_HIGH)
     public void onShearing(AttackEvent event, EntityRef entityRef) {
         ShearableComponent component = entityRef.getComponent(ShearableComponent.class);
         EntityRef heldItem = event.getDirectCause();
@@ -69,6 +70,7 @@ public class ShearingSystem extends BaseComponentSystem {
             delayManager.addPeriodicAction(entityRef, HAIR_REGROWTH_ACTION_ID, 0, HAIR_REGROWTH_TIME / 20);
             switchPrefab(entityRef, SHEARED_SHEEP_MESH, SHEARED_SHEEP_MATERIAL);
         }
+    event.consume();
     }
 
     /**
