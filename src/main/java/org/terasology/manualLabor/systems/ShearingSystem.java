@@ -3,9 +3,11 @@
 
 package org.terasology.manualLabor.systems;
 
+import org.joml.Vector3f;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.terasology.engine.core.Time;
+import org.terasology.engine.entitySystem.entity.EntityBuilder;
 import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.entitySystem.event.EventPriority;
@@ -16,6 +18,8 @@ import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.engine.logic.characters.events.AttackEvent;
 import org.terasology.engine.logic.delay.DelayManager;
 import org.terasology.engine.logic.delay.PeriodicActionTriggeredEvent;
+import org.terasology.engine.logic.inventory.events.DropItemEvent;
+import org.terasology.engine.logic.location.LocationComponent;
 import org.terasology.engine.registry.In;
 import org.terasology.engine.rendering.assets.material.Material;
 import org.terasology.engine.rendering.assets.skeletalmesh.SkeletalMesh;
@@ -69,6 +73,9 @@ public class ShearingSystem extends BaseComponentSystem {
             component.lastShearingTimestamp = time.getGameTimeInMs();
             delayManager.addPeriodicAction(entityRef, HAIR_REGROWTH_ACTION_ID, 0, HAIR_REGROWTH_TIME / 20);
             switchPrefab(entityRef, SHEARED_SHEEP_MESH, SHEARED_SHEEP_MATERIAL);
+            EntityBuilder dropEntity = entityManager.newBuilder(component.dropItemURI);
+            Vector3f worldPosition = entityRef.getComponent(LocationComponent.class).getWorldPosition(new Vector3f());
+            dropEntity.build().send(new DropItemEvent(worldPosition));
         }
     event.consume();
     }

@@ -19,4 +19,9 @@ public class ShearableComponent implements Component {
      * Stores the current state of shearing i.e. whether sheared or not.
      */
     public boolean isSheared;
+
+    /**
+     * URI of item to be dropped in event of shearing
+     */
+    public String dropItemURI;
 }
