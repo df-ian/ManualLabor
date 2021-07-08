@@ -6,6 +6,8 @@ package org.terasology.manualLabor.systems;
 import org.joml.Vector3f;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.terasology.engine.audio.StaticSound;
+import org.terasology.engine.audio.events.PlaySoundEvent;
 import org.terasology.engine.core.Time;
 import org.terasology.engine.entitySystem.entity.EntityBuilder;
 import org.terasology.engine.entitySystem.entity.EntityManager;
@@ -23,6 +25,7 @@ import org.terasology.engine.registry.In;
 import org.terasology.engine.rendering.assets.material.Material;
 import org.terasology.engine.rendering.assets.skeletalmesh.SkeletalMesh;
 import org.terasology.engine.rendering.logic.SkeletalMeshComponent;
+import org.terasology.engine.utilities.random.FastRandom;
 import org.terasology.gestalt.assets.ResourceUrn;
 import org.terasology.gestalt.assets.management.AssetManager;
 import org.terasology.manualLabor.components.ShearableComponent;
@@ -44,6 +47,9 @@ public class ShearingSystem extends BaseComponentSystem {
     public static final String SHEEP_MESH = "WildAnimals:sheep";
     public static final String SHEEP_MATERIAL = "WildAnimals:sheepSkin";
     private static final Logger logger = LoggerFactory.getLogger(ShearingSystem.class);
+    public static final String SOUND_ONE = "ManualLabor:shearingSoundOne";
+    public static final String SOUND_TWO = "ManualLabor:shearingSoundTwo";
+    public static final String PARTICLE_EFFECT = "ManualLabor:sheepShearingParticleEffect";
 
     @In
     protected Time time;
@@ -75,6 +81,14 @@ public class ShearingSystem extends BaseComponentSystem {
             EntityBuilder dropEntity = entityManager.newBuilder(component.dropItemURI);
             Vector3f worldPosition = entityRef.getComponent(LocationComponent.class).getWorldPosition(new Vector3f());
             dropEntity.build().send(new DropItemEvent(worldPosition));
+            EntityBuilder entityBuilder = entityManager.newBuilder(PARTICLE_EFFECT);
+            LocationComponent locationComponent = entityBuilder.getComponent(LocationComponent.class);
+            locationComponent.setWorldPosition(worldPosition);
+            entityBuilder.build();
+            int random = new FastRandom().nextInt(0, 1);
+            String soundURI = (random == 1) ? SOUND_ONE : SOUND_TWO;
+            Optional<StaticSound> asset = assetManager.getAsset(soundURI, StaticSound.class);
+            asset.ifPresent(staticSound -> entityRef.send(new PlaySoundEvent(staticSound, 1)));
         }
     }
 
