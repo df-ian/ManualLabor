@@ -58,7 +58,7 @@ public class ShearingSystem extends BaseComponentSystem {
     private EntityManager entityManager;
 
     @In
-    private AssetManager assetManager;
+    AssetManager assetManager;
 
     @In
     private DelayManager delayManager;
@@ -116,7 +116,7 @@ public class ShearingSystem extends BaseComponentSystem {
      * @param meshURI mesh URI for the new model
      * @param materialURI material URI for the new model
      */
-    private void switchPrefab(EntityRef entity, String meshURI, String materialURI) {
+    void switchPrefab(EntityRef entity, String meshURI, String materialURI) {
         SkeletalMeshComponent skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
         if (skeletalMeshComponent != null) {
             Optional<SkeletalMesh> skeletalMesh = assetManager.getAsset(meshURI,
