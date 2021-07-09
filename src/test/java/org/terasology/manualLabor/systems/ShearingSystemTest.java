@@ -34,7 +34,7 @@ class ShearingSystemTest {
     }
 
     /**
-     * Check whether switchPrefab() changes mesh and material attributes of SkeletalMeshComponent correctly
+     * Check whether switchPrefab() changes mesh and material attributes of SkeletalMeshComponent correctly in all scenarios
      */
     @Test
     public void testSwitchPrefabAssetChange() {
@@ -49,5 +49,27 @@ class ShearingSystemTest {
 
         Assertions.assertEquals(skeletalMeshComponent.mesh, expectedMesh);
         Assertions.assertEquals(skeletalMeshComponent.material, expectedMaterial);
+
+        when(shearingSystem.assetManager.getAsset("empty", SkeletalMesh.class)).thenReturn(Optional.empty());
+        when(shearingSystem.assetManager.getAsset("empty", Material.class)).thenReturn(Optional.empty());
+
+        shearingSystem.switchPrefab(entity, "testMesh", "empty");
+        skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
+
+        Assertions.assertEquals(skeletalMeshComponent.mesh, expectedMesh);
+        Assertions.assertEquals(skeletalMeshComponent.material, expectedMaterial);
+
+        shearingSystem.switchPrefab(entity, "empty", "testMaterial");
+        skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
+
+        Assertions.assertEquals(skeletalMeshComponent.mesh, expectedMesh);
+        Assertions.assertEquals(skeletalMeshComponent.material, expectedMaterial);
+
+        shearingSystem.switchPrefab(entity, "empty", "empty");
+        skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
+
+        Assertions.assertEquals(skeletalMeshComponent.mesh, expectedMesh);
+        Assertions.assertEquals(skeletalMeshComponent.material, expectedMaterial);
+
     }
 }
