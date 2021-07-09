@@ -36,10 +36,10 @@ class ShearingSystemTest {
     @Test
     public void testSwitchPrefab() {
         shearingSystem.assetManager = mock(AssetManager.class);
-        OpenGLSkeletalMesh mesh = mock(OpenGLSkeletalMesh.class);
-        when(shearingSystem.assetManager.getAsset("mesh", SkeletalMesh.class)).thenReturn(Optional.of(mesh));
-        GLSLMaterial material = mock(GLSLMaterial.class);
-        when(shearingSystem.assetManager.getAsset("material", Material.class)).thenReturn(Optional.of(material));
+        OpenGLSkeletalMesh expectedMesh = mock(OpenGLSkeletalMesh.class);
+        when(shearingSystem.assetManager.getAsset("testMesh", SkeletalMesh.class)).thenReturn(Optional.of(mesh));
+        GLSLMaterial expectedMaterial = mock(GLSLMaterial.class);
+        when(shearingSystem.assetManager.getAsset("testMaterial", Material.class)).thenReturn(Optional.of(material));
         shearingSystem.switchPrefab(entity, "mesh", "material");
         SkeletalMeshComponent skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
         Assertions.assertEquals(skeletalMeshComponent.mesh, mesh);
