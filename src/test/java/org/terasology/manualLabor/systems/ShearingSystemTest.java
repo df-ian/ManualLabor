@@ -11,10 +11,7 @@ import org.terasology.engine.entitySystem.entity.internal.PojoEntityManager;
 import org.terasology.engine.rendering.assets.material.Material;
 import org.terasology.engine.rendering.assets.skeletalmesh.SkeletalMesh;
 import org.terasology.engine.rendering.logic.SkeletalMeshComponent;
-import org.terasology.engine.rendering.opengl.GLSLMaterial;
-import org.terasology.engine.rendering.opengl.OpenGLSkeletalMesh;
 import org.terasology.gestalt.assets.management.AssetManager;
-
 
 import java.util.Optional;
 
@@ -25,6 +22,9 @@ class ShearingSystemTest {
     ShearingSystem shearingSystem;
     private EntityRef entity;
 
+    /**
+     * Initialize the shearing system and entity to be used while testing. The entity is supposed to mock the animal entity.
+     */
     @BeforeEach
     public void setUp() {
         shearingSystem = new ShearingSystem();
@@ -33,16 +33,21 @@ class ShearingSystemTest {
         entity.saveComponent(skeletalMeshComponent);
     }
 
+    /**
+     * Check whether switchPrefab() changes mesh and material attributes of SkeletalMeshComponent correctly
+     */
     @Test
-    public void testSwitchPrefab() {
+    public void testSwitchPrefabAssetChange() {
+        SkeletalMesh expectedMesh = mock(SkeletalMesh.class);
+        Material expectedMaterial = mock(Material.class);
         shearingSystem.assetManager = mock(AssetManager.class);
-        OpenGLSkeletalMesh expectedMesh = mock(OpenGLSkeletalMesh.class);
-        when(shearingSystem.assetManager.getAsset("testMesh", SkeletalMesh.class)).thenReturn(Optional.of(mesh));
-        GLSLMaterial expectedMaterial = mock(GLSLMaterial.class);
-        when(shearingSystem.assetManager.getAsset("testMaterial", Material.class)).thenReturn(Optional.of(material));
-        shearingSystem.switchPrefab(entity, "mesh", "material");
+        when(shearingSystem.assetManager.getAsset("testMesh", SkeletalMesh.class)).thenReturn(Optional.of(expectedMesh));
+        when(shearingSystem.assetManager.getAsset("testMaterial", Material.class)).thenReturn(Optional.of(expectedMaterial));
+
+        shearingSystem.switchPrefab(entity, "testMesh", "testMaterial");
         SkeletalMeshComponent skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
-        Assertions.assertEquals(skeletalMeshComponent.mesh, mesh);
-        Assertions.assertEquals(skeletalMeshComponent.material,material);
+
+        Assertions.assertEquals(skeletalMeshComponent.mesh, expectedMesh);
+        Assertions.assertEquals(skeletalMeshComponent.material, expectedMaterial);
     }
 }
