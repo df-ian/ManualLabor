@@ -34,42 +34,61 @@ class ShearingSystemTest {
     }
 
     /**
-     * Check whether switchPrefab() changes mesh and material attributes of SkeletalMeshComponent correctly in all scenarios
+     * Check whether switchPrefab() changes mesh and material attributes of SkeletalMeshComponent correctly
      */
     @Test
     public void testSwitchPrefabAssetChange() {
         SkeletalMesh expectedMesh = mock(SkeletalMesh.class);
         Material expectedMaterial = mock(Material.class);
-        shearingSystem.assetManager = mock(AssetManager.class);
-        when(shearingSystem.assetManager.getAsset("testMesh", SkeletalMesh.class)).thenReturn(Optional.of(expectedMesh));
-        when(shearingSystem.assetManager.getAsset("testMaterial", Material.class)).thenReturn(Optional.of(expectedMaterial));
+        createMockAssetManager(expectedMesh, expectedMaterial);
 
         shearingSystem.switchPrefab(entity, "testMesh", "testMaterial");
         SkeletalMeshComponent skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
 
         Assertions.assertEquals(skeletalMeshComponent.mesh, expectedMesh);
         Assertions.assertEquals(skeletalMeshComponent.material, expectedMaterial);
+    }
 
-        when(shearingSystem.assetManager.getAsset("empty", SkeletalMesh.class)).thenReturn(Optional.empty());
-        when(shearingSystem.assetManager.getAsset("empty", Material.class)).thenReturn(Optional.empty());
+    /**
+     * Check whether switchPrefab() changes mesh and material attributes of SkeletalMeshComponent correctly when mesh is empty. Ideal
+     * behaviour in such a case would be to skip the change
+     */
+    @Test
+    public void testSwitchPrefabWithEmptyMaterial() {
+        SkeletalMesh expectedMesh = mock(SkeletalMesh.class);
+        Material expectedMaterial = mock(Material.class);
+        createMockAssetManager(expectedMesh, expectedMaterial);
 
         shearingSystem.switchPrefab(entity, "testMesh", "empty");
-        skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
+        SkeletalMeshComponent skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
 
-        Assertions.assertEquals(skeletalMeshComponent.mesh, expectedMesh);
-        Assertions.assertEquals(skeletalMeshComponent.material, expectedMaterial);
+        Assertions.assertEquals(skeletalMeshComponent.mesh, null);
+        Assertions.assertEquals(skeletalMeshComponent.material, null);
+    }
+
+    /**
+     * Check whether switchPrefab() changes mesh and material attributes of SkeletalMeshComponent correctly when material is empty. Ideal
+     * behaviour in such a case would be to skip the change
+     */
+    @Test
+    public void testSwitchPrefabWithEmptyMesh() {
+        SkeletalMesh expectedMesh = mock(SkeletalMesh.class);
+        Material expectedMaterial = mock(Material.class);
+        createMockAssetManager(expectedMesh, expectedMaterial);
 
         shearingSystem.switchPrefab(entity, "empty", "testMaterial");
-        skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
+        SkeletalMeshComponent skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
 
-        Assertions.assertEquals(skeletalMeshComponent.mesh, expectedMesh);
-        Assertions.assertEquals(skeletalMeshComponent.material, expectedMaterial);
-
-        shearingSystem.switchPrefab(entity, "empty", "empty");
-        skeletalMeshComponent = entity.getComponent(SkeletalMeshComponent.class);
-
-        Assertions.assertEquals(skeletalMeshComponent.mesh, expectedMesh);
-        Assertions.assertEquals(skeletalMeshComponent.material, expectedMaterial);
-
+        Assertions.assertEquals(skeletalMeshComponent.mesh, null);
+        Assertions.assertEquals(skeletalMeshComponent.material, null);
     }
+
+    private void createMockAssetManager(SkeletalMesh expectedMesh, Material expectedMaterial) {
+        shearingSystem.assetManager = mock(AssetManager.class);
+        when(shearingSystem.assetManager.getAsset("testMesh", SkeletalMesh.class)).thenReturn(Optional.of(expectedMesh));
+        when(shearingSystem.assetManager.getAsset("testMaterial", Material.class)).thenReturn(Optional.of(expectedMaterial));
+        when(shearingSystem.assetManager.getAsset("empty", SkeletalMesh.class)).thenReturn(Optional.empty());
+        when(shearingSystem.assetManager.getAsset("empty", Material.class)).thenReturn(Optional.empty());
+    }
+
 }
