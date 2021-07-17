@@ -3,9 +3,12 @@
 
 package org.terasology.manualLabor.systems;
 
+import com.google.common.collect.Lists;
 import org.joml.Vector3f;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.terasology.engine.audio.StaticSound;
+import org.terasology.engine.audio.events.PlaySoundEvent;
 import org.terasology.engine.core.Time;
 import org.terasology.engine.entitySystem.entity.EntityBuilder;
 import org.terasology.engine.entitySystem.entity.EntityManager;
@@ -24,11 +27,16 @@ import org.terasology.engine.registry.In;
 import org.terasology.engine.rendering.assets.material.Material;
 import org.terasology.engine.rendering.assets.skeletalmesh.SkeletalMesh;
 import org.terasology.engine.rendering.logic.SkeletalMeshComponent;
+import org.terasology.engine.utilities.random.FastRandom;
+import org.terasology.engine.utilities.random.Random;
 import org.terasology.gestalt.assets.ResourceUrn;
 import org.terasology.gestalt.assets.management.AssetManager;
 import org.terasology.manualLabor.components.ShearableComponent;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * This system is handling the logic for shearing. It currently is implemented mainly for sheep.
@@ -40,11 +48,18 @@ public class ShearingSystem extends BaseComponentSystem {
     public static final String SHEARING_ITEM = "ManualLabor:CrudeShears";
     public static final int HAIR_REGROWTH_TIME = 3 * 60 * 1000; // 3 minutes in ms
     public static final String HAIR_REGROWTH_ACTION_ID = "ManualLabor:HairRegrowthAction";
+
     public static final String SHEARED_SHEEP_MESH = "WildAnimals:shearedSheep";
     public static final String SHEARED_SHEEP_MATERIAL = "WildAnimals:shearedSheepSkin";
     public static final String SHEEP_MESH = "WildAnimals:sheep";
     public static final String SHEEP_MATERIAL = "WildAnimals:sheepSkin";
+
+    public static final List<String> SOUND_ASSETS = Lists.newArrayList("ManualLabor:Shearing1", "ManualLabor:Shearing2");
+    public static final List<StaticSound> SHEARING_SOUNDS = Lists.newArrayList();
+    public static final String PARTICLE_EFFECT = "ManualLabor:sheepShearingParticleEffect";
+
     private static final Logger logger = LoggerFactory.getLogger(ShearingSystem.class);
+    private Random random = new FastRandom();
 
     @In
     protected Time time;
@@ -57,6 +72,17 @@ public class ShearingSystem extends BaseComponentSystem {
 
     @In
     private DelayManager delayManager;
+
+    @Override
+    public void initialise() {
+        super.initialise();
+        SHEARING_SOUNDS.addAll(SOUND_ASSETS.stream()
+                .map(urn -> assetManager.getAsset(urn, StaticSound.class))
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .collect(Collectors.toList())
+        );
+    }
 
     /**
      * Checks pre-conditions for shearing (e.g. the right tool) and initiates the shearing cycle.
@@ -73,11 +99,20 @@ public class ShearingSystem extends BaseComponentSystem {
             component.lastShearingTimestamp = time.getGameTimeInMs();
             delayManager.addPeriodicAction(entityRef, HAIR_REGROWTH_ACTION_ID, 0, HAIR_REGROWTH_TIME / 20);
             switchPrefab(entityRef, SHEARED_SHEEP_MESH, SHEARED_SHEEP_MATERIAL);
+
             EntityBuilder dropEntity = entityManager.newBuilder(component.dropItemURI);
             Vector3f worldPosition = entityRef.getComponent(LocationComponent.class).getWorldPosition(new Vector3f());
             dropEntity.build().send(new DropItemEvent(worldPosition));
+
+            EntityBuilder entityBuilder = entityManager.newBuilder(PARTICLE_EFFECT);
+            LocationComponent locationComponent = entityBuilder.getComponent(LocationComponent.class);
+            locationComponent.setWorldPosition(worldPosition);
+            entityBuilder.build();
+
+            entityRef.send(new PlaySoundEvent(random.nextItem(SHEARING_SOUNDS), 1));
         }
-    event.consume();
+        
+        event.consume();
     }
 
     /**
