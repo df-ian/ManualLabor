@@ -49,5 +49,6 @@
         "lightRenderingDistance": 0.0,
         "lightAttenuationFalloff": 1.25,
         "lightDiffuseIntensity": 1.0
-    }
+    },
+    "network":{}
 }
