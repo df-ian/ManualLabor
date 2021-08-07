@@ -6,6 +6,10 @@
   "DisplayName": {
     "name": "Crude Shears"
   },
+  "Durability": {
+        "durability": 32,
+        "maxDurability": 32
+  },
   "ItemHelp": {
     "paragraphText": [
       "The crude shears can be used to shear animals. However, they are not very durable."
