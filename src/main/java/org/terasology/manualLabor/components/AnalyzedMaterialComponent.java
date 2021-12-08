@@ -7,10 +7,10 @@ import org.terasology.gestalt.entitysystem.component.Component;
 
 public class AnalyzedMaterialComponent implements Component<AnalyzedMaterialComponent> {
     @Replicate
-    public boolean IsAnalyzed = true;
+    public boolean isAnalyzed = true;
 
     @Override
     public void copyFrom(AnalyzedMaterialComponent other) {
-        this.IsAnalyzed = other.IsAnalyzed;
+        this.isAnalyzed = other.isAnalyzed;
     }
 }

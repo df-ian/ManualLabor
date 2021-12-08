@@ -16,12 +16,12 @@
 package org.terasology.manualLabor.processParts;
 
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.prefab.Prefab;
 import org.terasology.engine.entitySystem.prefab.PrefabManager;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.engine.registry.In;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 import org.terasology.manualLabor.components.BurnableSubstanceComponent;
 import org.terasology.substanceMatters.components.MaterialCompositionComponent;
 import org.terasology.substanceMatters.components.MaterialItemComponent;
@@ -43,7 +43,8 @@ public class BurnableSubstanceRequirementProcessPartCommonSystem extends BaseCom
     public void isValidInventoryItem(ProcessEntityIsInvalidForInventoryItemEvent event, EntityRef processEntity,
                                      BurnableSubstanceRequirementComponent burnableSubstanceRequirementComponent,
                                      InventoryInputComponent inventoryInputComponent) {
-        if (WorkstationInventoryUtils.getAssignedInputSlots(event.getWorkstation(), InventoryInputProcessPartCommonSystem.WORKSTATIONINPUTCATEGORY).contains(event.getSlotNo())) {
+        if (WorkstationInventoryUtils.getAssignedInputSlots(event.getWorkstation(),
+                InventoryInputProcessPartCommonSystem.WORKSTATIONINPUTCATEGORY).contains(event.getSlotNo())) {
             if (getBurnTime(event.getItem()) == 0) {
                 event.consume();
             }

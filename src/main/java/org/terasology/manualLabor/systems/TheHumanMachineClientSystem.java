@@ -17,7 +17,7 @@ package org.terasology.manualLabor.systems;
 
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.entitySystem.event.EventPriority;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
+import org.terasology.engine.entitySystem.event.Priority;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterMode;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
@@ -25,9 +25,10 @@ import org.terasology.engine.logic.players.LocalPlayer;
 import org.terasology.engine.network.ClientComponent;
 import org.terasology.engine.registry.In;
 import org.terasology.engine.rendering.nui.NUIManager;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 import org.terasology.input.ButtonState;
-import org.terasology.module.inventory.input.InventoryButton;
 import org.terasology.manualLabor.components.TheHumanMachineComponent;
+import org.terasology.module.inventory.input.InventoryButton;
 
 @RegisterSystem(RegisterMode.CLIENT)
 public class TheHumanMachineClientSystem extends BaseComponentSystem {
@@ -38,7 +39,8 @@ public class TheHumanMachineClientSystem extends BaseComponentSystem {
     LocalPlayer localPlayer;
 
 
-    @ReceiveEvent(components = ClientComponent.class, priority = EventPriority.PRIORITY_HIGH)
+    @Priority(EventPriority.PRIORITY_HIGH)
+    @ReceiveEvent(components = ClientComponent.class)
     public void onToggleInventory(InventoryButton event, EntityRef entity) {
         if (event.getState() == ButtonState.DOWN) {
             TheHumanMachineComponent theHumanMachine = localPlayer.getCharacterEntity().getComponent(TheHumanMachineComponent.class);

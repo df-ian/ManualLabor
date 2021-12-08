@@ -20,13 +20,13 @@ import com.google.common.collect.Maps;
 import org.terasology.engine.entitySystem.entity.EntityBuilder;
 import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
-import org.terasology.module.inventory.systems.InventoryManager;
 import org.terasology.engine.registry.In;
 import org.terasology.engine.world.block.BlockManager;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 import org.terasology.manualLabor.events.ModifyToolCreationEvent;
+import org.terasology.module.inventory.systems.InventoryManager;
 import org.terasology.substanceMatters.SubstanceMattersUtil;
 import org.terasology.substanceMatters.components.MaterialCompositionComponent;
 import org.terasology.substanceMatters.components.MaterialItemComponent;
@@ -84,7 +84,8 @@ public class ToolItemOutputProcessPartCommonSystem extends BaseComponentSystem {
     public void validateToStartExecution(ProcessEntityIsInvalidToStartEvent event, EntityRef processEntity,
                                          ToolItemOutputComponent toolItemOutputComponent) {
         Set<EntityRef> outputItems = createOutputItems(processEntity, toolItemOutputComponent);
-        if (!InventoryProcessPartUtils.canGiveItemsTo(event.getWorkstation(), outputItems, InventoryOutputProcessPartCommonSystem.WORKSTATIONOUTPUTCATEGORY)) {
+        if (!InventoryProcessPartUtils.canGiveItemsTo(event.getWorkstation(), outputItems,
+                InventoryOutputProcessPartCommonSystem.WORKSTATIONOUTPUTCATEGORY)) {
             event.consume();
         }
     }
@@ -96,7 +97,9 @@ public class ToolItemOutputProcessPartCommonSystem extends BaseComponentSystem {
         // allow other systems to post process these items
         processEntity.addComponent(new InventoryOutputItemsComponent(outputItems));
         for (EntityRef outputItem : outputItems) {
-            if (!inventoryManager.giveItem(event.getWorkstation(), event.getInstigator(), outputItem, WorkstationInventoryUtils.getAssignedOutputSlots(event.getWorkstation(), InventoryOutputProcessPartCommonSystem.WORKSTATIONOUTPUTCATEGORY))) {
+            if (!inventoryManager.giveItem(event.getWorkstation(), event.getInstigator(), outputItem,
+                    WorkstationInventoryUtils.getAssignedOutputSlots(event.getWorkstation(),
+                            InventoryOutputProcessPartCommonSystem.WORKSTATIONOUTPUTCATEGORY))) {
                 outputItem.destroy();
             }
         }
@@ -106,7 +109,8 @@ public class ToolItemOutputProcessPartCommonSystem extends BaseComponentSystem {
     public void isValidInventoryItem(ProcessEntityIsInvalidForInventoryItemEvent event, EntityRef processEntity,
                                      ToolItemOutputComponent toolItemOutputComponent) {
         // only allow the workstation to put items in the output
-        if (WorkstationInventoryUtils.getAssignedOutputSlots(event.getWorkstation(), InventoryOutputProcessPartCommonSystem.WORKSTATIONOUTPUTCATEGORY).contains(event.getSlotNo())
+        if (WorkstationInventoryUtils.getAssignedOutputSlots(event.getWorkstation(),
+                InventoryOutputProcessPartCommonSystem.WORKSTATIONOUTPUTCATEGORY).contains(event.getSlotNo())
                 && !event.getInstigator().equals(event.getWorkstation())) {
             event.consume();
         }
@@ -168,11 +172,13 @@ public class ToolItemOutputProcessPartCommonSystem extends BaseComponentSystem {
      */
     public void tweakToolEntityIcon(EntityRef toolEntity, Map<String, String> iconSubstanceMap) {
         TintOverlayIconComponent tintOverlayIconComponent = toolEntity.getComponent(TintOverlayIconComponent.class);
-        List<TintOverlayIconComponent.TintParameter> remainingTintParameters = Lists.newArrayList(tintOverlayIconComponent.texture.values());
+        List<TintOverlayIconComponent.TintParameter> remainingTintParameters =
+                Lists.newArrayList(tintOverlayIconComponent.texture.values());
 
         // check all the items for an icon match in the tint overlay
         for (Map.Entry<String, String> iconSubstanceItem : iconSubstanceMap.entrySet()) {
-            TintOverlayIconComponent.TintParameter tintParameter = tintOverlayIconComponent.getTintParameterForIcon(iconSubstanceItem.getKey());
+            TintOverlayIconComponent.TintParameter tintParameter =
+                    tintOverlayIconComponent.getTintParameterForIcon(iconSubstanceItem.getKey());
             if (tintParameter != null) {
                 // change the appearance of this overlay (dont change the offset)
                 SubstanceMattersUtil.setTintParametersFromSubstance(iconSubstanceItem.getValue(), tintParameter);

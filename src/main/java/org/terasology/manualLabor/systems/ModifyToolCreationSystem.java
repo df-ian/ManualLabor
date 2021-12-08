@@ -17,11 +17,11 @@ package org.terasology.manualLabor.systems;
 
 import org.terasology.durability.components.DurabilityComponent;
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.prefab.Prefab;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.engine.utilities.Assets;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 import org.terasology.manualLabor.components.BonusToolDamageComponent;
 import org.terasology.manualLabor.components.IncreaseToolDamageComponent;
 import org.terasology.manualLabor.components.IncreaseToolDurabilityComponent;

@@ -14,7 +14,7 @@ import org.terasology.engine.entitySystem.entity.EntityBuilder;
 import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.entitySystem.event.EventPriority;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
+import org.terasology.engine.entitySystem.event.Priority;
 import org.terasology.engine.entitySystem.prefab.Prefab;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
@@ -31,12 +31,12 @@ import org.terasology.engine.utilities.random.FastRandom;
 import org.terasology.engine.utilities.random.Random;
 import org.terasology.gestalt.assets.ResourceUrn;
 import org.terasology.gestalt.assets.management.AssetManager;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 import org.terasology.manualLabor.components.ShearableComponent;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * This system is handling the logic for shearing. It currently is implemented mainly for sheep.
@@ -59,16 +59,17 @@ public class ShearingSystem extends BaseComponentSystem {
     public static final String PARTICLE_EFFECT = "ManualLabor:sheepShearingParticleEffect";
 
     private static final Logger logger = LoggerFactory.getLogger(ShearingSystem.class);
-    private Random random = new FastRandom();
 
     @In
     protected Time time;
 
     @In
-    private EntityManager entityManager;
+    AssetManager assetManager;
+
+    private Random random = new FastRandom();
 
     @In
-    AssetManager assetManager;
+    private EntityManager entityManager;
 
     @In
     private DelayManager delayManager;
@@ -89,7 +90,8 @@ public class ShearingSystem extends BaseComponentSystem {
      *
      * @param entityRef Entity being sheared
      */
-    @ReceiveEvent(components = {ShearableComponent.class}, priority = EventPriority.PRIORITY_HIGH)
+    @Priority(EventPriority.PRIORITY_HIGH)
+    @ReceiveEvent(components = ShearableComponent.class)
     public void onShearing(AttackEvent event, EntityRef entityRef) {
         ShearableComponent component = entityRef.getComponent(ShearableComponent.class);
         EntityRef heldItem = event.getDirectCause();

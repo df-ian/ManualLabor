@@ -18,7 +18,6 @@ package org.terasology.manualLabor.systems;
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.entitySystem.entity.lifecycleEvents.OnActivatedComponent;
 import org.terasology.engine.entitySystem.entity.lifecycleEvents.OnChangedComponent;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterMode;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
@@ -27,6 +26,7 @@ import org.terasology.entityNetwork.Network;
 import org.terasology.entityNetwork.NetworkNode;
 import org.terasology.entityNetwork.components.EntityNetworkComponent;
 import org.terasology.entityNetwork.systems.EntityNetworkManager;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 import org.terasology.manualLabor.components.HeatBlockNetworkComponent;
 import org.terasology.manualLabor.components.HeatSourceComponent;
 import org.terasology.manualLabor.components.HeatedComponent;
@@ -103,6 +103,6 @@ public class HeatAuthoritySystem extends BaseComponentSystem {
             }
         }
 
-        return (float)heatSources;
+        return (float) heatSources;
     }
 }

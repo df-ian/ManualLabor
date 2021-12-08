@@ -21,20 +21,20 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.terasology.gestalt.assets.ResourceUrn;
 import org.terasology.engine.entitySystem.entity.EntityBuilder;
 import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
-import org.terasology.module.inventory.systems.InventoryManager;
-import org.terasology.module.inventory.systems.InventoryUtils;
 import org.terasology.engine.registry.In;
 import org.terasology.engine.world.block.BlockManager;
 import org.terasology.engine.world.block.BlockUri;
 import org.terasology.engine.world.block.items.BlockItemComponent;
 import org.terasology.engine.world.block.items.BlockItemFactory;
+import org.terasology.gestalt.assets.ResourceUrn;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
+import org.terasology.module.inventory.systems.InventoryManager;
+import org.terasology.module.inventory.systems.InventoryUtils;
 import org.terasology.workstation.process.WorkstationInventoryUtils;
 import org.terasology.workstation.process.inventory.InventoryInputItemsComponent;
 import org.terasology.workstation.process.inventory.InventoryInputProcessPartCommonSystem;
@@ -87,7 +87,8 @@ public class ShapedBlockInputProcessPartCommonSystem extends BaseComponentSystem
     public void validateToStartExecution(ProcessEntityIsInvalidToStartEvent event, EntityRef processEntity,
                                          ShapedBlockInputComponent shapedBlockInputComponent) {
         Map<Predicate<EntityRef>, Integer> itemFilters = getInputItemsFilter(shapedBlockInputComponent);
-        Map<Integer, Integer> slotAmounts = InventoryProcessPartUtils.findItems(event.getWorkstation(), InventoryInputProcessPartCommonSystem.WORKSTATIONINPUTCATEGORY, itemFilters, processEntity, event.getInstigator());
+        Map<Integer, Integer> slotAmounts = InventoryProcessPartUtils.findItems(event.getWorkstation(),
+                InventoryInputProcessPartCommonSystem.WORKSTATIONINPUTCATEGORY, itemFilters, processEntity, event.getInstigator());
         if (slotAmounts != null) {
             processEntity.addComponent(new InventoryInputProcessPartSlotAmountsComponent(slotAmounts));
         } else {
@@ -99,7 +100,8 @@ public class ShapedBlockInputProcessPartCommonSystem extends BaseComponentSystem
     @ReceiveEvent
     public void execute(ProcessEntityStartExecutionEvent event, EntityRef processEntity,
                         ShapedBlockInputComponent shapedBlockInputComponent) {
-        InventoryInputProcessPartSlotAmountsComponent slotAmountsComponent = processEntity.getComponent(InventoryInputProcessPartSlotAmountsComponent.class);
+        InventoryInputProcessPartSlotAmountsComponent slotAmountsComponent =
+                processEntity.getComponent(InventoryInputProcessPartSlotAmountsComponent.class);
         // this will be null if another process part has already consumed the items
         if (slotAmountsComponent != null) {
             InventoryInputItemsComponent inventoryInputItemsComponent = new InventoryInputItemsComponent();
@@ -108,14 +110,16 @@ public class ShapedBlockInputProcessPartCommonSystem extends BaseComponentSystem
                 if (slotAmount.getValue() > InventoryUtils.getStackCount(item)) {
                     logger.error("Not enough items in the stack");
                 }
-                EntityRef removedItem = inventoryManager.removeItem(event.getWorkstation(), event.getInstigator(), item, false, slotAmount.getValue());
+                EntityRef removedItem = inventoryManager.removeItem(event.getWorkstation(), event.getInstigator(), item,
+                        false, slotAmount.getValue());
                 inventoryInputItemsComponent.items.add(removedItem);
                 if (removedItem == null) {
                     logger.error("Could not remove input item");
                 }
             }
 
-            // add the removed items to the process entity.  They will be destroyed along with the process entity eventually unless removed from the component.
+            // add the removed items to the process entity.
+            // They will be destroyed along with the process entity eventually unless removed from the component.
             processEntity.addComponent(inventoryInputItemsComponent);
         }
 
@@ -126,7 +130,8 @@ public class ShapedBlockInputProcessPartCommonSystem extends BaseComponentSystem
     @ReceiveEvent
     public void validateInventoryItem(ProcessEntityIsInvalidForInventoryItemEvent event, EntityRef processEntity,
                                       ShapedBlockInputComponent shapedBlockInputComponent) {
-        if (WorkstationInventoryUtils.getAssignedInputSlots(event.getWorkstation(), InventoryInputProcessPartCommonSystem.WORKSTATIONINPUTCATEGORY).contains(event.getSlotNo())
+        if (WorkstationInventoryUtils.getAssignedInputSlots(event.getWorkstation(),
+                InventoryInputProcessPartCommonSystem.WORKSTATIONINPUTCATEGORY).contains(event.getSlotNo())
                 && !Iterables.any(getInputItemsFilter(shapedBlockInputComponent).keySet(), x -> x.apply(event.getItem()))) {
             event.consume();
         }
@@ -154,9 +159,7 @@ public class ShapedBlockInputProcessPartCommonSystem extends BaseComponentSystem
                     BlockItemComponent blockItemComponent = input.getComponent(BlockItemComponent.class);
                     if (blockItemComponent != null) {
                         Optional<ResourceUrn> shapeUrn = blockItemComponent.blockFamily.getURI().getShapeUrn();
-                        if (shapeUrn.isPresent() && shapeUrn.get().equals(new ResourceUrn(shapedBlockInputComponent.shape))) {
-                            return true;
-                        }
+                        return shapeUrn.isPresent() && shapeUrn.get().equals(new ResourceUrn(shapedBlockInputComponent.shape));
                     }
                     return false;
                 },
@@ -167,7 +170,8 @@ public class ShapedBlockInputProcessPartCommonSystem extends BaseComponentSystem
     protected Set<EntityRef> createItems(ShapedBlockInputComponent shapedBlockInputComponent, boolean createPersistentEntities) {
         Set<EntityRef> output = Sets.newHashSet();
         BlockItemFactory blockFactory = new BlockItemFactory(entityManager);
-        EntityBuilder builder = blockFactory.newBuilder(blockManager.getBlockFamily(new BlockUri(new ResourceUrn("ManualLabor:TempBlock"), new ResourceUrn(shapedBlockInputComponent.shape))), shapedBlockInputComponent.amount);
+        EntityBuilder builder = blockFactory.newBuilder(blockManager.getBlockFamily(new BlockUri(new ResourceUrn("ManualLabor:TempBlock"),
+                new ResourceUrn(shapedBlockInputComponent.shape))), shapedBlockInputComponent.amount);
         builder.setPersistent(createPersistentEntities);
         output.add(builder.build());
         return output;
