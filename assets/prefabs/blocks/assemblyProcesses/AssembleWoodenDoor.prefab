@@ -1,0 +1,16 @@
+{
+  "Parent": "AssemblingBaseProcessPart",
+  "ProcessDefinition": {
+    "processType": "ManualLabor:Assembling"
+  },
+  "InventoryInput": {
+    "itemCounts": {
+      "ManualLabor:Plank": 6
+    }
+  },
+  "InventoryOutput": {
+    "blockCounts": {
+      "CoreAdvancedAssets:door": 3
+    }
+  }
+}
